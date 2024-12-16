@@ -136,6 +136,20 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
             style={TECH_ICON_SHADOW}
         />
     ),
+    'Rust': (
+        <SiRust
+            color='#DEA584' // Rust logo color
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
+    'Linux': (
+        <SiLinux
+            color='#F7F7F7' // Linux logo color (light grey)
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
 }
 
 export default function Technologies(): React.ReactNode {

@@ -13,7 +13,6 @@ import { FiBook } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 
 
-const diagonalGlideOverlay = '/assets/home/diagonal_slowglide_overlay.gif'
 const logo = '/assets/bits/sreenidhi-logo.png'  
 
 export default function Navbar(): React.ReactNode {
@@ -21,7 +20,6 @@ export default function Navbar(): React.ReactNode {
     const handleClick = () => setNav(!nav)
 
     
-    const [announceDismissed, setAnnounceDismissed] = useState(false)
 
     return (
         <div className='z-50 flex flex-col fixed w-full'>
