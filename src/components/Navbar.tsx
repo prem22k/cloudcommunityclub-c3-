@@ -37,6 +37,7 @@ export default function Navbar(): React.ReactNode {
                     src={logo}
                     alt='Snist Logo'
                     className='my-auto'
+                    unoptimized
                     priority
                 />
 
