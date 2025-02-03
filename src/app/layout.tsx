@@ -40,11 +40,11 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://snist.cloudcommunityclub.in'),
     title: 'Cloud Community Club (C³)',
     description: 'A vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.',
-    keywords: ['cloud computing', 'community', 'technology', 'learning'],
+    keywords: ['cloud community', 'community', 'technology', 'learning'],
     authors: [{ name: 'Cloud Community Club' }],
     openGraph: {
         title: 'Cloud Community Club (C³)',
-        description: 'Join our cloud computing community',
+        description: 'Join our cloud community club',
         url: 'https://snist.cloudcommunityclub.in',
         siteName: 'Cloud Community Club',
         images: [
