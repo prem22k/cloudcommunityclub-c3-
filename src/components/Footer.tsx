@@ -58,7 +58,7 @@ export default function Footer() {
                     </button>
                 </Link>
 
-                <Link href='mailto:cloudcommunityclub@gmail.com'>
+                <Link href='mailto:C3@snist.cloudcommunityclub.in'>
                     <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 px-4 active:scale-95 hover:bg-[#EA4335] hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#EA4335] active:outline-neutral-200 duration-200 active:duration-200'>
                         <MdOutlineEmail className='my-auto group-hover:text-white' />
                         Email

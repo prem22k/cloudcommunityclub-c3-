@@ -1,68 +1,57 @@
-import './globals.css';
+import { Inter, Poppins, Ubuntu, Rubik, Open_Sans } from 'next/font/google'
+import { Metadata } from 'next'
+import Navbar from '@/components/Navbar'
+import './globals.css'
 
-import { Inter, Poppins, Ubuntu, Rubik, Open_Sans } from 'next/font/google';
-
-import Navbar from '../components/Navbar';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
-
-const rubik = Rubik({
-  weight: ['300', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-rubik',
-});
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-  weight: ['500'],
-});
-
+// Font configurations
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const poppins = Poppins({ 
+    weight: ['400', '500', '600', '700'],
+    subsets: ['latin'],
+    variable: '--font-poppins'
+})
 const ubuntu = Ubuntu({
-  weight: ['300', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-ubuntu',
-});
+    weight: ['400', '500', '700'],
+    subsets: ['latin'],
+    variable: '--font-ubuntu'
+})
+const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' })
+const open_sans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' })
 
-const open_sans = Open_Sans({
-  weight: ['300', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-open_sans',
-});
-
-export const metadata = {
-  title: 'Cloud Community Club (C³)',
-  description:
-    'Empowering students to explore and excel in cloud computing and emerging technologies. Join C³ for hands-on experience, research opportunities, and industry collaboration. #Development2Deployment',
-};
+export const metadata: Metadata = {
+    title: 'Cloud Community Club (C³)',
+    description: 'A vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.',
+    keywords: ['cloud computing', 'community', 'technology', 'learning'],
+    authors: [{ name: 'Cloud Community Club' }],
+    openGraph: {
+        title: 'Cloud Community Club (C³)',
+        description: 'Join our cloud computing community',
+        url: 'https://snist.cloudcommunityclub.in',
+        siteName: 'Cloud Community Club',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Cloud Community Club (C³)'
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
-}): React.ReactNode {
-  return (
-    <html
-      className={`${inter.variable} ${poppins.variable} ${ubuntu.variable} ${rubik.variable} ${open_sans.variable}`}
-    >
-      <head>
-        {/* Link to the site.webmanifest */}
-        <link rel="manifest" href="/site.webmanifest" />
-        
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        
-        {/* Apple Touch Icon */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-      </head>
-      <body>
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  );
+    children: React.ReactNode
+}) {
+    return (
+        <html lang="en" className={`${inter.variable} ${poppins.variable} ${ubuntu.variable} ${rubik.variable} ${open_sans.variable}`}>
+            <body className="min-h-screen bg-black text-white">
+                <Navbar />
+                <main>{children}</main>
+            </body>
+        </html>
+    )
 }

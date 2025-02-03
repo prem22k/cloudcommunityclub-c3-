@@ -57,12 +57,12 @@ export default function Navbar(): React.ReactNode {
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                         <HiOutlineCloud className='my-auto mr-2 text-xl' />
-                        <Link href='/'>Projects</Link>
+                        <Link href='/projects'>Projects</Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                         <FiBook className='my-auto mr-2 text-xl' />
-                        <Link href='/'>
+                        <Link href='/research'>
                         Research</Link>
                     </li>
 
@@ -107,14 +107,14 @@ export default function Navbar(): React.ReactNode {
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <HiOutlineCloud className='my-auto mr-2 text-2xl' />
-                            <Link href='.' onClick={handleClick}>
+                            <Link href='/projects' onClick={handleClick}>
                                 Projects
                             </Link>
                         </div>
 
                         <div className='text-2xl text-yellow-300 font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <FiBook className='my-auto mr-2 text-2xl' />
-                            <Link href='.' onClick={handleClick}>
+                            <Link href='/research' onClick={handleClick}>
                                 Research
                             </Link>
                         </div>
