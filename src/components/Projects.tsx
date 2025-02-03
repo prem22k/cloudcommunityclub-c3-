@@ -113,13 +113,6 @@ export default function Projects(): React.ReactNode {
                     </motion.div>
                 </motion.div>
             </div>
-
-            {/* Animated particles or dots (optional) */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <div className="absolute w-2 h-2 bg-blue-500 rounded-full animate-ping" style={{ top: '20%', left: '10%' }} />
-                <div className="absolute w-2 h-2 bg-purple-500 rounded-full animate-ping" style={{ top: '70%', left: '80%' }} />
-                <div className="absolute w-2 h-2 bg-cyan-500 rounded-full animate-ping" style={{ top: '40%', left: '60%' }} />
-            </div>
         </div>
     )
 }
