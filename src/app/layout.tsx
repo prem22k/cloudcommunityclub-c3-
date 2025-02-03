@@ -4,21 +4,40 @@ import Navbar from '@/components/Navbar'
 import './globals.css'
 
 // Font configurations
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({ 
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-inter'
+})
+
 const poppins = Poppins({ 
     weight: ['400', '500', '600', '700'],
     subsets: ['latin'],
+    display: 'swap',
     variable: '--font-poppins'
 })
+
 const ubuntu = Ubuntu({
     weight: ['400', '500', '700'],
     subsets: ['latin'],
+    display: 'swap',
     variable: '--font-ubuntu'
 })
-const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' })
-const open_sans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' })
+
+const rubik = Rubik({ 
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-rubik'
+})
+
+const open_sans = Open_Sans({ 
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-open-sans'
+})
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://snist.cloudcommunityclub.in'),
     title: 'Cloud Community Club (C³)',
     description: 'A vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.',
     keywords: ['cloud computing', 'community', 'technology', 'learning'],
@@ -38,7 +57,7 @@ export const metadata: Metadata = {
         ],
         locale: 'en_US',
         type: 'website',
-    },
+    }
 }
 
 export default function RootLayout({
