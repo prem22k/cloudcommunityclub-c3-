@@ -39,22 +39,23 @@ export default function Projects(): React.ReactNode {
 
                     {/* Features */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 max-w-4xl mx-auto mt-8 sm:mt-12 px-4">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-gradient-to-br from-neutral-900/50 to-neutral-950/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl"
-                        >
-                            <div className="flex justify-center mb-3 sm:mb-4">
-                                <Rocket className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400" />
-                            </div>
-                            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                                Innovation Hub
-                            </h3>
-                            <p className="text-gray-400 text-sm sm:text-base">
-                                Cutting-edge cloud computing projects in development
-                            </p>
-                        </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gradient-to-br from-neutral-900/50 to-neutral-950/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl"
+                    >
+                        <div className="flex justify-center mb-3 sm:mb-4">
+                            <Rocket className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400" />
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                            Innovation Hub
+                        </h3>
+                        <p className="text-gray-400 text-sm sm:text-base">
+                            Innovative projects in emerging technologies and open-source innovation.
+                        </p>
+                    </motion.div>
+
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
