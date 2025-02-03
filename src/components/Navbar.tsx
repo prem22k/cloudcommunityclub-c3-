@@ -95,7 +95,7 @@ export default function Navbar(): React.ReactNode {
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <GoHome className='my-auto mr-2 text-2xl' />
                             <Link
-                                href='.'
+                                href='/'
                                 onMouseUp={() => {
                                     animateScroll.scrollToTop()
                                     handleClick()
@@ -112,7 +112,7 @@ export default function Navbar(): React.ReactNode {
                             </Link>
                         </div>
 
-                        <div className='text-2xl text-yellow-300 font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
+                        <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <FiBook className='my-auto mr-2 text-2xl' />
                             <Link href='/research' onClick={handleClick}>
                                 Research
