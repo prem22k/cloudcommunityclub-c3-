@@ -13,7 +13,7 @@ export default function Footer() {
 
             <div className='flex flex-row flex-wrap gap-3 justify-center py-4 overflow-x-hidden'>
                 <Link
-                    href='https://discord.gg/kx9VH9pu'
+                    href='https://discord.gg/dBNXWDKhrD'
                     target='_blank'
                 >
                     <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 px-4 active:scale-95 hover:bg-[#5865F2] hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#5865F2] active:outline-neutral-200 duration-200 active:duration-200'>

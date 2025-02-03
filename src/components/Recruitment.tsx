@@ -61,7 +61,7 @@ export default function Recruitment(): React.ReactNode {
                     width="100%">
                     </iframe>
 
-                    <a href='https://discord.gg/kx9VH9pu' target='_blank' className='w-[75%] h-[72px] hover:scale-[101%] hover:animate-pulse transition-all opacity-70 hover:opacity-85 duration-300'>
+                    <a href='https://discord.gg/dBNXWDKhrD' target='_blank' className='w-[75%] h-[72px] hover:scale-[101%] hover:animate-pulse transition-all opacity-70 hover:opacity-85 duration-300'>
                         <iframe
                         title='discord'
                         src='https://ptb.discord.com/widget?id=1316108296075218944&theme=dark'

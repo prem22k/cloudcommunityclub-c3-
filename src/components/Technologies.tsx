@@ -94,6 +94,13 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
             style={TECH_ICON_SHADOW}
         />
     ),
+    'Gitlab': (
+        <SiGitlab
+            color='#FC6D26'
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
     'Grafana': (
         <SiGrafana
             color='#F46800'
