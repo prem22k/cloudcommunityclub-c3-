@@ -44,37 +44,49 @@ export default function Navbar(): React.ReactNode {
                 {/* Desktop Navigation */}
                 <ul className='hidden md:flex text-[15px]'>
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <GoHome className='my-auto mr-2 text-xl' />
+                        
                         <Link 
                             href='/'
+                            className='flex items-center'
                             onMouseUp={() => {
                                 animateScroll.scrollToTop()
                             }}
                         >
+                            <GoHome className='my-auto mr-2 text-xl' />
                             Home
                         </Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <HiOutlineCloud className='my-auto mr-2 text-xl' />
-                        <Link href='/projects'>Projects</Link>
+                        
+                        <Link href='/projects' className='flex items-center'>
+                            <HiOutlineCloud className='my-auto mr-2 text-xl' />
+                            Projects
+                        </Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <FiBook className='my-auto mr-2 text-xl' />
-                        <Link href='/research'>
-                        Research</Link>
+                        
+                        <Link href='/research' className='flex items-center'>
+                            <FiBook className='my-auto mr-2 text-xl' />
+                            Research
+                        </Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <MdOutlineEmojiEvents className='my-auto mr-2 text-xl' />
-                        <Link href='/'>
-                        Events</Link>
+                        
+                        <Link href='/' className='flex items-center'>
+                            <MdOutlineEmojiEvents className='my-auto mr-2 text-xl' />
+                            Events
+                        </Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
+                        
+                        <Link href='https://discord.gg/dBNXWDKhrD' className='flex items-center'>
                         <GoCodeOfConduct className='my-auto mr-2 text-xl' />
-                        <Link href='https://discord.gg/dBNXWDKhrD'>Join Us</Link>
+                        Join Us
+                        </Link>
                     </li>
                 </ul>
 
