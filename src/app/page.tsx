@@ -2,7 +2,6 @@
 
 import React from 'react'
 
-import { Element } from 'react-scroll'
 import { ReactTyped } from 'react-typed'
 
 

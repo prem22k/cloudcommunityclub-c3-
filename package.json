@@ -32,6 +32,7 @@
         "@types/react-scroll": "^1.8.10",
         "autoprefixer": "^10.0.1",
         "eslint": "^8.57.0",
+        "eslint-config-next": "^15.1.6",
         "framer-motion": "^10.16.14",
         "postcss": "^8",
         "prettier": "3.2.5",

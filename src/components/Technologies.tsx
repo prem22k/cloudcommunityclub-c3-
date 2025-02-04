@@ -94,6 +94,13 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
             style={TECH_ICON_SHADOW}
         />
     ),
+    'Gitlab': (
+        <SiGitlab
+            color='#FC6D26'
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
     'Grafana': (
         <SiGrafana
             color='#F46800'
@@ -132,6 +139,20 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
     'TypeScript': (
         <SiTypescript
             color='#3178C6'
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
+    'Rust': (
+        <SiRust
+            color='#DEA584' // Rust logo color
+            className={TECH_ICON_CLASSES}
+            style={TECH_ICON_SHADOW}
+        />
+    ),
+    'Linux': (
+        <SiLinux
+            color='#F7F7F7' // Linux logo color (light grey)
             className={TECH_ICON_CLASSES}
             style={TECH_ICON_SHADOW}
         />

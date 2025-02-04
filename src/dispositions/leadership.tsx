@@ -51,7 +51,7 @@ export const leadership = {
     major: {
         'Nandhan Rao': {
             role: 'President',
-            imgSrc: pfp_president,
+            imgSrc: pfp_none,
             quote: (
                 <p>
                     Oh, these weren't homemade, they were made in a factory.

@@ -1,15 +1,10 @@
-import React from 'react'
+import Projects from '@/components/Projects'
 
-import IntroFade from '../../components/IntroFade'
+export const metadata = {
+    title: 'Projects | Cloud Community Club (C³)',
+    description: 'Discover our cloud computing projects and initiatives.',
+}
 
-import ProjectCarousel from '../../components/Carousel'
-
-export default function Projects() {
-    return (
-        <div>
-            <IntroFade />
-
-            <ProjectCarousel />
-        </div>
-    )
+export default function ProjectsPage() {
+    return <Projects />
 }

@@ -120,7 +120,7 @@ export default function Overview(): React.ReactNode {
                 <p className='title-main text-neutral-500 font-semibold'>Join our Community</p>
 
                 <div className='flex flex-row flex-wrap gap-3 justify-center py-4'>
-                    <Link href='https://discord.gg/kx9VH9pu' target='_blank'>
+                    <Link href='https://discord.gg/dBNXWDKhrD' target='_blank'>
                         <button className='flex group w-[140px] sm:w-[160px] md:w-[180px] md:hover:w-[200px] justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 md:py-3 active:scale-95 hover:bg-[#5865F2] hover:outline-4 hover:text-white text-lg md:text-xl font-bold active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#5865F2] active:outline-neutral-200 duration-200 active:duration-200'>
                             <SiDiscord className='my-auto group-hover:text-white group-hover:text-xl md:group-hover:text-2xl transition-all duration-300' />
                             Discord

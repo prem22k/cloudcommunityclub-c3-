@@ -32,9 +32,12 @@ export default function About(): React.ReactNode {
 
             <div className='w-full py-24 flex flex-col lg:flex-row justify-center items-center gap-x-20 gap-y-8 bg-[#030303]'>
                 <div className='relative w-[85%] lg:w-[45%]'>
-                <div className='absolute top-0 w-full h-[20%] bg-gradient-to-b from-[#030303] to-transparent z-10' />
-                <div className='z-0 absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-[#030303] to-transparent' />
-                <div className='absolute w-full h-full bg-[radial-gradient(50%_90%_at_50%_50%,rgba(255,255,255,0)_40%,rgba(03,03,03,1)_100%)]' />
+                {/* Reduced opacity in the top gradient */}
+                <div className='absolute top-0 w-full h-[20%] bg-gradient-to-b from-[rgba(3,3,3,1)] to-transparent z-10' />
+                {/* Reduced opacity in the bottom gradient */}
+                <div className='z-0 absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-[rgba(3,3,3,1)] to-transparent' />
+                {/* Reduced opacity in the radial gradient */}
+                <div className='absolute w-full h-full bg-[radial-gradient(50%_90%_at_50%_50%,rgba(255,255,255,0)_40%,rgba(3,3,3,1)_100%)]' />
     
                 {/* Aerial view video */}
                 <video

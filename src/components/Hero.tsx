@@ -63,6 +63,7 @@ export default function Hero(): React.ReactNode {
                         className='absolute w-full h-full blur-[0px] object-cover opacity-60'
                         src={backdrop}
                         alt=''
+                        unoptimized
                         priority
                     />
                     

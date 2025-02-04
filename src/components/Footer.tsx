@@ -1,9 +1,8 @@
 import Link from 'next/link'
-
 import Image from 'next/image'
-
 import { SiDiscord, SiLinkedin, SiGithub, SiInstagram } from 'react-icons/si'
 import { FaXTwitter } from 'react-icons/fa6'
+import { MdOutlineEmail } from 'react-icons/md'
 
 export default function Footer() {
     return (
@@ -13,7 +12,7 @@ export default function Footer() {
 
             <div className='flex flex-row flex-wrap gap-3 justify-center py-4 overflow-x-hidden'>
                 <Link
-                    href='https://discord.gg/kx9VH9pu'
+                    href='https://discord.gg/dBNXWDKhrD'
                     target='_blank'
                 >
                     <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 px-4 active:scale-95 hover:bg-[#5865F2] hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#5865F2] active:outline-neutral-200 duration-200 active:duration-200'>
@@ -58,15 +57,23 @@ export default function Footer() {
                         X
                     </button>
                 </Link>
+
+                <Link href='mailto:C3@snist.cloudcommunityclub.in'>
+                    <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 px-4 active:scale-95 hover:bg-[#EA4335] hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#EA4335] active:outline-neutral-200 duration-200 active:duration-200'>
+                        <MdOutlineEmail className='my-auto group-hover:text-white' />
+                        Email
+                    </button>
+                </Link>
             </div>
 
             <div className='flex flex-row items-center justify-center gap-4 py-2 w-full'>
                 <Link href='https://sreenidhi.edu.in/' target='_blank'>
                     <Image
-                        src={'/assets/bits/sreenidhi-logo.png'}  // Add your college logo
+                        src='/assets/bits/sreenidhi-logo.png'  // Add your college logo
                         width={250}
                         height={250}
                         alt='College Logo'
+                        unoptimized
                     />
                 </Link>
             </div>

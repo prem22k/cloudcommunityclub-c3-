@@ -9,11 +9,10 @@ import { HiOutlineCloud } from 'react-icons/hi2'
 import { GoHome, GoCodeOfConduct } from 'react-icons/go'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FiBook } from 'react-icons/fi'
-
+import { MdOutlineEmojiEvents } from "react-icons/md";
 import { motion } from 'framer-motion'
 
 
-const diagonalGlideOverlay = '/assets/home/diagonal_slowglide_overlay.gif'
 const logo = '/assets/bits/sreenidhi-logo.png'  
 
 export default function Navbar(): React.ReactNode {
@@ -21,7 +20,6 @@ export default function Navbar(): React.ReactNode {
     const handleClick = () => setNav(!nav)
 
     
-    const [announceDismissed, setAnnounceDismissed] = useState(false)
 
     return (
         <div className='z-50 flex flex-col fixed w-full'>
@@ -39,13 +37,14 @@ export default function Navbar(): React.ReactNode {
                     src={logo}
                     alt='Snist Logo'
                     className='my-auto'
+                    unoptimized
                     priority
                 />
 
                 {/* Desktop Navigation */}
                 <ul className='hidden md:flex text-[15px]'>
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <GoHome className='my-auto mr-2' />
+                        <GoHome className='my-auto mr-2 text-xl' />
                         <Link 
                             href='/'
                             onMouseUp={() => {
@@ -57,19 +56,25 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <HiOutlineCloud className='my-auto mr-2' />
-                        <Link href='/'>Projects</Link>
+                        <HiOutlineCloud className='my-auto mr-2 text-xl' />
+                        <Link href='/projects'>Projects</Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <FiBook className='my-auto mr-2' />
-                        <Link href='/'>
+                        <FiBook className='my-auto mr-2 text-xl' />
+                        <Link href='/research'>
                         Research</Link>
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <GoCodeOfConduct className='my-auto mr-2' />
-                        <Link href='/'>Join Us</Link>
+                        <MdOutlineEmojiEvents className='my-auto mr-2 text-xl' />
+                        <Link href='/'>
+                        Events</Link>
+                    </li>
+
+                    <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
+                        <GoCodeOfConduct className='my-auto mr-2 text-xl' />
+                        <Link href='https://discord.gg/dBNXWDKhrD'>Join Us</Link>
                     </li>
                 </ul>
 
@@ -88,9 +93,9 @@ export default function Navbar(): React.ReactNode {
                 >
                     <div className='flex flex-col gap-4'>
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <GoHome className='my-auto mr-2' />
+                            <GoHome className='my-auto mr-2 text-2xl' />
                             <Link
-                                href='.'
+                                href='/'
                                 onMouseUp={() => {
                                     animateScroll.scrollToTop()
                                     handleClick()
@@ -101,23 +106,30 @@ export default function Navbar(): React.ReactNode {
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <HiOutlineCloud className='my-auto mr-2' />
-                            <Link href='.' onClick={handleClick}>
+                            <HiOutlineCloud className='my-auto mr-2 text-2xl' />
+                            <Link href='/projects' onClick={handleClick}>
                                 Projects
                             </Link>
                         </div>
 
-                        <div className='text-2xl text-yellow-300 font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <FiBook className='my-auto mr-2' />
-                            <Link href='.' onClick={handleClick}>
+                        <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
+                            <FiBook className='my-auto mr-2 text-2xl' />
+                            <Link href='/research' onClick={handleClick}>
                                 Research
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <GoCodeOfConduct className='my-auto mr-2' />
+                            <MdOutlineEmojiEvents className='my-auto mr-2 text-2xl' />
+                            <Link href='.' onClick={handleClick}>
+                                Events
+                            </Link>
+                        </div>
+
+                        <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
+                        <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
                             <a
-                                href='https://discord.gg/kx9VH9pu'
+                                href='https://discord.gg/dBNXWDKhrD'
                                 onMouseUp={handleClick}
                             >
                                 Join Us!
