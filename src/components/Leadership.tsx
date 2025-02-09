@@ -240,70 +240,68 @@ export default function Leadership(): React.ReactNode {
                 {/* WebMaster Card */}
                 <div className='mt-8 flex justify-center'>
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className='relative w-[280px] h-[380px] rounded-xl bg-gradient-to-br from-[#1a1a1a]/80 to-[#0d0d0d]/80 
-                                 backdrop-blur-sm border border-[#345222]/30 group hover:border-[#345222]/50 
-                                 transition-all duration-300 overflow-hidden'
+                        initial={{ opacity: 0, transform: 'perspective(500px) translateZ(55px)' }}
+                        animate={{ opacity: 1, transform: 'translateZ(0px)' }}
+                        transition={{ duration: 1.25, delay: 0.5, ease: 'easeOut' }}
+                        className='hover:z-20 sm:hover:mx-4 w-[160px] sm:w-[200px] ring-2 ring-green-950 
+                                 relative group hover:rounded-b-none sm:hover:!scale-[115%] transition-all 
+                                 duration-500 select-none rounded-t-xl rounded-b-lg bg-gradient-to-t 
+                                 from-[#040404] via-green-950 to-green-950 shadow-md hover:shadow-2xl 
+                                 shadow-neutral-600 hover:shadow-green-300'
                     >
-                        {/* Background Pattern */}
-                        <div className='absolute inset-0 opacity-[0.15] bg-[radial-gradient(#ffffff33_1px,#00000000_1px)] [background-size:16px_16px]' />
+                        {/* Leader Portrait */}
+                        <div className='sm:hover:scale-110 sm:hover:-translate-y-2 outline-neutral-300 
+                                      outline-0 hover:outline-2 active:!scale-[104%] transition-all 
+                                      duration-200 rounded-t-xl rounded-b-lg drop-shadow-2xl outline-6 
+                                      active:outline-8 active:outline-neutral-300 outline-double'>
+                            <Image
+                                width={320}
+                                height={320}
+                                className='rounded-t-xl rounded-b-lg aspect-square'
+                                alt=''
+                                src={leadership.webmaster.imgSrc}
+                                unoptimized
+                            />
+                        </div>
 
-                        {/* Content Container */}
-                        <div className='relative h-full flex flex-col items-center p-6'>
-                            {/* Image */}
-                            <div className='w-[160px] h-[160px] rounded-full overflow-hidden mb-4 
-                                          ring-2 ring-[#345222]/50 group-hover:ring-[#345222] transition-all duration-300'>
-                                <Image
-                                    src={leadership.webmaster.imgSrc}
-                                    alt={leadership.webmaster.name}
-                                    width={160}
-                                    height={160}
-                                    className='object-cover w-full h-full transition-transform duration-300 group-hover:scale-110'
-                                    unoptimized
-                                />
-                            </div>
-
-                            {/* Role Icon */}
-                            <div className='text-3xl text-[#4CAF50] mb-2 drop-shadow-[0_0_8px_rgba(76,175,80,0.5)]'>
+                        {/* Name and Role */}
+                        <div className='rounded-xl p-2 py-3 group-hover:pb-0'>
+                            <div className='absolute text-[10px] sm:text-[16px]'>
                                 <AiOutlineGlobal />
                             </div>
-
-                            {/* Name & Role */}
-                            <h3 className='text-xl font-semibold text-center text-white mb-1'>
+                            <h1 className='title-main text-[16px] sm:text-[19px] font-semibold text-center 
+                                         group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] 
+                                         duration-300 group-hover:animate-pulse'>
                                 {leadership.webmaster.name}
-                            </h3>
-                            <p className='text-[#4CAF50] font-medium mb-3'>
+                            </h1>
+                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center 
+                                         drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'>
                                 {leadership.webmaster.role}
-                            </p>
+                            </h2>
+                        </div>
 
-                            {/* Quote */}
-                            <p className='text-gray-400 text-center text-sm italic mb-4'>
-                                "{leadership.webmaster.quote}"
-                            </p>
-
-                            {/* Social Links */}
-                            <div className='mt-auto flex justify-center gap-4'>
-                                <a href={leadership.webmaster.github} 
-                                   target='_blank' 
-                                   rel='noreferrer'
-                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
-                                    <SiGithub size={22} />
-                                </a>
-                                <a href={leadership.webmaster.linkedin} 
-                                   target='_blank' 
-                                   rel='noreferrer'
-                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
-                                    <SiLinkedin size={22} />
-                                </a>
-                                <a href={leadership.webmaster.instagram} 
-                                   target='_blank' 
-                                   rel='noreferrer'
-                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
-                                    <SiInstagram size={22} />
-                                </a>
-                            </div>
+                        {/* Social Links */}
+                        <div className='z-10 absolute hidden group-hover:flex border-b-4 border-green-700 
+                                      justify-center w-full rounded-b-lg bg-gradient-to-b from-[#040a04] 
+                                      to-black gap-2 px-2 pb-2'>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.github}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiGithub size={'3vh'} className='h-10' />
+                            </a>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.linkedin}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiLinkedin size={'3vh'} className='h-10' />
+                            </a>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.instagram}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiInstagram size={'3vh'} className='h-10' />
+                            </a>
                         </div>
                     </motion.div>
                 </div>
