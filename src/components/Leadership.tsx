@@ -243,11 +243,11 @@ export default function Leadership(): React.ReactNode {
                         initial={{ opacity: 0, transform: 'perspective(500px) translateZ(55px)' }}
                         animate={{ opacity: 1, transform: 'translateZ(0px)' }}
                         transition={{ duration: 1.25, delay: 0.5, ease: 'easeOut' }}
-                        className='hover:z-20 sm:hover:mx-4 w-[160px] sm:w-[200px] ring-2 ring-green-950 
+                        className='hover:z-20 sm:hover:mx-4 w-[160px] sm:w-[200px] ring-2 ring-red-950 
                                  relative group hover:rounded-b-none sm:hover:!scale-[115%] transition-all 
                                  duration-500 select-none rounded-t-xl rounded-b-lg bg-gradient-to-t 
-                                 from-[#040404] via-green-950 to-green-950 shadow-md hover:shadow-2xl 
-                                 shadow-neutral-600 hover:shadow-green-300'
+                                 from-[#040404] via-red-950 to-red-950 shadow-md hover:shadow-2xl 
+                                 shadow-neutral-600 hover:shadow-red-300'
                     >
                         {/* Leader Portrait */}
                         <div className='sm:hover:scale-110 sm:hover:-translate-y-2 outline-neutral-300 
@@ -266,7 +266,7 @@ export default function Leadership(): React.ReactNode {
 
                         {/* Name and Role */}
                         <div className='rounded-xl p-2 py-3 group-hover:pb-0'>
-                            <div className='absolute text-[10px] sm:text-[16px]'>
+                            <div className='absolute text-[10px] sm:text-[16px] text-red-400'>
                                 <AiOutlineGlobal />
                             </div>
                             <h1 className='title-main text-[16px] sm:text-[19px] font-semibold text-center 
@@ -274,29 +274,32 @@ export default function Leadership(): React.ReactNode {
                                          duration-300 group-hover:animate-pulse'>
                                 {leadership.webmaster.name}
                             </h1>
-                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center 
+                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center text-red-300
                                          drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'>
                                 {leadership.webmaster.role}
                             </h2>
                         </div>
 
                         {/* Social Links */}
-                        <div className='z-10 absolute hidden group-hover:flex border-b-4 border-green-700 
+                        <div className='z-10 absolute hidden group-hover:flex border-b-4 border-red-700 
                                       justify-center w-full rounded-b-lg bg-gradient-to-b from-[#040a04] 
                                       to-black gap-2 px-2 pb-2'>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
+                                        text-red-400 hover:text-red-300'
                                href={leadership.webmaster.github}
                                target='_blank'
                                rel='noreferrer'>
                                 <SiGithub size={'3vh'} className='h-10' />
                             </a>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
+                                        text-red-400 hover:text-red-300'
                                href={leadership.webmaster.linkedin}
                                target='_blank'
                                rel='noreferrer'>
                                 <SiLinkedin size={'3vh'} className='h-10' />
                             </a>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
+                                        text-red-400 hover:text-red-300'
                                href={leadership.webmaster.instagram}
                                target='_blank'
                                rel='noreferrer'>
