@@ -105,7 +105,7 @@ export default function Navbar(): React.ReactNode {
                 >
                     <div className='flex flex-col gap-4'>
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <GoHome className='my-auto mr-2 text-2xl' />
+                            
                             <Link
                                 href='/'
                                 onMouseUp={() => {
@@ -113,39 +113,44 @@ export default function Navbar(): React.ReactNode {
                                     handleClick()
                                 }}
                             >
+                                <GoHome className='my-auto mr-2 text-2xl' />
                                 Home
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <HiOutlineCloud className='my-auto mr-2 text-2xl' />
+                            
                             <Link href='/projects' onClick={handleClick}>
+                            <HiOutlineCloud className='my-auto mr-2 text-2xl' />
                                 Projects
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <FiBook className='my-auto mr-2 text-2xl' />
+                            
                             <Link href='/research' onClick={handleClick}>
+                            <FiBook className='my-auto mr-2 text-2xl' />
                                 Research
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            <MdOutlineEmojiEvents className='my-auto mr-2 text-2xl' />
+                            
                             <Link href='.' onClick={handleClick}>
+                            <MdOutlineEmojiEvents className='my-auto mr-2 text-2xl' />
                                 Events
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
-                            <a
+                        
+                            <Link
                                 href='https://discord.gg/dBNXWDKhrD'
                                 onMouseUp={handleClick}
                             >
+                                <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
                                 Join Us!
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
