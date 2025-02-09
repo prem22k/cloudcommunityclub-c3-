@@ -15,12 +15,13 @@ import {
     SiDiscord,
     SiLinkedin,
 } from 'react-icons/si'
-import { FaNetworkWired, FaQuoteLeft } from 'react-icons/fa'
+import { FaNetworkWired, FaQuoteLeft, FaCat } from 'react-icons/fa'
 import { AiOutlineGlobal } from 'react-icons/ai'
 
 const sfx_clunk = '/assets/sound_fx/clunk.mp3'
 const sfx_hoverThunk = '/assets/sound_fx/muffled_hover_thunk.mp3'
 const sfx_discorda = '/assets/sound_fx/discorda.mp3'
+const sfx_catMeow = '/assets/sound_fx/cat_meow.mp3'
 
 const { leadership, FALLBACK_QUOTE } = require('../dispositions/leadership.tsx')
 
@@ -208,6 +209,8 @@ const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
 }
 
 export default function Leadership(): React.ReactNode {
+    const [playSfx_catMeow] = useSound(sfx_catMeow)
+
     return (
         <div className='w-full h-full pb-40 text-gray-300 bg-gradient-to-b from-black via-[#031302] to-black'>
             <Element name='leadership' />
@@ -243,12 +246,29 @@ export default function Leadership(): React.ReactNode {
                         initial={{ opacity: 0, transform: 'perspective(500px) translateZ(55px)' }}
                         animate={{ opacity: 1, transform: 'translateZ(0px)' }}
                         transition={{ duration: 1.25, delay: 0.5, ease: 'easeOut' }}
+                        onMouseEnter={() => playSfx_catMeow()}
                         className='hover:z-20 sm:hover:mx-4 w-[160px] sm:w-[200px] ring-2 ring-red-950 
                                  relative group hover:rounded-b-none sm:hover:!scale-[115%] transition-all 
                                  duration-500 select-none rounded-t-xl rounded-b-lg bg-gradient-to-t 
                                  from-[#040404] via-red-950 to-red-950 shadow-md hover:shadow-2xl 
                                  shadow-neutral-600 hover:shadow-red-300'
                     >
+                        {/* Spinning Cat Icon Overlay */}
+                        <div className='absolute -top-4 -right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                            <motion.div
+                                animate={{ 
+                                    rotate: 360,
+                                    scale: [1, 1.2, 1]
+                                }}
+                                transition={{ 
+                                    rotate: { duration: 2, repeat: Infinity, ease: "linear" },
+                                    scale: { duration: 1, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                            >
+                                <FaCat className='text-2xl text-red-400' />
+                            </motion.div>
+                        </div>
+
                         {/* Leader Portrait */}
                         <div className='sm:hover:scale-110 sm:hover:-translate-y-2 outline-neutral-300 
                                       outline-0 hover:outline-2 active:!scale-[104%] transition-all 
@@ -266,7 +286,7 @@ export default function Leadership(): React.ReactNode {
 
                         {/* Name and Role */}
                         <div className='rounded-xl p-2 py-3 group-hover:pb-0'>
-                            <div className='absolute text-[10px] sm:text-[16px] text-red-400'>
+                            <div className='absolute text-[10px] sm:text-[16px]'>
                                 <AiOutlineGlobal />
                             </div>
                             <h1 className='title-main text-[16px] sm:text-[19px] font-semibold text-center 
@@ -274,7 +294,7 @@ export default function Leadership(): React.ReactNode {
                                          duration-300 group-hover:animate-pulse'>
                                 {leadership.webmaster.name}
                             </h1>
-                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center text-red-300
+                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center
                                          drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'>
                                 {leadership.webmaster.role}
                             </h2>
@@ -284,22 +304,19 @@ export default function Leadership(): React.ReactNode {
                         <div className='z-10 absolute hidden group-hover:flex border-b-4 border-red-700 
                                       justify-center w-full rounded-b-lg bg-gradient-to-b from-[#040a04] 
                                       to-black gap-2 px-2 pb-2'>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
-                                        text-red-400 hover:text-red-300'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
                                href={leadership.webmaster.github}
                                target='_blank'
                                rel='noreferrer'>
                                 <SiGithub size={'3vh'} className='h-10' />
                             </a>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
-                                        text-red-400 hover:text-red-300'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
                                href={leadership.webmaster.linkedin}
                                target='_blank'
                                rel='noreferrer'>
                                 <SiLinkedin size={'3vh'} className='h-10' />
                             </a>
-                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out
-                                        text-red-400 hover:text-red-300'
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
                                href={leadership.webmaster.instagram}
                                target='_blank'
                                rel='noreferrer'>
