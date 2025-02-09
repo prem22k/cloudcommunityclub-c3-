@@ -243,26 +243,67 @@ export default function Leadership(): React.ReactNode {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className='w-[300px] p-6 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300'
+                        className='relative w-[280px] h-[380px] rounded-xl bg-gradient-to-br from-[#1a1a1a]/80 to-[#0d0d0d]/80 
+                                 backdrop-blur-sm border border-[#345222]/30 group hover:border-[#345222]/50 
+                                 transition-all duration-300 overflow-hidden'
                     >
-                        <div className='flex items-center justify-center mb-4'>
-                            <AiOutlineGlobal className='w-8 h-8 text-blue-400' />
-                        </div>
-                        <h3 className='text-xl font-semibold text-center text-white mb-2'>Web Master</h3>
-                        <p className='text-gray-400 text-center'>Prem Sai K</p>
-                        <div className='mt-4 flex justify-center gap-4'>
-                            {leadership.webmaster.github && (
-                                <a href={leadership.webmaster.github} target='_blank' rel='noreferrer' 
-                                   className='text-gray-400 hover:text-white transition-colors'>
-                                    <SiGithub size={24} />
+                        {/* Background Pattern */}
+                        <div className='absolute inset-0 opacity-[0.15] bg-[radial-gradient(#ffffff33_1px,#00000000_1px)] [background-size:16px_16px]' />
+
+                        {/* Content Container */}
+                        <div className='relative h-full flex flex-col items-center p-6'>
+                            {/* Image */}
+                            <div className='w-[160px] h-[160px] rounded-full overflow-hidden mb-4 
+                                          ring-2 ring-[#345222]/50 group-hover:ring-[#345222] transition-all duration-300'>
+                                <Image
+                                    src={leadership.webmaster.imgSrc}
+                                    alt={leadership.webmaster.name}
+                                    width={160}
+                                    height={160}
+                                    className='object-cover w-full h-full transition-transform duration-300 group-hover:scale-110'
+                                    unoptimized
+                                />
+                            </div>
+
+                            {/* Role Icon */}
+                            <div className='text-3xl text-[#4CAF50] mb-2 drop-shadow-[0_0_8px_rgba(76,175,80,0.5)]'>
+                                <AiOutlineGlobal />
+                            </div>
+
+                            {/* Name & Role */}
+                            <h3 className='text-xl font-semibold text-center text-white mb-1'>
+                                {leadership.webmaster.name}
+                            </h3>
+                            <p className='text-[#4CAF50] font-medium mb-3'>
+                                {leadership.webmaster.role}
+                            </p>
+
+                            {/* Quote */}
+                            <p className='text-gray-400 text-center text-sm italic mb-4'>
+                                "{leadership.webmaster.quote}"
+                            </p>
+
+                            {/* Social Links */}
+                            <div className='mt-auto flex justify-center gap-4'>
+                                <a href={leadership.webmaster.github} 
+                                   target='_blank' 
+                                   rel='noreferrer'
+                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
+                                    <SiGithub size={22} />
                                 </a>
-                            )}
-                            {leadership.webmaster.linkedin && (
-                                <a href={leadership.webmaster.linkedin} target='_blank' rel='noreferrer'
-                                   className='text-gray-400 hover:text-white transition-colors'>
-                                    <SiLinkedin size={24} />
+                                <a href={leadership.webmaster.linkedin} 
+                                   target='_blank' 
+                                   rel='noreferrer'
+                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
+                                    <SiLinkedin size={22} />
                                 </a>
-                            )}
+                                <a href={leadership.webmaster.instagram} 
+                                   target='_blank' 
+                                   rel='noreferrer'
+                                   className='text-gray-400 hover:text-white hover:scale-110 transition-all duration-300'>
+                                    <SiInstagram size={22} />
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

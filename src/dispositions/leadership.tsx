@@ -39,6 +39,7 @@ const pfp_organizing = dir_leaderPortraits + 'santoshkammari.png'
 const pfp_designing = dir_leaderPortraits + 'sivamaruthi.png'
 const pfp_marketing = dir_leaderPortraits + 'vasundara.png'
 const pfp_document = dir_leaderPortraits + 'bhargavi.png'
+const pfp_webmaster = dir_leaderPortraits + 'premsaik.png'
 const pfp_none = dir_leaderPortraits + 'noprofile.webp'
 
 export const FALLBACK_QUOTE = (
@@ -157,9 +158,14 @@ export const leadership = {
         },
     },
     webmaster: {
-        github: 'https://github.com/premsaik',
+        name: 'Prem Sai K',
+        role: 'Web Master',
+        imgSrc: pfp_webmaster, // Make sure to import this image
+        quote: 'Building digital experiences',
+        instagram: 'https://www.instagram.com/premsaik',
         linkedin: 'https://www.linkedin.com/in/premsaik',
-        // Add any other social links you want
+        github: 'https://github.com/premsaik',
+        icon: <AiOutlineGlobal />,
     }
 }
 
