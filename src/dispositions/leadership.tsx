@@ -156,13 +156,11 @@ export const leadership = {
             icon: <PiHandshakeBold />,
         },
     },
-    minor: {
-        'Web Master': {
-            label: 'Prem Sai K',
-            color_complex: 'from-[#ff6f61] shadow-[#ff6f61]', // Soft red-orange
-            icon: <AiOutlineGlobal />,
-        },
-    },
+    webmaster: {
+        github: 'https://github.com/premsaik',
+        linkedin: 'https://www.linkedin.com/in/premsaik',
+        // Add any other social links you want
+    }
 }
 
 export default leadership

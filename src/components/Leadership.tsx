@@ -16,6 +16,7 @@ import {
     SiLinkedin,
 } from 'react-icons/si'
 import { FaNetworkWired, FaQuoteLeft } from 'react-icons/fa'
+import { AiOutlineGlobal } from 'react-icons/ai'
 
 const sfx_clunk = '/assets/sound_fx/clunk.mp3'
 const sfx_hoverThunk = '/assets/sound_fx/muffled_hover_thunk.mp3'
@@ -25,11 +26,6 @@ const { leadership, FALLBACK_QUOTE } = require('../dispositions/leadership.tsx')
 
 interface props_MajorLeaderCard {
     leaderName: string
-    index: number
-}
-
-interface props_MinorLeaderCard {
-    roleName: string
     index: number
 }
 
@@ -211,58 +207,8 @@ const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
     )
 }
 
-
-
-const MinorLeaderCard: React.FC<props_MinorLeaderCard> = ({
-    roleName,
-    index,
-}) => {
-    const [playSfx_hoverThunk] = useSound(sfx_hoverThunk)
-
-    const [isAnimating, setIsAnimating] = useState(false)
-
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
-
-    const minorLeaderDetails = leadership.minor[roleName]
-
-    return (
-        <motion.div
-            ref={ref}
-            onAnimationStart={() => {
-                setIsAnimating(true)
-            }}
-            onAnimationComplete={() => {
-                setIsAnimating(false)
-            }}
-            onMouseEnter={() => playSfx_hoverThunk()}
-            initial={{ opacity: 0, transform: 'translateX(50%)' }}
-            animate={
-                isInView ? { opacity: 1, transform: 'translateX(0%)' } : ''
-            }
-            transition={{ duration: 1.3, delay: index * 0.45, ease: 'easeOut' }}
-            className={`${isAnimating && 'pointer-events-none'} w-[244px] hover:z-20 relative leading-[21px] opacity-0 hover:w-[280px] border-b border-neutral-800 border-1 transition-all duration-300 rounded-xl bg-gradient-to-b shadow-md hover:shadow-lg ${minorLeaderDetails.color_complex} to-transparent`}
-            key={roleName}
-        >
-            {/* Role and Name of Person */}
-            <div className='rounded-xl p-3'>
-                <div className='absolute text-xl'>{minorLeaderDetails.icon}</div>
-                <h1 className='title-main text-lg sm:text-xl font-semibold text-center'>
-                    {roleName}
-                </h1>
-                <h2 className='text-base font-semibold text-center'>
-                    {minorLeaderDetails.label}
-                </h2>
-            </div>
-        </motion.div>
-    )
-}
-
-
-
 export default function Leadership(): React.ReactNode {
     return (
-        // bg-[radial-gradient(#000_1px,transparent_1px)]
         <div className='w-full h-full pb-40 text-gray-300 bg-gradient-to-b from-black via-[#031302] to-black'>
             <Element name='leadership' />
 
@@ -276,7 +222,6 @@ export default function Leadership(): React.ReactNode {
                     </h1>
                 </div>
 
-                {/* <div className="grid grid-cols-4 gap-6 my-4 mx-[20%]"> */}
                 <div className='w-full text-4xl font-semibold border-b-2 border-[#345222] mb-2 drop-shadow-[0_0_30px_rgba(50,255,50,1)]'></div>
 
                 {/* Major Leadership Role Cards */}
@@ -292,17 +237,34 @@ export default function Leadership(): React.ReactNode {
                     )}
                 </div>
 
-                {/* Minor Leadership Role Cards */}
-                <div className='flex flex-row flex-wrap justify-center align-middle mt-1 gap-x-4 sm:gap-x-8 gap-y-4'>
-                    {Object.keys(leadership.minor).map(
-                        (minorLeaderRoleName, index) => (
-                            <MinorLeaderCard
-                                key={minorLeaderRoleName + index}
-                                index={index}
-                                roleName={minorLeaderRoleName}
-                            />
-                        )
-                    )}
+                {/* WebMaster Card */}
+                <div className='mt-8 flex justify-center'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className='w-[300px] p-6 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300'
+                    >
+                        <div className='flex items-center justify-center mb-4'>
+                            <AiOutlineGlobal className='w-8 h-8 text-blue-400' />
+                        </div>
+                        <h3 className='text-xl font-semibold text-center text-white mb-2'>Web Master</h3>
+                        <p className='text-gray-400 text-center'>Prem Sai K</p>
+                        <div className='mt-4 flex justify-center gap-4'>
+                            {leadership.webmaster.github && (
+                                <a href={leadership.webmaster.github} target='_blank' rel='noreferrer' 
+                                   className='text-gray-400 hover:text-white transition-colors'>
+                                    <SiGithub size={24} />
+                                </a>
+                            )}
+                            {leadership.webmaster.linkedin && (
+                                <a href={leadership.webmaster.linkedin} target='_blank' rel='noreferrer'
+                                   className='text-gray-400 hover:text-white transition-colors'>
+                                    <SiLinkedin size={24} />
+                                </a>
+                            )}
+                        </div>
+                    </motion.div>
                 </div>
 
                 <div className='w-full text-4xl font-semibold border-b-2 border-[#345222] drop-shadow-[0_0_30px_rgba(50,255,50,1)]'></div>
