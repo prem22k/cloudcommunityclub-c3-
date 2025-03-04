@@ -147,7 +147,7 @@ function Home() {
                 <div className='p-8'>
                     <div className='flex items-center mb-6 justify-center'>
                         <img
-                            src='https://cloudcommunityclub.in/wp-content/uploads/2024/08/cropped-blacklogo-768x256.png'
+                            src='/assets/ccc_logo.png'
                             alt='Cloud Community Club Logo'
                             className='h-16 w-auto mb-4'
                         />
