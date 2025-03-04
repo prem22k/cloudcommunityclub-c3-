@@ -132,7 +132,7 @@ export default function Navbar(): React.ReactNode {
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
                             <a
-                                href='https://discord.gg/dBNXWDKhrD'
+                                href='/join-us'
                                 onMouseUp={handleClick}
                             >
                                 Join Us!
