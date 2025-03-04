@@ -149,7 +149,7 @@ function Home() {
                         <img
                             src='/assets/ccc_logo.png'
                             alt='Cloud Community Club Logo'
-                            className='h-16 w-auto mb-4'
+                            className='h-24 w-auto mb-4'
                         />
                     </div>
                     <div className='flex items-center mb-6 justify-center'>

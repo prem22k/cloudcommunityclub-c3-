@@ -42,7 +42,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                    href='https://github.com/your-org'
+                    href='https://github.com/C3Snist'
                     target='_blank'
                 >
                     <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-1 py-2 px-4 active:scale-95 hover:bg-[#24292e] hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-[#24292e] active:outline-neutral-200 duration-200 active:duration-200'>
@@ -51,7 +51,7 @@ export default function Footer() {
                     </button>
                 </Link>
 
-                <Link href='https://twitter.com/c3club' target='_blank'>
+                <Link href='https://x.com/C3Snist' target='_blank'>
                     <button className='flex group w-full justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 px-4 active:scale-95 hover:bg-black hover:outline-4 hover:text-white active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-neutral-700 active:outline-neutral-200 duration-200 active:duration-200'>
                         <FaXTwitter className='my-auto group-hover:text-white' />
                         X
@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
 
             <div className='pt-4 pb-10'>
-                <Link href='https://github.com/your-org/website' target='_blank'>
+                <Link href='https://github.com/C3Snist' target='_blank'>
                     <p className='text-blue-500 text-sm sm:text-lg'>
                         Built with 💙 by C³ members
                     </p>

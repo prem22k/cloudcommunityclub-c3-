@@ -57,6 +57,16 @@ export const metadata: Metadata = {
         ],
         locale: 'en_US',
         type: 'website',
+    },
+    
+    twitter: {
+        card: 'summary_large_image',
+        site: '@C3Snist',
+        creator: '@C3Snist'
+    },
+    other: {
+        'linkedin:organization': 'cloud-community-club',
+        'github:organization': 'C3Snist'
     }
 }
 
