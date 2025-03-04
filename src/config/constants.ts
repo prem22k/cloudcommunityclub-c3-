@@ -1,5 +1,5 @@
 export const GALLERY_TYPED_WORDS = [
-    'Cloud Computing',
+    'Cloud Community',
     'Innovation',
     'Community',
     'Learning',

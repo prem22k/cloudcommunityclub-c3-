@@ -15,21 +15,18 @@ import {
     SiDiscord,
     SiLinkedin,
 } from 'react-icons/si'
-import { FaNetworkWired, FaQuoteLeft } from 'react-icons/fa'
+import { FaNetworkWired, FaQuoteLeft, FaCat } from 'react-icons/fa'
+import { AiOutlineGlobal } from 'react-icons/ai'
 
 const sfx_clunk = '/assets/sound_fx/clunk.mp3'
 const sfx_hoverThunk = '/assets/sound_fx/muffled_hover_thunk.mp3'
 const sfx_discorda = '/assets/sound_fx/discorda.mp3'
+const sfx_catMeow = '/assets/sound_fx/cat_meow.mp3'
 
 const { leadership, FALLBACK_QUOTE } = require('../dispositions/leadership.tsx')
 
 interface props_MajorLeaderCard {
     leaderName: string
-    index: number
-}
-
-interface props_MinorLeaderCard {
-    roleName: string
     index: number
 }
 
@@ -211,58 +208,10 @@ const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
     )
 }
 
-
-
-const MinorLeaderCard: React.FC<props_MinorLeaderCard> = ({
-    roleName,
-    index,
-}) => {
-    const [playSfx_hoverThunk] = useSound(sfx_hoverThunk)
-
-    const [isAnimating, setIsAnimating] = useState(false)
-
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
-
-    const minorLeaderDetails = leadership.minor[roleName]
-
-    return (
-        <motion.div
-            ref={ref}
-            onAnimationStart={() => {
-                setIsAnimating(true)
-            }}
-            onAnimationComplete={() => {
-                setIsAnimating(false)
-            }}
-            onMouseEnter={() => playSfx_hoverThunk()}
-            initial={{ opacity: 0, transform: 'translateX(50%)' }}
-            animate={
-                isInView ? { opacity: 1, transform: 'translateX(0%)' } : ''
-            }
-            transition={{ duration: 1.3, delay: index * 0.45, ease: 'easeOut' }}
-            className={`${isAnimating && 'pointer-events-none'} w-[244px] hover:z-20 relative leading-[21px] opacity-0 hover:w-[280px] border-b border-neutral-800 border-1 transition-all duration-300 rounded-xl bg-gradient-to-b shadow-md hover:shadow-lg ${minorLeaderDetails.color_complex} to-transparent`}
-            key={roleName}
-        >
-            {/* Role and Name of Person */}
-            <div className='rounded-xl p-3'>
-                <div className='absolute text-xl'>{minorLeaderDetails.icon}</div>
-                <h1 className='title-main text-lg sm:text-xl font-semibold text-center'>
-                    {roleName}
-                </h1>
-                <h2 className='text-base font-semibold text-center'>
-                    {minorLeaderDetails.label}
-                </h2>
-            </div>
-        </motion.div>
-    )
-}
-
-
-
 export default function Leadership(): React.ReactNode {
+    const [playSfx_catMeow] = useSound(sfx_catMeow)
+
     return (
-        // bg-[radial-gradient(#000_1px,transparent_1px)]
         <div className='w-full h-full pb-40 text-gray-300 bg-gradient-to-b from-black via-[#031302] to-black'>
             <Element name='leadership' />
 
@@ -276,7 +225,6 @@ export default function Leadership(): React.ReactNode {
                     </h1>
                 </div>
 
-                {/* <div className="grid grid-cols-4 gap-6 my-4 mx-[20%]"> */}
                 <div className='w-full text-4xl font-semibold border-b-2 border-[#345222] mb-2 drop-shadow-[0_0_30px_rgba(50,255,50,1)]'></div>
 
                 {/* Major Leadership Role Cards */}
@@ -292,17 +240,90 @@ export default function Leadership(): React.ReactNode {
                     )}
                 </div>
 
-                {/* Minor Leadership Role Cards */}
-                <div className='flex flex-row flex-wrap justify-center align-middle mt-1 gap-x-4 sm:gap-x-8 gap-y-4'>
-                    {Object.keys(leadership.minor).map(
-                        (minorLeaderRoleName, index) => (
-                            <MinorLeaderCard
-                                key={minorLeaderRoleName + index}
-                                index={index}
-                                roleName={minorLeaderRoleName}
+                {/* WebMaster Card */}
+                <div className='mt-8 flex justify-center'>
+                    <motion.div
+                        initial={{ opacity: 0, transform: 'perspective(500px) translateZ(55px)' }}
+                        animate={{ opacity: 1, transform: 'translateZ(0px)' }}
+                        transition={{ duration: 1.25, delay: 0.5, ease: 'easeOut' }}
+                        onMouseEnter={() => playSfx_catMeow()}
+                        className='hover:z-20 sm:hover:mx-4 w-[160px] sm:w-[200px] ring-2 ring-red-950 
+                                 relative group hover:rounded-b-none sm:hover:!scale-[115%] transition-all 
+                                 duration-500 select-none rounded-t-xl rounded-b-lg bg-gradient-to-t 
+                                 from-[#040404] via-red-950 to-red-950 shadow-md hover:shadow-2xl 
+                                 shadow-neutral-600 hover:shadow-red-300'
+                    >
+                        {/* Spinning Cat Icon Overlay */}
+                        <div className='absolute -top-4 -right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                            <motion.div
+                                animate={{ 
+                                    rotate: 360,
+                                    scale: [1, 1.2, 1]
+                                }}
+                                transition={{ 
+                                    rotate: { duration: 2, repeat: Infinity, ease: "linear" },
+                                    scale: { duration: 1, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                            >
+                                <FaCat className='text-2xl text-red-400' />
+                            </motion.div>
+                        </div>
+
+                        {/* Leader Portrait */}
+                        <div className='sm:hover:scale-110 sm:hover:-translate-y-2 outline-neutral-300 
+                                      outline-0 hover:outline-2 active:!scale-[104%] transition-all 
+                                      duration-200 rounded-t-xl rounded-b-lg drop-shadow-2xl outline-6 
+                                      active:outline-8 active:outline-neutral-300 outline-double'>
+                            <Image
+                                width={320}
+                                height={320}
+                                className='rounded-t-xl rounded-b-lg aspect-square'
+                                alt=''
+                                src={leadership.webmaster.imgSrc}
+                                unoptimized
                             />
-                        )
-                    )}
+                        </div>
+
+                        {/* Name and Role */}
+                        <div className='rounded-xl p-2 py-3 group-hover:pb-0'>
+                            <div className='absolute text-[10px] sm:text-[16px]'>
+                                <AiOutlineGlobal />
+                            </div>
+                            <h1 className='title-main text-[16px] sm:text-[19px] font-semibold text-center 
+                                         group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] 
+                                         duration-300 group-hover:animate-pulse'>
+                                {leadership.webmaster.name}
+                            </h1>
+                            <h2 className='text-[13px] sm:text-[15px] font-semibold text-center
+                                         drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'>
+                                {leadership.webmaster.role}
+                            </h2>
+                        </div>
+
+                        {/* Social Links */}
+                        <div className='z-10 absolute hidden group-hover:flex border-b-4 border-red-700 
+                                      justify-center w-full rounded-b-lg bg-gradient-to-b from-[#040a04] 
+                                      to-black gap-2 px-2 pb-2'>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.github}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiGithub size={'3vh'} className='h-10' />
+                            </a>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.linkedin}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiLinkedin size={'3vh'} className='h-10' />
+                            </a>
+                            <a className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                               href={leadership.webmaster.instagram}
+                               target='_blank'
+                               rel='noreferrer'>
+                                <SiInstagram size={'3vh'} className='h-10' />
+                            </a>
+                        </div>
+                    </motion.div>
                 </div>
 
                 <div className='w-full text-4xl font-semibold border-b-2 border-[#345222] drop-shadow-[0_0_30px_rgba(50,255,50,1)]'></div>
