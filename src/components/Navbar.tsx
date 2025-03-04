@@ -9,21 +9,17 @@ import { HiOutlineCloud } from 'react-icons/hi2'
 import { GoHome, GoCodeOfConduct } from 'react-icons/go'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FiBook } from 'react-icons/fi'
-import { MdOutlineEmojiEvents } from "react-icons/md";
+import { MdOutlineEmojiEvents } from 'react-icons/md'
 import { motion } from 'framer-motion'
 
-
-const logo = '/assets/bits/sreenidhi-logo.png'  
+const logo = '/assets/bits/sreenidhi-logo.png'
 
 export default function Navbar(): React.ReactNode {
     const [nav, setNav] = useState(false)
     const handleClick = () => setNav(!nav)
 
-    
-
     return (
         <div className='z-50 flex flex-col fixed w-full'>
-            
             {/* Top Bar */}
             <motion.div
                 className='z-20 flex relative h-[64px] px-4 justify-between items-center text-gray-300 bg-gradient-to-b from-[#000] to-transparent'
@@ -44,8 +40,7 @@ export default function Navbar(): React.ReactNode {
                 {/* Desktop Navigation */}
                 <ul className='hidden md:flex text-[15px]'>
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
-                        <Link 
+                        <Link
                             href='/'
                             className='flex items-center'
                             onMouseUp={() => {
@@ -58,7 +53,6 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
                         <Link href='/projects' className='flex items-center'>
                             <HiOutlineCloud className='my-auto mr-2 text-xl' />
                             Projects
@@ -66,7 +60,6 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
                         <Link href='/research' className='flex items-center'>
                             <FiBook className='my-auto mr-2 text-xl' />
                             Research
@@ -74,7 +67,6 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
                         <Link href='/' className='flex items-center'>
                             <MdOutlineEmojiEvents className='my-auto mr-2 text-xl' />
                             Events
@@ -82,10 +74,9 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
-                        <Link href='https://discord.gg/dBNXWDKhrD' className='flex items-center'>
-                        <GoCodeOfConduct className='my-auto mr-2 text-xl' />
-                        Join Us
+                        <Link href='/join-us' className='flex items-center'>
+                            <GoCodeOfConduct className='my-auto mr-2 text-xl' />
+                            Join Us
                         </Link>
                     </li>
                 </ul>
@@ -105,7 +96,7 @@ export default function Navbar(): React.ReactNode {
                 >
                     <div className='flex flex-col gap-4'>
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            
+                            <GoHome className='my-auto mr-2 text-2xl' />
                             <Link
                                 href='/'
                                 onMouseUp={() => {
@@ -113,44 +104,39 @@ export default function Navbar(): React.ReactNode {
                                     handleClick()
                                 }}
                             >
-                                <GoHome className='my-auto mr-2 text-2xl' />
                                 Home
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            
-                            <Link href='/projects' onClick={handleClick}>
                             <HiOutlineCloud className='my-auto mr-2 text-2xl' />
+                            <Link href='/projects' onClick={handleClick}>
                                 Projects
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            
-                            <Link href='/research' onClick={handleClick}>
                             <FiBook className='my-auto mr-2 text-2xl' />
+                            <Link href='/research' onClick={handleClick}>
                                 Research
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                            
-                            <Link href='.' onClick={handleClick}>
                             <MdOutlineEmojiEvents className='my-auto mr-2 text-2xl' />
+                            <Link href='.' onClick={handleClick}>
                                 Events
                             </Link>
                         </div>
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        
-                            <Link
-                                href='https://discord.gg/dBNXWDKhrD'
+                            <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
+                            <a
+                                href='/join-us'
                                 onMouseUp={handleClick}
                             >
-                                <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
                                 Join Us!
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
