@@ -39,7 +39,6 @@ const pfp_organizing = dir_leaderPortraits + 'santoshkammari.png'
 const pfp_designing = dir_leaderPortraits + 'sivamaruthi.png'
 const pfp_marketing = dir_leaderPortraits + 'vasundara.png'
 const pfp_document = dir_leaderPortraits + 'bhargavi.png'
-const pfp_webmaster = dir_leaderPortraits + 'premsaik.png'
 const pfp_none = dir_leaderPortraits + 'noprofile.webp'
 
 export const FALLBACK_QUOTE = (
@@ -157,16 +156,13 @@ export const leadership = {
             icon: <PiHandshakeBold />,
         },
     },
-    webmaster: {
-        name: 'Prem Sai K',
-        role: 'Web Master',
-        imgSrc: pfp_webmaster, // Make sure to import this image
-        quote: 'Building digital experiences',
-        instagram: 'https://www.instagram.com/premsaik',
-        linkedin: 'https://www.linkedin.com/in/premsaik',
-        github: 'https://github.com/premsaik',
-        icon: <AiOutlineGlobal />,
-    }
+    minor: {
+        'Web Master': {
+            label: 'Prem Sai K',
+            color_complex: 'from-[#ff6f61] shadow-[#ff6f61]', // Soft red-orange
+            icon: <AiOutlineGlobal />,
+        },
+    },
 }
 
 export default leadership
