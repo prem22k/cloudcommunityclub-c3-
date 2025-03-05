@@ -34,7 +34,7 @@ const TYPED_KEYWORDS = [
 ]
 
 const logo = '/assets/ccc_logo.png'
-const backdrop = '/assets/home/snist_backdrop.jpeg'
+const backdrop = '/assets/home/snist_backdrop1.jpeg'
 const heroOverlay = '/assets/home/hero_overlay_gray.gif'
 
 export default function Hero(): React.ReactNode {

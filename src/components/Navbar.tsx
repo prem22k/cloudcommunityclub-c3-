@@ -67,7 +67,7 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <Link href='/' className='flex items-center'>
+                        <Link href='/events' className='flex items-center'>
                             <MdOutlineEmojiEvents className='my-auto mr-2 text-xl' />
                             Events
                         </Link>
@@ -124,7 +124,7 @@ export default function Navbar(): React.ReactNode {
 
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <MdOutlineEmojiEvents className='my-auto mr-2 text-2xl' />
-                            <Link href='.' onClick={handleClick}>
+                            <Link href='/events' onClick={handleClick}>
                                 Events
                             </Link>
                         </div>
