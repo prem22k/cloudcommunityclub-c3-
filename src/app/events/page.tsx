@@ -11,16 +11,15 @@ const pastEvents = [
     {
         id: 1,
         title: "AI Hack Day",
-        date: "March 16, 2024",
-        time: "9:00 AM - 6:00 PM",
+        date: "February 22, 2024",
+        time: "9:00 AM - 4:00 PM",
         location: "Sreenidhi Institute of Science and Technology",
-        description: "A one-day hackathon focused on AI/ML innovations. Students developed creative solutions using artificial intelligence and machine learning.",
+        description: "AI Hack Day 2025 is a national-level hackathon designed to inspire the brightest minds to harness the power of Artificial Intelligence to tackle real-world challenges. This event brings together students, industry experts, and cutting-edge AI tools in a collaborative space where innovation meets impact.",
         image: "/assets/events/ai-hack-day.jpg",
         highlights: [
-            "100+ Participants",
-            "20+ Project Submissions",
-            "5 Expert Judges",
-            "Prizes worth ₹50,000"
+            "250+ Participants",
+            "80+ Project Submissions",
+            "4 Industry mentors"
         ],
         gallery: [
             "/assets/events/ai-hack-1.jpg",
@@ -34,11 +33,11 @@ const pastEvents = [
 const upcomingEvents = [
     {
         id: 1,
-        title: "C³ Open Session",
-        date: "April 6, 2024",
-        time: "2:00 PM - 4:00 PM",
-        location: "Sreenidhi Institute of Science and Technology",
-        description: "Join us for an interactive session about cloud computing and modern technology. Learn about our community, upcoming activities, and how you can be part of C³.",
+        title: "C³ Inaugural & Open Session",
+        date: "March 10th, 2025",
+        time: "1:30 PM - 3:30 PM",
+        location: "Sreenidhi Institute of Science and Technology, Seminar hall-2",
+        description: "Join us to Inaugurate Cloudcommunityclub at SNIST. C³ is a Tech community focuses on Open-source, Research, Institution-centric Projects, Deployment and cutting edge tech. Learn about our community, upcoming activities, and how you can be part of C³.",
         image: "/assets/events/open-session.jpg",
         registrationLink: "/join-us",
         agenda: [
