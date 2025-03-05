@@ -39,7 +39,7 @@ const upcomingEvents = [
         time: "1:30 PM - 3:30 PM",
         location: "Sreenidhi Institute of Science and Technology, Seminar hall-2",
         description: "Join us to Inaugurate Cloudcommunityclub at SNIST. C³ is a Tech community focuses on Open-source, Research, Institution-centric Projects, Deployment and cutting edge tech. Learn about our community, upcoming activities, and how you can be part of C³.",
-        image: "/assets/events/open-session.jpg",
+        image: "/assets/events/open-session-main.jpg",
         registrationLink: "/join-us",
         agenda: [
             "Introduction to Cloud Community Club",
