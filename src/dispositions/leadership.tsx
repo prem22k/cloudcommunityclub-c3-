@@ -29,11 +29,11 @@ import { PiFeatherDuotone, PiHandshakeBold } from 'react-icons/pi'
 
 const dir_leaderPortraits = '/assets/home/leader_portraits/'
 
-const pfp_president = dir_leaderPortraits + 'tylerkuwadaport.png'
+const pfp_president = dir_leaderPortraits + 'nandhanrao.png'
 const pfp_vicepresident = dir_leaderPortraits + 'nikhilanand.png'
 const pfp_secretary = dir_leaderPortraits + 'vasalaharshitha.png'
 const pfp_community = dir_leaderPortraits + 'vamanakhil.png'
-const pfp_technical = dir_leaderPortraits + 'srinivasg.png'
+const pfp_technical = dir_leaderPortraits + 'sathwik.png'
 const pfp_rdhead = dir_leaderPortraits + 'harshanvarma.png'
 const pfp_organizing = dir_leaderPortraits + 'santoshkammari.png'
 const pfp_designing = dir_leaderPortraits + 'sivamaruthi.png'
@@ -51,18 +51,18 @@ export const leadership = {
     major: {
         'Nandhan Rao': {
             role: 'President',
-            imgSrc: pfp_none,
+            imgSrc: pfp_president,
             quote: (
                 <p>
-                    Oh, these weren't homemade, they were made in a factory.
-                    A bomb factory. They're bombs.
+                    Power resides where men believe it resides
+                    - R.R.Martin
                 </p>
             ),
             linktree: '',
-            instagram: '',
-            discord: '',
+            instagram: 'https://www.instagram.com/nandhan_rao_?igsh=MTM1cDh0b3N0MXBiOA%3D%3D&utm_source=qr',
+            discord: 'https://discord.gg/Jxk6Yzhh',
             github: '',
-            linkedin: '',
+            linkedin: 'https://www.linkedin.com/in/nandhan-rao-12345abc/',
             website: '',
             icon: <BiCrown />,
         },
@@ -100,15 +100,15 @@ export const leadership = {
             website: 'https://akhilon.dev/',
             icon: <FaRegHandPeace />,
         },
-        'Srinivas G': {
+        'Sathwik': {
             role: 'Technical Head',
             imgSrc: pfp_technical,
             quote: (
                 <p>
-                   First, solve the problem. Then, write the code.
+                   IT'S NEVER TOO LATE TO DREAM.
                 </p>
             ),
-            website: 'https://blog.srinivasgogula.me/',
+            linktree: 'https://linktr.ee/sathwikbodakuntla',
             icon: <LuConstruction />,
         },
         'Harshan Varma': {

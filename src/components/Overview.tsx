@@ -127,7 +127,7 @@ export default function Overview(): React.ReactNode {
                         </button>
                     </Link>
 
-                    <Link href='https://www.linkedin.com/company/cloudcommunityclub' target='_blank'>
+                    <Link href='https://www.linkedin.com/company/cloud-community-club' target='_blank'>
                         <button className='flex group w-[140px] sm:w-[160px] md:w-[180px] md:hover:w-[200px] justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 md:py-3 active:scale-95 hover:bg-blue-600 hover:outline-4 hover:text-white text-lg md:text-xl font-bold active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-blue-400 active:outline-neutral-200 duration-200 active:duration-200'>
                             <SiLinkedin className='my-auto group-hover:text-white group-hover:text-xl md:group-hover:text-2xl transition-all duration-300' />
                             LinkedIn
@@ -141,14 +141,14 @@ export default function Overview(): React.ReactNode {
                         </button>
                     </Link>
 
-                    <Link href='https://github.com/CloudCommunityClub' target='_blank'>
+                    <Link href='https://github.com/C3Snist' target='_blank'>
                         <button className='flex group w-[140px] sm:w-[160px] md:w-[180px] md:hover:w-[200px] justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 md:py-3 active:scale-95 hover:bg-neutral-800 hover:outline-4 hover:text-white text-lg md:text-xl font-bold active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-neutral-700 active:outline-neutral-200 duration-200 active:duration-200'>
                             <SiGithub className='my-auto group-hover:text-white group-hover:text-xl md:group-hover:text-2xl transition-all duration-300' />
                             GitHub
                         </button>
                     </Link>
 
-                    <Link href='https://twitter.com/c3club' target='_blank'>
+                    <Link href='https://x.com/C3Snist' target='_blank'>
                         <button className='flex group w-[140px] sm:w-[160px] md:w-[180px] md:hover:w-[200px] justify-center bg-neutral-700 dark:bg-neutral-900 bg-opacity-80 rounded-md gap-2 py-2 md:py-3 active:scale-95 hover:bg-black hover:outline-4 hover:text-white text-lg md:text-xl font-bold active:outline-2 hover:outline-double outline-white border-[1px] border-neutral-800 hover:outline-neutral-700 active:outline-neutral-200 duration-200 active:duration-200'>
                             <FaXTwitter className='my-auto group-hover:text-white group-hover:text-xl md:group-hover:text-2xl transition-all duration-300' />
                             Twitter
