@@ -7,7 +7,7 @@
         SOCIALS START HERE
         'linktree': 'https://www.linktr.ee/devalto',
         'instagram': 'https://www.instagram.com/dev_alto',
-        'discord': 'https://discordapp.com/users/168406210687533056',
+        'discord': 'https://discordapp.com/users/691359092136083457',
         'github': 'https://www.github.com/dev-alto',
         'linkedin': 'https://www.linkedin.com/in/lance-ruiz',
         'website': 'https://the-devalto-experiments.000webhostapp.com/'
@@ -40,7 +40,8 @@ const pfp_designing = dir_leaderPortraits + 'sivamaruthi.png'
 const pfp_marketing = dir_leaderPortraits + 'vasundara.png'
 const pfp_document = dir_leaderPortraits + 'bhargavi.png'
 const pfp_none = dir_leaderPortraits + 'noprofile.webp'
-
+const pfp_webmaster = dir_leaderPortraits + 'premsai.jpg'  // Make sure to add your image to this directory
+const pfp_publicity = dir_leaderPortraits + 'goneeeshita.jpeg'
 export const FALLBACK_QUOTE = (
     <p>
         That was no message. <i>This</i> is a message.
@@ -91,7 +92,7 @@ export const leadership = {
             imgSrc: pfp_community,
             quote: (
                 <p>
-                    “Building bridges between ideas and innovation.”
+                    "Building bridges between ideas and innovation."
                 </p>
             ),
             instagram: 'https://www.instagram.com/vamanakhil/',
@@ -155,12 +156,31 @@ export const leadership = {
             linkedin: 'https://www.linkedin.com/in/bhargavi-harshini-amidhepuram',
             icon: <PiHandshakeBold />,
         },
+
+        'Gone Eeshitha': {
+            role: 'Publicity Head',
+            imgSrc: pfp_publicity,
+            quote: '“Adapt and thrive.”',
+            instagram: 'https://www.instagram.com/eesha45?igsh=MWYyMXIxcDc3YW1vdQ%3D%3D&utm_source=qr',
+            github: 'https://github.com/eesha264',
+            linkedin: 'https://www.linkedin.com/in/gone-eeshitha-38192624a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+            twitter: '',
+            icon: <PiHandshakeBold />,
+        },
     },
     minor: {
         'Web Master': {
             label: 'Prem Sai K',
             color_complex: 'from-[#ff6f61] shadow-[#ff6f61]', // Soft red-orange
             icon: <AiOutlineGlobal />,
+            imgSrc: pfp_webmaster,
+            quote: 'wake up to reality.',
+            linktree: '',
+            instagram: 'https://www.instagram.com/iblameprems/',
+            discord: 'https://discordapp.com/users/691359092136083457',
+            github: 'https://github.com/prem22k',
+            linkedin: 'https://www.linkedin.com/in/premsai22k/',
+            website: '',
         },
     },
 }

@@ -33,6 +33,17 @@ interface props_MinorLeaderCard {
     index: number
 }
 
+interface MinorLeaderDetails {
+    label: string
+    color_complex: string
+    icon: React.ReactNode
+    imgSrc?: string
+    quote?: string
+    github?: string
+    linkedin?: string
+    instagram?: string
+}
+
 const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
     leaderName,
     index,
@@ -211,54 +222,169 @@ const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
     )
 }
 
-
-
 const MinorLeaderCard: React.FC<props_MinorLeaderCard> = ({
     roleName,
     index,
 }) => {
+    const [playSfx_clunk] = useSound(sfx_clunk)
     const [playSfx_hoverThunk] = useSound(sfx_hoverThunk)
-
+    const [playSfx_discorda] = useSound(sfx_discorda)
+    const [displayQuote, setDisplayQuote] = useState(false)
     const [isAnimating, setIsAnimating] = useState(false)
 
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
 
-    const minorLeaderDetails = leadership.minor[roleName]
+    const minorLeaderDetails = leadership.minor[roleName] as MinorLeaderDetails
 
     return (
-        <motion.div
-            ref={ref}
-            onAnimationStart={() => {
-                setIsAnimating(true)
-            }}
-            onAnimationComplete={() => {
-                setIsAnimating(false)
-            }}
-            onMouseEnter={() => playSfx_hoverThunk()}
-            initial={{ opacity: 0, transform: 'translateX(50%)' }}
-            animate={
-                isInView ? { opacity: 1, transform: 'translateX(0%)' } : ''
-            }
-            transition={{ duration: 1.3, delay: index * 0.45, ease: 'easeOut' }}
-            className={`${isAnimating && 'pointer-events-none'} w-[244px] hover:z-20 relative leading-[21px] opacity-0 hover:w-[280px] border-b border-neutral-800 border-1 transition-all duration-300 rounded-xl bg-gradient-to-b shadow-md hover:shadow-lg ${minorLeaderDetails.color_complex} to-transparent`}
-            key={roleName}
-        >
-            {/* Role and Name of Person */}
-            <div className='rounded-xl p-3'>
-                <div className='absolute text-xl'>{minorLeaderDetails.icon}</div>
-                <h1 className='title-main text-lg sm:text-xl font-semibold text-center'>
-                    {roleName}
-                </h1>
-                <h2 className='text-base font-semibold text-center'>
-                    {minorLeaderDetails.label}
-                </h2>
-            </div>
-        </motion.div>
+        <div key={roleName + index} className="relative h-[280px] w-[200px] sm:w-[240px] flex items-center justify-center">
+            <motion.div
+                ref={ref}
+                onAnimationStart={() => {
+                    setIsAnimating(true)
+                }}
+                onAnimationComplete={() => {
+                    setIsAnimating(false)
+                }}
+                onMouseEnter={() => playSfx_hoverThunk()}
+                initial={{ opacity: 0, transform: 'perspective(500px) translateZ(55px) translateX(60%)' }}
+                animate={
+                    isInView ? { opacity: 1, transform: 'translateZ(0px) translateX(0%)' } : ''
+                }
+                transition={{ duration: 1.25, delay: index * 0.15, ease: 'easeOut' }}
+                className={`${isAnimating && 'pointer-events-none'} 
+                    hover:z-20 
+                    w-[160px] sm:w-[200px] 
+                    ring-2 
+                    ring-[#ff6f61] 
+                    relative 
+                    group/minorcard 
+                    hover:rounded-b-none 
+                    sm:hover:!scale-[115%] 
+                    transition-all 
+                    duration-500 
+                    select-none 
+                    rounded-t-xl 
+                    rounded-b-lg 
+                    bg-gradient-to-t 
+                    from-[#040404] 
+                    via-[#ff6f61]/20 
+                    to-[#ff6f61]/20 
+                    shadow-md 
+                    hover:shadow-2xl 
+                    shadow-neutral-600 
+                    hover:shadow-[#ff6f61]`}
+            >
+                {/* Leader Portrait + Leader Quote Overlay */}
+                <div
+                    className='sm:hover:scale-110 sm:hover:-translate-y-2 outline-neutral-300 outline-0 hover:outline-2 active:!scale-[104%] transition-all duration-200 rounded-t-xl rounded-b-lg drop-shadow-2xl outline-6 active:outline-8 active:outline-neutral-300 outline-double'
+                    onMouseDown={() => {
+                        setDisplayQuote(!displayQuote)
+                        playSfx_clunk()
+                    }}
+                    onMouseUp={() => playSfx_clunk()}
+                >
+                    <motion.div
+                        animate={displayQuote ? { opacity: 1 } : { opacity: 0 }}
+                        className='z-10 absolute w-full h-full opacity-0 outline-black bg-gradient-to-b from-[#040a0470] to-black rounded-t-xl rounded-b-lg'
+                    >
+                        <motion.div
+                            className='absolute'
+                            initial={{ transform: 'translateY(-8%)' }}
+                            animate={{ transform: 'translateY(8%)' }}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: 'mirror',
+                                ease: 'linear',
+                                duration: 1.5,
+                            }}
+                        >
+                            <FaQuoteLeft size={26} className='p-1 sm:p-0 m-2 sm:m-4 text-[#ff6f61]' />
+                        </motion.div>
+
+                        <div className='aspect-square w-full flex items-center px-1 sm:px-6 font-semibold text-shadow-lg shadow-black'>
+                            <div className='text-center text-white whitespace-pre-line leading-[14px] sm:leading-5 text-sm'>
+                                {minorLeaderDetails.quote}
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <Image
+                        width={320}
+                        height={320}
+                        className='rounded-t-xl rounded-b-lg aspect-square'
+                        alt={minorLeaderDetails.label}
+                        src={minorLeaderDetails.imgSrc || ''}
+                    />
+                </div>
+
+                {/* Leader Name and Role */}
+                <div className='rounded-xl p-2 py-3 group-hover/minorcard:pb-0'>
+                    <div className='absolute text-[10px] sm:text-[16px] text-[#ff6f61]'>{minorLeaderDetails.icon}</div>
+                    <h1 className='title-main text-[16px] sm:text-[19px] font-semibold text-center group-hover/minorcard:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] duration-300 group-hover/minorcard:animate-pulse'>
+                        {minorLeaderDetails.label}
+                    </h1>
+                    <h2 className='text-[13px] sm:text-[15px] font-semibold text-center drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]'>
+                        {roleName}
+                    </h2>
+                </div>
+
+                {/* Leader socials and other links, dynamically generated */}
+                <div
+                    onMouseDown={() => playSfx_clunk()}
+                    onMouseUp={() => playSfx_clunk()}
+                    className='z-10 absolute hidden group-hover/minorcard:flex border-b-4 border-[#ff6f61] justify-center w-full rounded-b-lg bg-gradient-to-b from-[#040a04] to-black gap-2 px-2 pb-2'
+                >
+                    {minorLeaderDetails.github && (
+                        <a
+                            className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            href={minorLeaderDetails.github}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <SiGithub size={'3vh'} className='h-10' />
+                        </a>
+                    )}
+                    {minorLeaderDetails.discord && (
+                        <a
+                            className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            href={minorLeaderDetails.discord}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <SiDiscord 
+                                onMouseUp={() => playSfx_discorda && playSfx_discorda()}
+                                size={'3vh'} 
+                                className='h-10' 
+                            />
+                        </a>
+                    )}
+                    {minorLeaderDetails.linkedin && (
+                        <a
+                            className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            href={minorLeaderDetails.linkedin}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <SiLinkedin size={'3vh'} className='h-10' />
+                        </a>
+                    )}
+                    {minorLeaderDetails.instagram && (
+                        <a
+                            className='hover:scale-110 active:scale-90 active:opacity-90 transition duration-200 ease-out'
+                            href={minorLeaderDetails.instagram}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <SiInstagram size={'3vh'} className='h-10' />
+                        </a>
+                    )}
+                </div>
+            </motion.div>
+        </div>
     )
 }
-
-
 
 export default function Leadership(): React.ReactNode {
     return (
@@ -293,14 +419,15 @@ export default function Leadership(): React.ReactNode {
                 </div>
 
                 {/* Minor Leadership Role Cards */}
-                <div className='flex flex-row flex-wrap justify-center align-middle mt-1 gap-x-4 sm:gap-x-8 gap-y-4'>
+                <div className='flex flex-row flex-wrap justify-center align-middle mt-8 mb-4'>
                     {Object.keys(leadership.minor).map(
                         (minorLeaderRoleName, index) => (
-                            <MinorLeaderCard
-                                key={minorLeaderRoleName + index}
-                                index={index}
-                                roleName={minorLeaderRoleName}
-                            />
+                            <div key={minorLeaderRoleName + index} className="relative h-[280px] w-[200px] sm:w-[240px] flex items-center justify-center">
+                                <MinorLeaderCard
+                                    index={index}
+                                    roleName={minorLeaderRoleName}
+                                />
+                            </div>
                         )
                     )}
                 </div>
