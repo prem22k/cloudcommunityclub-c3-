@@ -42,6 +42,9 @@ interface MinorLeaderDetails {
     github?: string
     linkedin?: string
     instagram?: string
+    discord?: string
+    linktree?: string
+    website?: string
 }
 
 const MajorLeaderCard: React.FC<props_MajorLeaderCard> = ({
