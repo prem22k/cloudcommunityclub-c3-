@@ -124,7 +124,7 @@ export const leadership = {
             linkedin: 'https://www.linkedin.com/in/harshanvarma17/',
             icon: <PiHandshakeBold />,
         },
-        'Santhosh': {
+        'Santosh': {
             role: 'Organizing Head',
             imgSrc: pfp_organizing,
             quote: 'Behind the scenes, ahead of the game.',
