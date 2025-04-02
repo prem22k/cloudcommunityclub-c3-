@@ -197,9 +197,11 @@ export default function Projects(): React.ReactNode {
                     {/* Main Title */}
                     <motion.h1 
                         variants={itemVariants}
-                        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 px-2 mb-8"
+                        className="text-4xl sm:text-5xl md:text-7xl font-bold text-white px-2 mb-8 relative z-10"
                     >
-                        Project Schools
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 drop-shadow-[0_5px_20px_rgba(79,70,229,0.45)]">
+                            Project Schools
+                        </span>
                     </motion.h1>
 
                     {/* Description */}
