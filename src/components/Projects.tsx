@@ -171,7 +171,7 @@ export default function Projects(): React.ReactNode {
     }, [selectedProject]);
 
     return (
-        <div className="relative min-h-screen bg-black flex flex-col items-center justify-start overflow-hidden pt-16 sm:pt-0">
+        <div className="relative min-h-screen bg-black flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-32">
             <Element name="projects" />
             
             {/* Background Image */}
@@ -187,17 +187,17 @@ export default function Projects(): React.ReactNode {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-4 py-16 max-w-7xl mx-auto">
+            <div className="relative z-10 w-full px-4 py-8 sm:py-16 max-w-7xl mx-auto">
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeInVariants}
-                    className="space-y-8 text-center"
+                    className="space-y-10 text-center mt-8 sm:mt-12"
                 >
                     {/* Main Title */}
                     <motion.h1 
                         variants={itemVariants}
-                        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 px-2 mb-4"
+                        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 px-2 mb-6"
                     >
                         Project Schools
                     </motion.h1>
@@ -366,49 +366,7 @@ export default function Projects(): React.ReactNode {
                     </div>
                 </motion.div>
 
-                {/* Call to Action */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                        delay: 0.8, 
-                        duration: 0.6,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 15
-                    }}
-                    className="mt-20 text-center"
-                >
-                    <h3 className="text-2xl font-bold text-white mb-6">Ready to join Project Schools?</h3>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <motion.a
-                            href="/join-us"
-                            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 text-lg font-medium"
-                            whileHover={{ 
-                                scale: 1.03, 
-                                boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.5), 0 8px 10px -6px rgba(124, 58, 237, 0.5)" 
-                            }}
-                            whileTap={{ scale: 0.97 }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 400,
-                                damping: 17
-                            }}
-                        >
-                            Apply Now
-                        </motion.a>
-                        <motion.a
-                            href="https://discord.gg/dBNXWDKhrD"
-                            className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 text-lg font-medium"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.98 }}
-                        >
-                            Join Discord
-                        </motion.a>
-                    </div>
-                </motion.div>
+                
 
                 {/* Project Details Modal */}
                 <AnimatePresence>
@@ -531,7 +489,7 @@ export default function Projects(): React.ReactNode {
                                                             whileHover={{ scale: 1.05 }}
                                                             whileTap={{ scale: 0.95 }}
                                                         >
-                                                            Join This Project
+                                                            View this project
                                                             <svg className="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M13.75 6.75L19.25 12L13.75 17.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                                                 <path d="M19 12H4.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
