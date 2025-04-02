@@ -55,7 +55,7 @@ export default function Navbar(): React.ReactNode {
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                         <Link href='/projects' className='flex items-center'>
                             <HiOutlineCloud className='my-auto mr-2 text-xl' />
-                            Projects
+                            Project Schools
                         </Link>
                     </li>
 
@@ -111,7 +111,7 @@ export default function Navbar(): React.ReactNode {
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <HiOutlineCloud className='my-auto mr-2 text-2xl' />
                             <Link href='/projects' onClick={handleClick}>
-                                Projects
+                                Project Schools
                             </Link>
                         </div>
 

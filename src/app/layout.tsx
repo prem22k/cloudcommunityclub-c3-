@@ -38,8 +38,11 @@ const open_sans = Open_Sans({
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://snist.cloudcommunityclub.in'),
-    title: 'Cloud Community Club (C³)',
-    description: 'A vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.',
+    title: {
+        default: 'Cloud Community Club',
+        template: '%s | Cloud Community Club',
+    },
+    description: 'Cloud Community Club - Learn, collaborate, and build with our Project Schools initiative and community events.',
     keywords: ['cloud community', 'community', 'technology', 'learning'],
     authors: [{ name: 'Cloud Community Club' }],
     openGraph: {
