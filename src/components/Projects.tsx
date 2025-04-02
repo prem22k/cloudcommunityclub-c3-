@@ -171,7 +171,7 @@ export default function Projects(): React.ReactNode {
     }, [selectedProject]);
 
     return (
-        <div className="relative min-h-screen bg-black flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-32">
+        <div className="relative min-h-screen bg-black flex flex-col items-center justify-start overflow-hidden pt-16 sm:pt-24">
             <Element name="projects" />
             
             {/* Background Image */}
@@ -187,17 +187,17 @@ export default function Projects(): React.ReactNode {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-4 py-8 sm:py-16 max-w-7xl mx-auto">
+            <div className="relative z-10 w-full px-4 py-8 sm:py-12 max-w-7xl mx-auto">
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeInVariants}
-                    className="space-y-10 text-center mt-8 sm:mt-12"
+                    className="space-y-10 text-center mt-4 sm:mt-8 mb-8 sm:mb-12"
                 >
                     {/* Main Title */}
                     <motion.h1 
                         variants={itemVariants}
-                        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 px-2 mb-6"
+                        className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 px-2 mb-8"
                     >
                         Project Schools
                     </motion.h1>
