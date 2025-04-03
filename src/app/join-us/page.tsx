@@ -204,7 +204,7 @@ export default function JoinUs() {
                         Join Cloud Community Club
                     </h1>
                     <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                        Be part of an innovative community dedicated to cloud computing and technology
+                        Be part of an innovative community dedicated to open-source and cloud technologies
                     </p>
                 </motion.div>
 
