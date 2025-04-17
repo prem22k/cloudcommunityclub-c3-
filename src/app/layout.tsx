@@ -1,4 +1,4 @@
-import { Inter, Poppins, Ubuntu, Rubik, Open_Sans } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import { Metadata } from 'next'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from '@/components/Navbar'
@@ -8,33 +8,16 @@ import './globals.css'
 const inter = Inter({ 
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-inter'
+    variable: '--font-inter',
+    preload: true
 })
 
 const poppins = Poppins({ 
     weight: ['400', '500', '600', '700'],
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-poppins'
-})
-
-const ubuntu = Ubuntu({
-    weight: ['400', '500', '700'],
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-ubuntu'
-})
-
-const rubik = Rubik({ 
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-rubik'
-})
-
-const open_sans = Open_Sans({ 
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-open-sans'
+    variable: '--font-poppins',
+    preload: true
 })
 
 export const metadata: Metadata = {
@@ -80,7 +63,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className={`${inter.variable} ${poppins.variable} ${ubuntu.variable} ${rubik.variable} ${open_sans.variable}`}>
+        <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
             <body className="min-h-screen bg-black text-white">
                 <Navbar />
                 <main>{children}</main>

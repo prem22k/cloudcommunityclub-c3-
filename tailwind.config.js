@@ -39,20 +39,15 @@ module.exports = {
         },
 
         fontFamily: {
-            Poppins: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
-            Rubik: ['var(--font-rubik)', ...defaultTheme.fontFamily.sans],
-            Ubuntu: ['var(--font-ubuntu)', ...defaultTheme.fontFamily.sans],
-            Open_Sans: [
-                'var(--font-open_sans)',
-                ...defaultTheme.fontFamily.sans,
-            ],
+            sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+            display: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
         },
     },
 
     variants: {
         extend: {
             visibility: ['group-hover'],
-            animation: ['hover', 'focus'], // Added animation variants
+            animation: ['hover', 'focus'],
         },
     },
 

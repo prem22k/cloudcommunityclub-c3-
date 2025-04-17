@@ -62,9 +62,9 @@ export default function Hero(): React.ReactNode {
                         height={1080}
                         className='absolute w-full h-full blur-[0px] object-cover opacity-60'
                         src={backdrop}
-                        alt=''
-                        unoptimized
+                        alt='SNIST Campus Backdrop'
                         priority
+                        quality={85}
                     />
                     
                     <Image
@@ -72,9 +72,9 @@ export default function Hero(): React.ReactNode {
                         height={1080}
                         src={heroOverlay}
                         className='absolute top-0 w-full h-full drop-shadow-lg opacity-5 sm:opacity-10'
-                        alt=''
-                        unoptimized
+                        alt='Hero Overlay Pattern'
                         priority
+                        quality={75}
                     />
                 </motion.div>
             </div>
@@ -89,8 +89,9 @@ export default function Hero(): React.ReactNode {
                         width={250}
                         height={250}
                         src={logo}
-                        alt=''
-                        unoptimized
+                        alt='Cloud Community Club Logo'
+                        priority
+                        quality={90}
                         className='relative z-20 animate-heartbeat drop-shadow-[0_0_30px_rgba(255,255,255,0.6)]'
                     />
                 </div>
