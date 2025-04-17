@@ -67,6 +67,8 @@ const nextConfig = {
         ]
     },
     experimental: {
+        // Note: critters package is deprecated but still required for optimizeCss
+        // Consider switching to the maintained fork at https://github.com/danielroe/beasties in the future
         optimizeCss: true,
         optimizePackageImports: ['@vercel/speed-insights', 'framer-motion', 'react-icons'],
     },
