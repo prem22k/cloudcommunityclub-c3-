@@ -35,7 +35,7 @@ const TYPED_KEYWORDS = [
 
 const logo = '/assets/ccc_logo.png'
 const backdrop = '/assets/home/snist_backdrop1.jpeg'
-const heroOverlay = '/assets/home/hero_overlay_gray.gif'
+const heroOverlay = '/assets/home/hero_overlay.webp'
 
 export default function Hero(): React.ReactNode {
     const ref = useRef(null)
@@ -65,6 +65,7 @@ export default function Hero(): React.ReactNode {
                         alt='SNIST Campus Backdrop'
                         priority
                         quality={85}
+                        sizes="100vw"
                     />
                     
                     <Image
@@ -75,6 +76,7 @@ export default function Hero(): React.ReactNode {
                         alt='Hero Overlay Pattern'
                         priority
                         quality={75}
+                        sizes="100vw"
                     />
                 </motion.div>
             </div>
@@ -92,6 +94,7 @@ export default function Hero(): React.ReactNode {
                         alt='Cloud Community Club Logo'
                         priority
                         quality={90}
+                        sizes="(max-width: 768px) 150px, 250px"
                         className='relative z-20 animate-heartbeat drop-shadow-[0_0_30px_rgba(255,255,255,0.6)]'
                     />
                 </div>
