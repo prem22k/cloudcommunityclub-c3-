@@ -2,7 +2,6 @@
 
 import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
-import { ReactTyped } from 'react-typed'
 
 // Critical components loaded immediately
 import IntroFade from '../components/IntroFade'
@@ -26,6 +25,12 @@ const Recruitment = dynamic(() => import('../components/Recruitment'), {
 })
 const Footer = dynamic(() => import('../components/Footer'), {
     loading: () => null
+})
+
+// Dynamically import ReactTyped
+const ReactTyped = dynamic(() => import('react-typed').then(mod => mod.ReactTyped), {
+    ssr: false,
+    loading: () => <span className="bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent">Loading...</span>
 })
 
 const GALLERY_TYPED_WORDS = [
@@ -67,14 +72,16 @@ export default function App() {
                     <span className='text-shadow shadow-gray-700'>
                         Innovate with us through&nbsp;
                     </span>
-                    <ReactTyped
-                        strings={GALLERY_TYPED_WORDS}
-                        typeSpeed={50}
-                        backSpeed={75}
-                        backDelay={3000}
-                        loop
-                        className='bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(225,200,255,0.5)]'
-                    ></ReactTyped>
+                    <Suspense fallback={<span className="bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent">Loading...</span>}>
+                        <ReactTyped
+                            strings={GALLERY_TYPED_WORDS}
+                            typeSpeed={50}
+                            backSpeed={75}
+                            backDelay={3000}
+                            loop
+                            className='bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(225,200,255,0.5)]'
+                        />
+                    </Suspense>
                 </h1>
             </div>
 

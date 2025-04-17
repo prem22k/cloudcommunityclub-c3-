@@ -18,8 +18,9 @@ export default function Recruitment(): React.ReactNode {
                 height={1600}
                 alt='space background'
                 className='-z-10 object-cover aspect-auto absolute w-full h-full opacity-[50%]'
-                unoptimized
-                priority
+                loading="lazy"
+                quality={75}
+                sizes="100vw"
             />
 
             <div className='w-full h-[110vh] flex absolute bottom-[12rem] flex-col gap-4 justify-center items-center'>

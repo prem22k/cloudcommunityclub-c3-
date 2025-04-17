@@ -27,7 +27,9 @@ export default function IntroFade(): React.ReactNode {
                 alt='C³ Logo'
                 width={150}
                 height={150}
-                unoptimized
+                priority
+                quality={85}
+                sizes="150px"
             />
             <Image
                 src={loader}
@@ -35,7 +37,9 @@ export default function IntroFade(): React.ReactNode {
                 alt='Loading...'
                 width={80}
                 height={80}
-                unoptimized
+                priority
+                quality={75}
+                sizes="80px"
             />
 
             <p className="text-[#00A0DC] text-sm mt-2 font-light opacity-70">Cloud Community Club</p>

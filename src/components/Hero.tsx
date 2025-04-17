@@ -1,16 +1,18 @@
 'use client'
 
-import React from 'react'
-import { ReactTyped } from 'react-typed'
+import React, { useRef, Suspense } from 'react'
 import { Element } from 'react-scroll'
-
 import Image from 'next/image'
-
 import { IoMdArrowRoundDown } from 'react-icons/io'
 import { Link } from 'react-scroll'
-
-import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import dynamic from 'next/dynamic'
+
+// Dynamically import ReactTyped to reduce initial bundle size
+const ReactTyped = dynamic(() => import('react-typed').then(mod => mod.ReactTyped), {
+    ssr: false,
+    loading: () => <span className="text-[#00A0DC]">Loading...</span>
+})
 
 const TYPED_KEYWORDS = [
     'Cloud Compute',
@@ -81,7 +83,6 @@ export default function Hero(): React.ReactNode {
                 </motion.div>
             </div>
 
-
             {/* Content */}
             <div className='absolute w-full h-full mx-auto flex flex-col items-center justify-center pb-24'>
                 {/* Logo with enhanced visibility */}
@@ -99,8 +100,8 @@ export default function Hero(): React.ReactNode {
                     />
                 </div>
 
-                 {/* Rest of the content with enhanced text visibility */}
-                 <h1 className='z-20 title-main text-center text-[18px] sm:text-[32px] md:text-[38px] xl:text-[52px] text-shadow shadow-black font-bold text-white mx-4 my-[2px] sm:my-[-8px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
+                {/* Rest of the content with enhanced text visibility */}
+                <h1 className='z-20 title-main text-center text-[18px] sm:text-[32px] md:text-[38px] xl:text-[52px] text-shadow shadow-black font-bold text-white mx-4 my-[2px] sm:my-[-8px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
                     Cloud Community Club (C³)
                 </h1>
 
@@ -108,15 +109,18 @@ export default function Hero(): React.ReactNode {
                     <p className='drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>#Development2Deployment🚀</p>
                     <h1 className='title-main font-bold sm:text-[24px] text-2xl sm:pt-[10px]'>
                         {'>'} Let's{' '}
-                        <ReactTyped
-                            className='text-[#00A0DC] drop-shadow-[0_0_12px_rgba(0,160,220,0.5)]'
-                            strings={TYPED_KEYWORDS}
-                            typeSpeed={120}
-                            backSpeed={80}
-                            backDelay={2000}
-                            fadeOut={true}
-                            loop
-                        />{' '}
+                        <Suspense fallback={<span className="text-[#00A0DC]">Loading...</span>}>
+                            <ReactTyped
+                                className='text-[#00A0DC] drop-shadow-[0_0_12px_rgba(0,160,220,0.5)]'
+                                strings={TYPED_KEYWORDS}
+                                typeSpeed={120}
+                                backSpeed={80}
+                                backDelay={2000}
+                                fadeOut={true}
+                                loop
+                            />
+                        </Suspense>
+                        {' '}
                         {'<'}
                     </h1>
                 </div>
