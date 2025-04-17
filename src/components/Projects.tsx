@@ -214,7 +214,7 @@ export default function Projects(): React.ReactNode {
                     </motion.p>
 
                     {/* Features */}
-                    <motion.div 
+                    <motion.div
                         variants={containerVariants}
                         className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12"
                     >
@@ -225,14 +225,14 @@ export default function Projects(): React.ReactNode {
                         >
                             <div className="flex justify-center mb-4">
                                 <Cpu className="w-12 h-12 text-blue-400" />
-                            </div>
+                        </div>
                             <h3 className="text-xl font-semibold text-white mb-3 text-center">
                                 Hands-on Learning
-                            </h3>
+                        </h3>
                             <p className="text-gray-300 text-center">
                                 Gain practical experience by working on real-world projects with cutting-edge technologies
-                            </p>
-                        </motion.div>
+                        </p>
+                    </motion.div>
 
                         <motion.div
                             variants={itemVariants}
@@ -375,9 +375,9 @@ export default function Projects(): React.ReactNode {
                     {selectedProject !== null && (
                         <>
                             {/* Backdrop */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3 }}
                                 className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
@@ -503,7 +503,7 @@ export default function Projects(): React.ReactNode {
                                         ))}
                                     </div>
                                 </div>
-                            </motion.div>
+                    </motion.div>
                         </>
                     )}
                 </AnimatePresence>

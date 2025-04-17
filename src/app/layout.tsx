@@ -1,5 +1,6 @@
 import { Inter, Poppins, Ubuntu, Rubik, Open_Sans } from 'next/font/google'
 import { Metadata } from 'next'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from '@/components/Navbar'
 import './globals.css'
 
@@ -83,6 +84,7 @@ export default function RootLayout({
             <body className="min-h-screen bg-black text-white">
                 <Navbar />
                 <main>{children}</main>
+                <SpeedInsights />
             </body>
         </html>
     )
