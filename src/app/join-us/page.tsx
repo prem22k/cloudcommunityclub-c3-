@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Send } from 'lucide-react'
 import SuccessAnimation from '../../components/SuccessAnimation'
 import ErrorAnimation from '../../components/ErrorAnimation'
+import ExistingUserAnimation from '../../components/ExistingUserAnimation'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -59,7 +60,7 @@ export default function JoinUs() {
     // UI state
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<
-        'idle' | 'success' | 'error'
+        'idle' | 'success' | 'error' | 'existing'
     >('idle')
 
     // Handle form input changes
@@ -145,6 +146,8 @@ export default function JoinUs() {
                         referral: '',
                     })
                 }, 2000)
+            } else if (result.message === 'existing') {
+                setSubmitStatus('existing')
             } else {
                 setSubmitStatus('error')
             }
@@ -211,6 +214,7 @@ export default function JoinUs() {
                 {/* Status Animations */}
                 {submitStatus === 'success' && <SuccessAnimation />}
                 {submitStatus === 'error' && <ErrorAnimation />}
+                {submitStatus === 'existing' && <ExistingUserAnimation />}
 
                 {/* Form Section with enhanced styling */}
                 <motion.div
