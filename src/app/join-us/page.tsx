@@ -129,7 +129,8 @@ export default function JoinUs() {
             })
 
             const result = await response.json()
-            if (result.message === 'success') {
+            
+            if (response.ok && result.message === 'success') {
                 setSubmitStatus('success')
                 // Reset form after successful submission
                 setTimeout(() => {
@@ -150,8 +151,10 @@ export default function JoinUs() {
                 setSubmitStatus('existing')
             } else {
                 setSubmitStatus('error')
+                console.error('Registration error:', result.error)
             }
         } catch (error) {
+            console.error('Network error:', error)
             setSubmitStatus('error')
         } finally {
             setIsSubmitting(false)
@@ -597,4 +600,4 @@ export default function JoinUs() {
             </div>
         </div>
     )
-}
+} 
