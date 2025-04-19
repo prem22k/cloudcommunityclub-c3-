@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Send } from 'lucide-react'
 import SuccessAnimation from '../../components/SuccessAnimation'
 import ErrorAnimation from '../../components/ErrorAnimation'
@@ -63,23 +63,6 @@ export default function JoinUs() {
         'idle' | 'success' | 'error' | 'existing'
     >('idle')
 
-    // CORS preflight check
-    useEffect(() => {
-        // Test CORS configuration
-        fetch('https://c3-backend-cnhr.onrender.com/api/register', {
-            method: 'OPTIONS',
-            headers: {
-                'Origin': window.location.origin,
-            },
-        })
-        .then(response => {
-            console.log('CORS preflight response:', response);
-        })
-        .catch(error => {
-            console.error('CORS preflight error:', error);
-        });
-    }, []);
-
     // Handle form input changes
     const handleChange = (
         e: React.ChangeEvent<
@@ -132,19 +115,8 @@ export default function JoinUs() {
 
     // Handle form submission
     const handleSubmit = async (e: React.FormEvent) => {
-        console.log('Form submit button clicked!');
-        e.preventDefault();
-        console.log('Form submission started');
-        console.log('Form data:', formData);
-        console.log('Form validation result:', isFormValid());
-        
-        if (!isFormValid()) {
-            console.log('Form validation failed');
-            return;
-        }
-        
-        setIsSubmitting(true);
-        console.log('Sending request to backend...');
+        e.preventDefault()
+        setIsSubmitting(true)
 
         try {
             // Actual API call
@@ -154,15 +126,12 @@ export default function JoinUs() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
-            });
+            })
 
-            console.log('Response status:', response.status);
-            const result = await response.json();
-            console.log('Response data:', result);
+            const result = await response.json()
             
             if (response.ok && result.message === 'success') {
-                console.log('Registration successful');
-                setSubmitStatus('success');
+                setSubmitStatus('success')
                 // Reset form after successful submission
                 setTimeout(() => {
                     setFormData({
@@ -176,35 +145,28 @@ export default function JoinUs() {
                         rollNumber: '',
                         experience: '',
                         referral: '',
-                    });
-                }, 2000);
+                    })
+                }, 2000)
             } else if (result.message === 'existing') {
-                console.log('User already exists');
-                setSubmitStatus('existing');
+                setSubmitStatus('existing')
             } else {
-                console.log('Registration failed:', result.error);
-                setSubmitStatus('error');
-                console.error('Registration error:', result.error);
+                setSubmitStatus('error')
+                console.error('Registration error:', result.error)
             }
         } catch (error) {
-            console.error('Network error:', error);
-            setSubmitStatus('error');
+            console.error('Network error:', error)
+            setSubmitStatus('error')
         } finally {
-            setIsSubmitting(false);
+            setIsSubmitting(false)
             // Reset status after animation
             setTimeout(() => {
-                setSubmitStatus('idle');
-            }, 5000);
+                setSubmitStatus('idle')
+            }, 5000)
         }
     }
 
     return (
         <div className="min-h-screen relative">
-            {/* Vercel deployment test */}
-            <div className="bg-blue-500 text-white p-4 rounded-lg mb-4 absolute top-4 right-4 z-20">
-                <p>Vercel deployment test - {new Date().toISOString()}</p>
-            </div>
-            
             {/* Background Image with Overlay */}
             <div className="fixed inset-0 -z-10">
                 <Image
@@ -530,7 +492,6 @@ export default function JoinUs() {
                                 <div>
                                     <button
                                         type='submit'
-                                        onClick={() => console.log('Submit button clicked directly')}
                                         disabled={!isFormValid() || isSubmitting}
                                         className={`w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
                                             !isFormValid() || isSubmitting
@@ -572,34 +533,6 @@ export default function JoinUs() {
                             <p className="mt-4 text-xs text-gray-400 text-center">
                                 * Required fields
                             </p>
-                            
-                            {/* Debug Tools */}
-                            <div className="mt-4 p-4 bg-gray-700 rounded-lg">
-                                <h3 className="text-white font-bold mb-2">Debug Tools</h3>
-                                <button
-                                    onClick={async () => {
-                                        console.log('Test API call button clicked');
-                                        try {
-                                            const response = await fetch('https://c3-backend-cnhr.onrender.com/test', {
-                                                method: 'POST',
-                                                headers: {
-                                                    'Content-Type': 'application/json',
-                                                },
-                                                body: JSON.stringify({ test: 'data' }),
-                                            });
-                                            const result = await response.json();
-                                            console.log('Test API response:', result);
-                                            alert('Test API call successful! Check console for details.');
-                                        } catch (error) {
-                                            console.error('Test API call failed:', error);
-                                            alert('Test API call failed! Check console for details.');
-                                        }
-                                    }}
-                                    className="bg-yellow-500 text-black px-4 py-2 rounded-md"
-                                >
-                                    Test API Connection
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </motion.div>
