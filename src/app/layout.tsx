@@ -64,7 +64,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-            <body className="min-h-screen bg-black text-white">
+            <body className="min-h-screen bg-black text-white" suppressHydrationWarning>
                 <Navbar />
                 <main>{children}</main>
                 <SpeedInsights />
