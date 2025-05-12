@@ -79,15 +79,14 @@ export default function Footer() {
             </div>
 
             <div className='pt-4 pb-10'>
-                <Link href='https://github.com/C3Snist' target='_blank'>
-                    <p className='text-blue-500 text-sm sm:text-lg'>
-                        Built with 💙 by C³ members
-                    </p>
-                </Link>
-                <p className='text-neutral-500 text-sm sm:text-lg'>
-                    Copyright ©️ Cloud Community Club (C³) 2024
-                </p>
-            </div>
+    <p className='text-blue-500 text-sm sm:text-lg'>
+        Built with 💙 by <Link href='https://github.com/prem22k' target='_blank' className='underline'>Prem Sai</Link> and <Link href='https://github.com/C3Snist' target='_blank' className='underline'>C³ members</Link>
+    </p>
+    <p className='text-neutral-500 text-sm sm:text-lg'>
+        Copyright ©️ Cloud Community Club (C³) 2024
+    </p>
+</div>
+
         </div>
     )
 }
