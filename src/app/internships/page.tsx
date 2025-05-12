@@ -41,7 +41,7 @@ const internshipsData: Internship[] = [
     category: 'AI & Machine Learning',
     description: 'A Nationwide AI Internship to Build the World\'s First Telugu Large Language Model (LLM). Get hands-on training in cutting-edge AI technologies while contributing to this groundbreaking project.',
     applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1677442135148-f5c3d36937ab?q=80&w=1932&auto=format&fit=crop'
+    logo: '/soi_1.jpeg'
   }
 ]
 
@@ -370,8 +370,8 @@ export default function InternshipsPage() {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-2xl overflow-hidden mb-8">
               <Image
-                src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=2070&auto=format&fit=crop"
-                alt="AI Training"
+                src="/soi_2.png"
+                alt="Summer of AI 2025"
                 width={600}
                 height={400}
                 className="w-full h-64 object-cover rounded-2xl"
