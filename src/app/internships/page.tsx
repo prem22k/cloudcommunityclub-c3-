@@ -38,9 +38,9 @@ const internshipsData: Internship[] = [
     company: 'Swecha Telangana & Viswam.ai',
     location: 'Hybrid (Online + Offline Sessions)',
     duration: '1 Month (Starting May 15, 2025)',
-    stipend: 'Industry-Recognized Certificate',
+    stipend: 'Official Certificate',
     category: 'AI & Machine Learning',
-    description: 'Join this visionary initiative to create the world\'s first Telugu AI foundational model, one that speaks our language, understands our values, and preserves our culture.',
+    description: 'A Nationwide AI Internship to Build the World\'s First Telugu Large Language Model (LLM). Get hands-on training in cutting-edge AI technologies while contributing to this groundbreaking project.',
     applyLink: 'https://viswam.ai/summer-of-ai',
     logo: '/assets/internships/soi_1.jpeg'
   }
@@ -113,6 +113,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, isOpen, onClose
                 height={800}
                 className="object-contain max-h-[90vh]"
                 priority
+                unoptimized
               />
             </div>
           </motion.div>
@@ -376,13 +377,11 @@ export default function InternshipsPage() {
               Summer of AI 2025
             </h2>
             <p className="text-xl text-gray-200 mb-6 italic">
-              THE LARGEST AI INTERNSHIP PROGRAM IN THE WORLD
+              A Nationwide AI Internship to Build the World's First Telugu LLM
             </p>
             
             <p className="text-gray-300 mb-6">
-              Join this visionary initiative to create the world's first Telugu AI foundational model, 
-              one that speaks our language, understands our values, and preserves our culture. 
-              Let's turn historical wisdom into technology that truly represents us.
+              Summer of AI 2025 is an AI internship program empowering students to contribute to the world's first Telugu Large Language Model (LLM) and get hands-on training in cutting-edge AI technologies.
             </p>
             
             <div className="mb-8">
@@ -394,7 +393,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span><strong>Organizers:</strong> Swecha Telangana, Viswam.ai, IIIT Hyderabad, Meta, Ozonetel, TASK</span>
+                  <span><strong>Organizers:</strong> Swecha Telangana, Viswam.ai, IIIT Hyderabad, Meta, Ozonetel, TASK, HySEA</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
@@ -418,15 +417,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span><strong>Scale:</strong> Join 1,00,000 interns across Telugu-speaking states</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span><strong>Contact:</strong> internships@swecha.org | 040-45210808</span>
+                  <span><strong>Target:</strong> Training 1 Lakh AI Engineers across Telangana and Andhra Pradesh</span>
                 </li>
               </ul>
             </div>
@@ -440,7 +431,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Expert-led training with industry leaders and academic mentors</span>
+                  <span>Foundations of AI and Machine Learning</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
@@ -448,7 +439,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Hands-on sessions with Telugu ASR, Llama, and NLP tools</span>
+                  <span>Data Collection & Preprocessing for LLMs</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
@@ -456,7 +447,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Master data collection, annotation, and model validation</span>
+                  <span>Model Training & Fine-tuning</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
@@ -464,7 +455,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Gain expertise in TensorFlow, PyTorch, and HuggingFace</span>
+                  <span>AI for Social Good Projects</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
@@ -472,7 +463,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Contribute to building the first Telugu LLM with 500M tokens</span>
+                  <span>Hands-on contribution to the Telugu LLM Project</span>
                 </li>
               </ul>
             </div>
@@ -497,12 +488,12 @@ export default function InternshipsPage() {
                 </div>
               </div>
               <div className="absolute bottom-4 left-4">
-                <span className="text-white text-xl font-bold">PRESERVE TELUGU HERITAGE. MASTER AI SKILLS.</span>
+                <span className="text-white text-xl font-bold">A Nationwide AI Internship</span>
               </div>
             </div>
             
             <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-xl font-semibold mb-4 text-green-300">Program Features:</h3>
+              <h3 className="text-xl font-semibold mb-4 text-green-300">Perks:</h3>
               <ul className="space-y-3 text-gray-300 mb-6">
                 <li className="flex items-start">
                   <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
@@ -510,7 +501,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Expert-Led Hands-On Learning with industry leaders</span>
+                  <span>Official Internship Certificate (co-issued by IIIT-H, Meta, Ozonetel, TASK & Swecha)</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
@@ -518,7 +509,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Community-Driven Innovation using Free & Open Source Software</span>
+                  <span>Mentorship from industry experts and AI researchers</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
@@ -526,7 +517,7 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Cutting-Edge Projects with industry-recognized certificates</span>
+                  <span>Opportunity to showcase your AI projects</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
@@ -534,37 +525,12 @@ export default function InternshipsPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span>Build India's First Telugu LLM and drive AI sovereignty</span>
+                  <span>Network with 1 Lakh+ AI enthusiasts and practitioners</span>
                 </li>
               </ul>
               
-              <h3 className="text-xl font-semibold mb-4 text-blue-300">Opportunities:</h3>
-              <ul className="space-y-3 text-gray-300 mb-6">
-                <li className="flex items-start">
-                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Collect 500M tokens for a foundational language model</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Digitize folk tales, songs, and vanishing cultural wisdom</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span>Boost employability in AI-driven roles like NLP and data engineering</span>
-                </li>
-              </ul>
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">Open for:</h3>
+              <p className="text-gray-300 mb-6">All B.Tech / Engineering Students</p>
               
               <div className="mt-6">
                 <Link 
@@ -573,53 +539,19 @@ export default function InternshipsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  REGISTER AT: VISWAM.AI/SUMMER-OF-AI
+                  ✅ Join the Movement!
                 </Link>
-                <p className="text-center mt-4 text-gray-400">Join this visionary initiative to create the world's first Telugu AI foundational model.</p>
+                <p className="text-center mt-4 text-gray-400">Become a part of the AI revolution and help build India's first native-language LLM.</p>
+                <Link 
+                  href="https://viswam.ai/summer-of-ai"
+                  className="block w-full py-3 px-4 mt-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white text-center font-bold rounded-lg transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  👉 Apply Now
+                </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Apply Process Section */}
-      <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">How to Apply</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-blue-500/30 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-400">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Browse Listings</h3>
-              <p className="text-gray-400">Explore our curated collection of internship opportunities across various tech fields.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-purple-500/30 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-400">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Apply Online</h3>
-              <p className="text-gray-400">Submit your application with your resume and a brief introduction about yourself.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-pink-500/30 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-pink-400">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Interview Process</h3>
-              <p className="text-gray-400">Selected candidates will be contacted for interviews and technical assessments.</p>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Link 
-              href="#"
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium transition-all duration-300"
-            >
-              Join Our Talent Pool
-            </Link>
           </div>
         </div>
       </div>
