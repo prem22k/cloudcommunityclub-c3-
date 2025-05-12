@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { 
@@ -12,7 +12,8 @@ import {
   ExternalLink, 
   Search, 
   Filter, 
-  BookOpen
+  BookOpen,
+  X
 } from 'lucide-react'
 
 // Define internship type
@@ -47,6 +48,80 @@ const internshipsData: Internship[] = [
 
 const categoriesData: string[] = ['All', 'AI & Machine Learning', 'Software Development', 'Cloud Computing', 'Data Science', 'UI/UX Design', 'DevOps']
 
+// Interface for the Lightbox component props
+interface ImageLightboxProps {
+  src: string
+  alt: string
+  isOpen: boolean
+  onClose: () => void
+}
+
+// Lightbox/Modal component for full-size image viewing
+const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, isOpen, onClose }) => {
+  // Handle clicking outside the image to close
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose()
+    }
+  }
+
+  // Close on escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose()
+      }
+    }
+    
+    if (isOpen) {
+      window.addEventListener('keydown', handleEsc)
+    }
+    
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [isOpen, onClose])
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={handleBackdropClick}
+        >
+          <motion.div
+            className="relative max-w-[90vw] max-h-[90vh]"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.9 }}
+          >
+            <button 
+              className="absolute top-4 right-4 p-2 rounded-full bg-gray-800 text-white z-10 hover:bg-gray-700 transition-colors"
+              onClick={onClose}
+            >
+              <X size={24} />
+            </button>
+            <div className="relative w-full h-full">
+              <Image
+                src={src}
+                alt={alt}
+                width={1200}
+                height={800}
+                className="object-contain max-h-[90vh]"
+                priority
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function InternshipsPage() {
   // Initialize with empty values for SSR to prevent hydration mismatch
   const [isClient, setIsClient] = useState(false)
@@ -54,6 +129,16 @@ export default function InternshipsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [internships, setInternships] = useState<Internship[]>([])
   const [categories, setCategories] = useState<string[]>([])
+  
+  // State for lightbox/modal
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxImage, setLightboxImage] = useState({ src: '', alt: '' })
+
+  // Function to open the lightbox with a specific image
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxImage({ src, alt })
+    setLightboxOpen(true)
+  }
 
   // Initialize client-side data after component mounts
   useEffect(() => {
@@ -77,6 +162,14 @@ export default function InternshipsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      {/* Lightbox component */}
+      <ImageLightbox 
+        src={lightboxImage.src}
+        alt={lightboxImage.alt}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
+      
       {/* Hero Section */}
       <div className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -224,7 +317,10 @@ export default function InternshipsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div 
+                  className="relative h-48 overflow-hidden cursor-pointer" 
+                  onClick={() => openLightbox(internship.logo, internship.company)}
+                >
                   <Image
                     src={internship.logo}
                     alt={internship.company}
@@ -232,6 +328,11 @@ export default function InternshipsPage() {
                     className="object-cover transform hover:scale-110 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-black bg-opacity-50 rounded-full p-3">
+                      <span className="text-white font-medium">Click to enlarge</span>
+                    </div>
+                  </div>
                   <div className="absolute bottom-4 left-4">
                     <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/80 text-white">
                       {internship.category}
@@ -378,7 +479,10 @@ export default function InternshipsPage() {
           </div>
           
           <div className="w-full md:w-1/2">
-            <div className="relative rounded-2xl overflow-hidden mb-8">
+            <div 
+              className="relative rounded-2xl overflow-hidden mb-8 cursor-pointer" 
+              onClick={() => openLightbox('/assets/internships/soi_2.png', 'Summer of AI 2025')}
+            >
               <Image
                 src="/assets/internships/soi_2.png"
                 alt="Summer of AI 2025"
@@ -387,6 +491,11 @@ export default function InternshipsPage() {
                 className="w-full h-64 object-cover rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-black bg-opacity-50 rounded-full p-3">
+                  <span className="text-white font-medium">Click to view full image</span>
+                </div>
+              </div>
               <div className="absolute bottom-4 left-4">
                 <span className="text-white text-xl font-bold">PRESERVE TELUGU HERITAGE. MASTER AI SKILLS.</span>
               </div>
