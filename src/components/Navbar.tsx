@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Link as ScrollLink, animateScroll } from 'react-scroll'
 import Link from 'next/link'
@@ -19,18 +19,12 @@ const logo = '/assets/bits/sreenidhi-logo.png'
 export default function Navbar(): React.ReactNode {
     const [nav, setNav] = useState(false)
     const [announceDismissed, setAnnounceDismissed] = useState(false)
-    const [isClient, setIsClient] = useState(false)
     const handleClick = () => setNav(!nav)
-    
-    // Set isClient to true when component mounts (client-side only)
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
 
     return (
         <div className='z-50 flex flex-col fixed w-full'>
-            {/* Announcement Banner - Only render on client */}
-            {isClient && ANNOUNCEMENT_TEXT ? (
+            {/* Announcement Banner */}
+            {ANNOUNCEMENT_TEXT ? (
                 <motion.div
                     onMouseDown={() => {
                         setAnnounceDismissed(true)
@@ -38,15 +32,15 @@ export default function Navbar(): React.ReactNode {
                     className={`z-10 w-full h-[40px] px-6 absolute flex justify-between items-center bg-gradient-to-b ${ANNOUNCEMENT_GRAD_COLOR} to-black group/announcement_bar overflow-hidden`}
                     initial={{
                         opacity: 0,
-                        translateY: -100, // Use number instead of string for consistency
+                        translateY: '-100%',
                         position: 'static',
                     }}
                     animate={
                         !announceDismissed
-                            ? { opacity: 1, translateY: 0 } // Use number instead of string
+                            ? { opacity: 1, translateY: '0%' }
                             : {
                                 opacity: 0,
-                                translateY: -100, // Use number instead of string
+                                translateY: '-100%',
                                 position: 'absolute'
                             }
                     }
@@ -69,7 +63,9 @@ export default function Navbar(): React.ReactNode {
                         press to dismiss
                     </p>
                 </motion.div>
-            ) : null}
+            ) : (
+                <></>
+            )}
 
             {/* Top Bar */}
             <motion.div
