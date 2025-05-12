@@ -33,79 +33,19 @@ interface Internship {
 const internshipsData: Internship[] = [
   {
     id: 1,
-    title: 'Cloud Infrastructure Intern',
-    company: 'CloudTech Solutions',
-    location: 'Remote',
-    duration: '3 months',
-    stipend: '₹15,000/month',
-    category: 'Cloud Computing',
-    description: 'Work with our cloud infrastructure team to design, deploy and manage cloud-based solutions.',
+    title: 'Summer of AI 2025',
+    company: 'Swecha Telangana & Viswam.ai',
+    location: 'Hybrid (Online + Offline Sessions)',
+    duration: '1 Month (Starting May 15, 2025)',
+    stipend: 'Certificate & Training',
+    category: 'AI & Machine Learning',
+    description: 'A Nationwide AI Internship to Build the World\'s First Telugu Large Language Model (LLM). Get hands-on training in cutting-edge AI technologies while contributing to this groundbreaking project.',
     applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-  },
-  {
-    id: 2,
-    title: 'Full Stack Developer Intern',
-    company: 'WebDev Innovators',
-    location: 'Hyderabad',
-    duration: '6 months',
-    stipend: '₹20,000/month',
-    category: 'Software Development',
-    description: 'Join our development team to build scalable web applications using modern technologies.',
-    applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-  },
-  {
-    id: 3,
-    title: 'Data Science Intern',
-    company: 'DataMinds Analytics',
-    location: 'Bangalore',
-    duration: '4 months',
-    stipend: '₹18,000/month',
-    category: 'Data Science',
-    description: 'Apply machine learning and statistical techniques to extract insights from large datasets.',
-    applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-  },
-  {
-    id: 4,
-    title: 'UI/UX Design Intern',
-    company: 'Creative Interfaces',
-    location: 'Remote',
-    duration: '3 months',
-    stipend: '₹12,000/month',
-    category: 'UI/UX Design',
-    description: 'Design intuitive and beautiful user interfaces for web and mobile applications.',
-    applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-  },
-  {
-    id: 5,
-    title: 'DevOps Engineering Intern',
-    company: 'InfraOps Tech',
-    location: 'Mumbai',
-    duration: '6 months',
-    stipend: '₹25,000/month',
-    category: 'DevOps',
-    description: 'Learn and implement CI/CD pipelines, containerization, and infrastructure automation.',
-    applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1579403124614-197f69d8187b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
-  },
-  {
-    id: 6,
-    title: 'Backend Developer Intern',
-    company: 'ServerSide Systems',
-    location: 'Delhi',
-    duration: '4 months',
-    stipend: '₹17,000/month',
-    category: 'Software Development',
-    description: 'Develop robust backend services and APIs using Node.js, Python or Java.',
-    applyLink: '#',
-    logo: 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'
+    logo: 'https://images.unsplash.com/photo-1677442135148-f5c3d36937ab?q=80&w=1932&auto=format&fit=crop'
   }
 ]
 
-const categoriesData: string[] = ['All', 'Software Development', 'Cloud Computing', 'Data Science', 'UI/UX Design', 'DevOps']
+const categoriesData: string[] = ['All', 'AI & Machine Learning', 'Software Development', 'Cloud Computing', 'Data Science', 'UI/UX Design', 'DevOps']
 
 export default function InternshipsPage() {
   // Initialize with empty values for SSR to prevent hydration mismatch
@@ -325,6 +265,175 @@ export default function InternshipsPage() {
             ))}
           </div>
         )}
+      </div>
+      
+      {/* Summer of AI 2025 Detailed Section */}
+      <div className="container mx-auto px-6 py-16 bg-gradient-to-r from-blue-900/10 to-purple-900/10 rounded-2xl mb-16">
+        <div className="flex flex-col md:flex-row items-start gap-12">
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              Summer of AI 2025
+            </h2>
+            <p className="text-xl text-gray-200 mb-6 italic">
+              A Nationwide AI Internship to Build the World's First Telugu Large Language Model
+            </p>
+            
+            <p className="text-gray-300 mb-6">
+              Summer of AI 2025 is an AI internship program empowering students to contribute to the world's first Telugu Large Language Model (LLM) and get hands-on training in cutting-edge AI technologies.
+            </p>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">Program Highlights:</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span><strong>Organizers:</strong> Swecha Telangana, Viswam.ai, IIIT Hyderabad, Meta, Ozonetel, TASK, HySEA</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span><strong>Duration:</strong> 1 Month (Starting May 15, 2025)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span><strong>Mode:</strong> Hybrid (Online + Offline Sessions)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-blue-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span><strong>Target:</strong> Training 1 Lakh AI Engineers across Telangana and Andhra Pradesh</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">What You Will Learn:</h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start">
+                  <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Foundations of AI and Machine Learning</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Data Collection & Preprocessing for LLMs</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Model Training & Fine-tuning</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>AI for Social Good Projects</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-purple-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Hands-on contribution to the Telugu LLM Project</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="w-full md:w-1/2">
+            <div className="relative rounded-2xl overflow-hidden mb-8">
+              <Image
+                src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=2070&auto=format&fit=crop"
+                alt="AI Training"
+                width={600}
+                height={400}
+                className="w-full h-64 object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <span className="text-white text-xl font-bold">Join 1 Lakh+ AI Enthusiasts</span>
+              </div>
+            </div>
+            
+            <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+              <h3 className="text-xl font-semibold mb-4 text-green-300">Perks:</h3>
+              <ul className="space-y-3 text-gray-300 mb-6">
+                <li className="flex items-start">
+                  <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Official Internship Certificate (co-issued by IIIT-H, Meta, Ozonetel, TASK & Swecha)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Mentorship from industry experts and AI researchers</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Opportunity to showcase your AI projects</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span>Network with 1 Lakh+ AI enthusiasts and practitioners</span>
+                </li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold mb-4 text-blue-300">Eligibility:</h3>
+              <p className="text-gray-300 mb-6">Open for all B.Tech / Engineering Students</p>
+              
+              <div className="mt-6">
+                <Link 
+                  href="#"
+                  className="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-center font-bold rounded-lg transition-all duration-300"
+                >
+                  Apply Now - Join the AI Revolution!
+                </Link>
+                <p className="text-center mt-4 text-gray-400">Become a part of the AI revolution and help build India's first native-language LLM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       {/* Apply Process Section */}

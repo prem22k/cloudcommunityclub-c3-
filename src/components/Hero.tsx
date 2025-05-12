@@ -79,6 +79,7 @@ export default function Hero(): React.ReactNode {
                         priority
                         quality={75}
                         sizes="100vw"
+                        unoptimized
                     />
                 </motion.div>
             </div>
