@@ -533,14 +533,7 @@ export default function InternshipsPage() {
               <p className="text-gray-300 mb-6">All B.Tech / Engineering Students</p>
               
               <div className="mt-6">
-                <Link 
-                  href="https://viswam.ai/summer-of-ai"
-                  className="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-center font-bold rounded-lg transition-all duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ✅ Join the Movement!
-                </Link>
+                
                 <p className="text-center mt-4 text-gray-400">Become a part of the AI revolution and help build India's first native-language LLM.</p>
                 <Link 
                   href="https://viswam.ai/summer-of-ai"
