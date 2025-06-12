@@ -79,9 +79,9 @@ const upcomingEvents: Event[] = [
     {
         id: "1",
         title: "Cloud 101",
-        date: "COMING SOON",
-        time: "",
-        location: "Sreenidhi Institute of Science and Technology",
+        date: "June 16th & 17th, 2025",
+        time: "10:00 AM - 3:30 PM",
+        location: "Vaugh Seminar Hall, Sreenidhi Institute of Science and Technology",
         description: "Join us for a hands-on workshop on cloud computing fundamentals. Learn about cloud architecture, deployment models, and get practical experience with major cloud platforms. This workshop is perfect for beginners looking to start their cloud journey.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
         agenda: [
