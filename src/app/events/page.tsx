@@ -426,10 +426,28 @@ const EventDetailsModal = ({ event, isOpen, onClose, onGalleryOpen }: EventDetai
                         </div>
                     )}
 
-                    {/* Action buttons */}
-       
-                    {/* Action buttons */}
+                                        {/* Action buttons */}
                     <div className="flex flex-wrap gap-4 mt-8">
+                        {event.registrationLink && (
+                            isRegistrationOpen ? (
+                                <a
+                                    href={event.registrationLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-blue-900/30"
+                                >
+                                    Register Now
+                                    <ArrowRight className="w-4 h-4 ml-2" />
+                                </a>
+                            ) : (
+                                <button
+                                    disabled
+                                    className="inline-flex items-center px-6 py-3 bg-gray-700 text-gray-400 rounded-lg cursor-not-allowed"
+                                >
+                                    Registration Closed
+                                </button>
+                            )
+                        )}
                         <button
                             onClick={onClose}
                             className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300"
@@ -450,7 +468,7 @@ export default function Events() {
     const [currentEventTitle, setCurrentEventTitle] = useState("");
     const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
     const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-    
+
     const openGallery = (images: string[], eventTitle: string) => {
         setGalleryImages(images);
         setCurrentEventTitle(eventTitle);
@@ -468,7 +486,7 @@ export default function Events() {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-black">
             {/* Hero Section */}
@@ -483,13 +501,13 @@ export default function Events() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black" />
                 </div>
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="relative z-10 text-center px-4 max-w-4xl mx-auto"
                 >
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -499,7 +517,7 @@ export default function Events() {
                             C³ Events
                         </span>
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -514,24 +532,22 @@ export default function Events() {
             <div className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800 py-4 shadow-lg shadow-black/20">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex justify-center space-x-4">
-                        <button 
+                        <button
                             onClick={() => setActiveTab('upcoming')}
-                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${
-                                activeTab === 'upcoming' 
-                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30' 
-                                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                            }`}
+                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${activeTab === 'upcoming'
+                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
+                                : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                                }`}
                         >
                             <Calendar className="w-5 h-5 mr-2" />
                             Upcoming Events
                         </button>
-                        <button 
+                        <button
                             onClick={() => setActiveTab('past')}
-                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${
-                                activeTab === 'past' 
-                                    ? 'bg-gray-700 text-white shadow-lg shadow-gray-900/30' 
-                                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                            }`}
+                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${activeTab === 'past'
+                                ? 'bg-gray-700 text-white shadow-lg shadow-gray-900/30'
+                                : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                                }`}
                         >
                             <Clock className="w-5 h-5 mr-2" />
                             Past Events
@@ -544,14 +560,14 @@ export default function Events() {
             <div className="max-w-7xl mx-auto px-4 py-12">
                 {/* Upcoming Events */}
                 {activeTab === 'upcoming' && (
-                    <motion.div 
+                    <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                         className="space-y-8"
                     >
                         {upcomingEvents.length === 0 ? (
-                <motion.div 
+                            <motion.div
                                 variants={fadeInUp}
                                 className="text-center py-16 bg-gray-900/30 rounded-xl border border-gray-800 backdrop-blur-sm"
                             >
@@ -562,7 +578,7 @@ export default function Events() {
                                 <p className="text-gray-400 max-w-2xl mx-auto mb-6">
                                     We're currently planning our next events. Check back soon or join our Discord to be the first to know!
                                 </p>
-                                <a 
+                                <a
                                     href="https://discord.gg/dBNXWDKhrD"
                                     className="inline-flex items-center px-6 py-3 bg-blue-800/30 hover:bg-blue-800/50 text-white rounded-lg transition-all duration-300"
                                     target="_blank"
@@ -571,101 +587,125 @@ export default function Events() {
                                     Join Our Discord
                                     <ExternalLink className="w-4 h-4 ml-2" />
                                 </a>
-                </motion.div>
+                            </motion.div>
                         ) : (
-                            upcomingEvents.map((event) => (
-                        <motion.div
-                            key={event.id}
-                                    variants={fadeInUp}
-                                    initial="rest"
-                                    whileHover="hover"
-                                    className="group bg-gradient-to-br from-gray-900/80 to-black backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300"
-                                >
-                                    <motion.div className="md:flex" variants={cardHover}>
-                                        <div className="md:w-2/5 lg:w-1/3 relative h-64 md:h-auto overflow-hidden">
-                                    <Image
-                                        src={event.image}
-                                        alt={event.title}
-                                        fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-                                            
-                                            {/* Event tags */}
-                                            <div className="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
-                                                {event.tags && event.tags.map((tag, index) => (
-                                                    <span 
-                                                        key={index} 
-                                                        className="px-3 py-1 bg-blue-600/90 text-white text-xs font-medium rounded-full shadow-lg shadow-blue-900/30"
+                            upcomingEvents.map((event) => {
+                                const isRegistrationOpen = event.registrationDeadline ? new Date(event.registrationDeadline) > new Date() : true;
+
+                                return (
+                                    <motion.div
+                                        key={event.id}
+                                        variants={fadeInUp}
+                                        initial="rest"
+                                        whileHover="hover"
+                                        className="group bg-gradient-to-br from-gray-900/80 to-black backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-blue-500/50 transition-all duration-300"
+                                    >
+                                        <motion.div className="md:flex" variants={cardHover}>
+                                            <div className="md:w-2/5 lg:w-1/3 relative h-64 md:h-auto overflow-hidden">
+                                                <Image
+                                                    src={event.image}
+                                                    alt={event.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+
+                                                {/* Event tags */}
+                                                <div className="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                                                    {event.tags && event.tags.map((tag, index) => (
+                                                        <span
+                                                            key={index}
+                                                            className="px-3 py-1 bg-blue-600/90 text-white text-xs font-medium rounded-full shadow-lg shadow-blue-900/30"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                {/* Event date overlay */}
+                                                <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-blue-500/30 shadow-lg shadow-black/30">
+                                                    <div className="text-lg font-bold text-white">{event.date.split(' ')[1]}</div>
+                                                    <div className="text-xs text-blue-300">{event.date.split(' ')[0]}</div>
+                                                </div>
+                                            </div>
+                                            <div className="p-6 md:w-3/5 lg:w-2/3">
+                                                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                                                    {event.title}
+                                                </h3>
+
+                                                <div className="flex flex-wrap gap-4 mb-4 text-gray-300 text-sm">
+                                                    <div className="flex items-center">
+                                                        <Calendar className="w-4 h-4 mr-2 text-blue-400" />
+                                                        {event.date}
+                                                    </div>
+                                                    <div className="flex items-center">
+                                                        <Clock className="w-4 h-4 mr-2 text-blue-400" />
+                                                        {event.time}
+                                                    </div>
+                                                    <div className="flex items-center">
+                                                        <MapPin className="w-4 h-4 mr-2 text-blue-400" />
+                                                        {event.location}
+                                                    </div>
+                                                </div>
+
+                                                <p className="text-gray-300 mb-4">
+                                                    {event.description}
+                                                </p>
+
+                                                {/* Timer */}
+                                                {event.registrationDeadline && (
+                                                    <CountdownTimer deadline={event.registrationDeadline} />
+                                                )}
+
+                                                <div className="flex flex-wrap gap-4 mt-4">
+                                                    {event.registrationLink && (
+                                                        isRegistrationOpen ? (
+                                                            <a
+                                                                href={event.registrationLink}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-blue-900/30"
+                                                            >
+                                                                Register Now
+                                                                <ArrowRight className="w-4 h-4 ml-2" />
+                                                            </a>
+                                                        ) : (
+                                                            <button
+                                                                disabled
+                                                                className="inline-flex items-center px-6 py-3 bg-gray-700 text-gray-400 rounded-lg cursor-not-allowed"
+                                                            >
+                                                                Registration Closed
+                                                            </button>
+                                                        )
+                                                    )}
+                                                    <button
+                                                        onClick={() => openEventDetails(event)}
+                                                        className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300"
                                                     >
-                                                        {tag}
-                                                    </span>
-                                                ))}
+                                                        View Details
+                                                        <ChevronRight className="w-4 h-4 ml-2" />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            
-                                            {/* Event date overlay */}
-                                            <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-blue-500/30 shadow-lg shadow-black/30">
-                                                <div className="text-lg font-bold text-white">{event.date.split(' ')[1]}</div>
-                                                <div className="text-xs text-blue-300">{event.date.split(' ')[0]}</div>
-                                            </div>
-                                </div>
-                                        <div className="p-6 md:w-3/5 lg:w-2/3">
-                                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                                        {event.title}
-                                    </h3>
-                                    
-                                            <div className="flex flex-wrap gap-4 mb-4 text-gray-300 text-sm">
-                                        <div className="flex items-center">
-                                                    <Calendar className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.date}
-                                        </div>
-                                        <div className="flex items-center">
-                                                    <Clock className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.time}
-                                        </div>
-                                        <div className="flex items-center">
-                                                    <MapPin className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.location}
-                                        </div>
-                                    </div>
-
-                                            <p className="text-gray-300 mb-4">
-                                        {event.description}
-                                    </p>
-
-                                            {/* Timer */}
-                                            {event.registrationDeadline && (
-                                                <CountdownTimer deadline={event.registrationDeadline} />
-                                            )}
-
-                                            <div className="flex flex-wrap gap-4 mt-4">
-                                                <button 
-                                                    onClick={() => openEventDetails(event)}
-                                                    className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300"
-                                                >
-                                                    View Details
-                                                    <ChevronRight className="w-4 h-4 ml-2" />
-                                                </button>
-                                </div>
-                            </div>
-                        </motion.div>
-                                </motion.div>
-                            ))
+                                        </motion.div>
+                                    </motion.div>
+                                )
+                            })
                         )}
                     </motion.div>
                 )}
 
                 {/* Past Events */}
                 {activeTab === 'past' && (
-                <motion.div 
+                    <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                         className="grid grid-cols-1 md:grid-cols-2 gap-6"
                     >
-                    {pastEvents.map((event) => (
-                        <motion.div
-                            key={event.id}
+                        {pastEvents.map((event) => (
+                            <motion.div
+                                key={event.id}
                                 variants={fadeInUp}
                                 initial="rest"
                                 whileHover="hover"
@@ -673,37 +713,37 @@ export default function Events() {
                             >
                                 <motion.div variants={cardHover}>
                                     <div className="relative h-48 overflow-hidden">
-                                <Image
-                                    src={event.image}
-                                    alt={event.title}
-                                    fill
+                                        <Image
+                                            src={event.image}
+                                            alt={event.title}
+                                            fill
                                             className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
-                                        
+
                                         {/* Event tags */}
                                         <div className="absolute top-3 right-3 flex flex-wrap gap-2 justify-end">
                                             {event.tags && event.tags.map((tag, index) => (
-                                                <span 
-                                                    key={index} 
+                                                <span
+                                                    key={index}
                                                     className="px-2 py-1 bg-gray-800/90 text-white text-xs font-medium rounded-full shadow-lg shadow-black/30"
                                                 >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
-                                        
+
                                         <div className="absolute bottom-0 left-0 right-0 p-4">
                                             <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors">
-                                            {event.title}
-                                        </h3>
+                                                {event.title}
+                                            </h3>
                                             <div className="flex items-center text-gray-300 text-sm">
                                                 <Calendar className="w-3 h-3 mr-1 text-gray-400" />
                                                 {event.date}
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="p-4">
                                         <div className="flex flex-wrap gap-3 mb-3 text-gray-400 text-xs">
                                             <div className="flex items-center">
@@ -713,32 +753,32 @@ export default function Events() {
                                             <div className="flex items-center">
                                                 <MapPin className="w-3 h-3 mr-1 text-gray-500" />
                                                 {event.location}
-                                </div>
-                            </div>
+                                            </div>
+                                        </div>
 
                                         <p className="text-gray-400 mb-4 text-sm line-clamp-2">
-                                    {event.description}
-                                </p>
+                                            {event.description}
+                                        </p>
 
                                         <div className="flex flex-wrap gap-2 mb-4">
                                             {event.highlights && event.highlights.slice(0, 2).map((highlight, index) => (
-                                            <div 
-                                                key={index}
+                                                <div
+                                                    key={index}
                                                     className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800"
-                                            >
-                                                {highlight}
-                                            </div>
-                                        ))}
+                                                >
+                                                    {highlight}
+                                                </div>
+                                            ))}
                                             {event.highlights && event.highlights.length > 2 && (
                                                 <div className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800">
                                                     +{event.highlights.length - 2} more
-                                    </div>
+                                                </div>
                                             )}
-                                </div>
+                                        </div>
 
                                         <div className="flex justify-between items-center">
                                             {event.gallery && event.gallery.length > 0 && (
-                                                <button 
+                                                <button
                                                     onClick={() => openGallery(event.gallery || [], event.title)}
                                                     className="flex items-center text-blue-400 hover:text-blue-300 text-sm"
                                                 >
@@ -746,25 +786,25 @@ export default function Events() {
                                                     View Gallery
                                                 </button>
                                             )}
-                                            
-                                            <button 
+
+                                            <button
                                                 onClick={() => openEventDetails(event)}
                                                 className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 text-sm"
                                             >
                                                 Details
                                                 <ChevronRight className="w-3 h-3 ml-1" />
                                             </button>
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
                                 </motion.div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
                     </motion.div>
                 )}
-                </div>
-            
+            </div>
+
             {/* Gallery Modal */}
-            <ImageGallery 
+            <ImageGallery
                 images={galleryImages}
                 isOpen={galleryOpen}
                 onClose={() => setGalleryOpen(false)}
@@ -782,4 +822,4 @@ export default function Events() {
             )}
         </div>
     )
-} 
+}
