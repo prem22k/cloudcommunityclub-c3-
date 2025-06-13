@@ -84,6 +84,7 @@ const upcomingEvents: Event[] = [
         location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
         description: "Join us for a hands-on workshop on cloud computing and DevOps. Learn cloud architecture, deployment models, get started with Linux, and explore DevOps concepts with practical experience on popular tools. This workshop is perfect for beginners looking to start their cloud journey.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+        registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
         agenda: [
             { time: "TBD", activity: "Introduction to Cloud Computing" },
             { time: "TBD", activity: "Cloud Service Models (IaaS, PaaS, SaaS)" },
@@ -98,8 +99,8 @@ const upcomingEvents: Event[] = [
 // Animation variants
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-        opacity: 1, 
+    visible: {
+        opacity: 1,
         y: 0,
         transition: {
             duration: 0.7,
@@ -121,7 +122,7 @@ const staggerContainer = {
 
 const cardHover = {
     rest: { scale: 1 },
-    hover: { 
+    hover: {
         scale: 1.02,
         transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
     }
@@ -131,7 +132,6 @@ const cardHover = {
 const CountdownTimer = ({ deadline }: { deadline: string }) => {
     const calculateTimeLeft = () => {
         const difference = new Date(deadline).getTime() - new Date().getTime();
-        
         if (difference <= 0) {
             return {
                 days: 0,
@@ -141,7 +141,6 @@ const CountdownTimer = ({ deadline }: { deadline: string }) => {
                 expired: true
             };
         }
-        
         return {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
             hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -205,24 +204,21 @@ interface ImageGalleryProps {
 
 const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalleryProps) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    
+
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!isOpen) return;
-            
             if (e.key === "Escape") onClose();
             if (e.key === "ArrowRight") setCurrentImageIndex(prev => (prev + 1) % images.length);
             if (e.key === "ArrowLeft") setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
         };
-        
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [isOpen, images, onClose]);
-    
+
     if (!isOpen) return null;
-    
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -230,7 +226,7 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
         >
             <div className="relative w-full max-w-5xl h-[80vh] flex flex-col">
                 <div className="absolute top-0 right-0 p-4 z-10">
-                    <button 
+                    <button
                         onClick={onClose}
                         className="text-white hover:text-gray-300 transition-colors p-2"
                     >
@@ -240,12 +236,10 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                         </svg>
                     </button>
                 </div>
-                
                 <div className="text-center mb-4">
                     <h3 className="text-white text-xl">{currentEventTitle}</h3>
                     <p className="text-gray-400 text-sm">Image {currentImageIndex + 1} of {images.length}</p>
                 </div>
-                
                 <div className="relative flex-grow overflow-hidden rounded-lg">
                     <motion.div
                         key={currentImageIndex}
@@ -262,9 +256,8 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                         />
                     </motion.div>
                 </div>
-                
                 <div className="mt-4 flex justify-between">
-                    <button 
+                    <button
                         onClick={() => setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length)}
                         className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
                     >
@@ -272,7 +265,7 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
-                    <button 
+                    <button
                         onClick={() => setCurrentImageIndex(prev => (prev + 1) % images.length)}
                         className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
                     >
@@ -433,6 +426,8 @@ const EventDetailsModal = ({ event, isOpen, onClose, onGalleryOpen }: EventDetai
                         </div>
                     )}
 
+                    {/* Action buttons */}
+       
                     {/* Action buttons */}
                     <div className="flex flex-wrap gap-4 mt-8">
                         <button
