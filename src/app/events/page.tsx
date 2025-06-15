@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, MapPin, ExternalLink, ChevronRight, Users, Award, Tag, AlertCircle, ArrowRight, Camera, X, Check } from 'lucide-react'
 
-// Event Types
+// types 
 interface AgendaItem {
     time: string;
     activity: string;
