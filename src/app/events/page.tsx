@@ -83,7 +83,7 @@ const upcomingEvents: Event[] = [
         time: "10:00 AM - 3:30 PM",
         location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
         description: "Join us for a hands-on workshop on cloud computing and DevOps. Learn cloud architecture, deployment models, get started with Linux, and explore DevOps concepts with practical experience on popular tools. This workshop is perfect for beginners looking to start their cloud journey.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+        image: "/assets/events/Cloud 1O1 swecha-1.jpg",
         registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
         agenda: [
             { time: "TBD", activity: "Introduction to Cloud Computing" },
@@ -558,7 +558,7 @@ const EventsClient = () => {
                         className="space-y-8"
                     >
                         {upcomingEvents.length === 0 ? (
-                            <motion.div 
+                <motion.div 
                                 variants={fadeInUp}
                                 className="text-center py-16 bg-gray-900/30 rounded-xl border border-gray-800 backdrop-blur-sm"
                             >
@@ -578,11 +578,11 @@ const EventsClient = () => {
                                     Join Our Discord
                                     <ExternalLink className="w-4 h-4 ml-2" />
                                 </a>
-                            </motion.div>
+                </motion.div>
                         ) : (
                             upcomingEvents.map((event) => (
-                                <motion.div
-                                    key={event.id}
+                        <motion.div
+                            key={event.id}
                                     variants={fadeInUp}
                                     initial="rest"
                                     whileHover="hover"
@@ -590,10 +590,10 @@ const EventsClient = () => {
                                 >
                                     <motion.div className="md:flex" variants={cardHover}>
                                         <div className="md:w-2/5 lg:w-1/3 relative h-64 md:h-auto overflow-hidden">
-                                            <Image
-                                                src={event.image}
-                                                alt={event.title}
-                                                fill
+                                    <Image
+                                        src={event.image}
+                                        alt={event.title}
+                                        fill
                                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
@@ -615,30 +615,30 @@ const EventsClient = () => {
                                                 <div className="text-lg font-bold text-white">{event.date.split(' ')[1]}</div>
                                                 <div className="text-xs text-blue-300">{event.date.split(' ')[0]}</div>
                                             </div>
-                                        </div>
+                                </div>
                                         <div className="p-6 md:w-3/5 lg:w-2/3">
                                             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                                                {event.title}
-                                            </h3>
-                                            
+                                        {event.title}
+                                    </h3>
+                                    
                                             <div className="flex flex-wrap gap-4 mb-4 text-gray-300 text-sm">
-                                                <div className="flex items-center">
+                                        <div className="flex items-center">
                                                     <Calendar className="w-4 h-4 mr-2 text-blue-400" />
-                                                    {event.date}
-                                                </div>
-                                                <div className="flex items-center">
+                                            {event.date}
+                                        </div>
+                                        <div className="flex items-center">
                                                     <Clock className="w-4 h-4 mr-2 text-blue-400" />
-                                                    {event.time}
-                                                </div>
-                                                <div className="flex items-center">
+                                            {event.time}
+                                        </div>
+                                        <div className="flex items-center">
                                                     <MapPin className="w-4 h-4 mr-2 text-blue-400" />
-                                                    {event.location}
-                                                </div>
-                                            </div>
+                                            {event.location}
+                                        </div>
+                                    </div>
 
                                             <p className="text-gray-300 mb-4">
-                                                {event.description}
-                                            </p>
+                                        {event.description}
+                                    </p>
 
                                             {/* Timer */}
                                             {event.registrationDeadline && (
@@ -664,9 +664,9 @@ const EventsClient = () => {
                                                         <ExternalLink className="w-4 h-4 ml-2" />
                                                     </a>
                                                 )}
-                                            </div>
-                                        </div>
-                                    </motion.div>
+                                </div>
+                            </div>
+                        </motion.div>
                                 </motion.div>
                             ))
                         )}
@@ -675,15 +675,15 @@ const EventsClient = () => {
 
                 {/* Past Events */}
                 {activeTab === 'past' && (
-                    <motion.div 
+                <motion.div 
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                         className="grid grid-cols-1 md:grid-cols-2 gap-6"
                     >
-                        {pastEvents.map((event) => (
-                            <motion.div
-                                key={event.id}
+                    {pastEvents.map((event) => (
+                        <motion.div
+                            key={event.id}
                                 variants={fadeInUp}
                                 initial="rest"
                                 whileHover="hover"
@@ -691,10 +691,10 @@ const EventsClient = () => {
                             >
                                 <motion.div variants={cardHover}>
                                     <div className="relative h-48 overflow-hidden">
-                                        <Image
-                                            src={event.image}
-                                            alt={event.title}
-                                            fill
+                                <Image
+                                    src={event.image}
+                                    alt={event.title}
+                                    fill
                                             className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
@@ -713,8 +713,8 @@ const EventsClient = () => {
                                         
                                         <div className="absolute bottom-0 left-0 right-0 p-4">
                                             <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors">
-                                                {event.title}
-                                            </h3>
+                                            {event.title}
+                                        </h3>
                                             <div className="flex items-center text-gray-300 text-sm">
                                                 <Calendar className="w-3 h-3 mr-1 text-gray-400" />
                                                 {event.date}
@@ -731,28 +731,28 @@ const EventsClient = () => {
                                             <div className="flex items-center">
                                                 <MapPin className="w-3 h-3 mr-1 text-gray-500" />
                                                 {event.location}
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
 
                                         <p className="text-gray-400 mb-4 text-sm line-clamp-2">
-                                            {event.description}
-                                        </p>
+                                    {event.description}
+                                </p>
 
                                         <div className="flex flex-wrap gap-2 mb-4">
                                             {event.highlights && event.highlights.slice(0, 2).map((highlight, index) => (
-                                                <div 
-                                                    key={index}
+                                            <div 
+                                                key={index}
                                                     className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800"
-                                                >
-                                                    {highlight}
-                                                </div>
-                                            ))}
+                                            >
+                                                {highlight}
+                                            </div>
+                                        ))}
                                             {event.highlights && event.highlights.length > 2 && (
                                                 <div className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800">
                                                     +{event.highlights.length - 2} more
-                                                </div>
+                                    </div>
                                             )}
-                                        </div>
+                                </div>
 
                                         <div className="flex justify-between items-center">
                                             {event.gallery && event.gallery.length > 0 && (
@@ -772,14 +772,14 @@ const EventsClient = () => {
                                                 Details
                                                 <ChevronRight className="w-3 h-3 ml-1" />
                                             </button>
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
                                 </motion.div>
-                            </motion.div>
-                        ))}
+                        </motion.div>
+                    ))}
                     </motion.div>
                 )}
-            </div>
+                </div>
             
             {/* Gallery Modal */}
             <ImageGallery 
