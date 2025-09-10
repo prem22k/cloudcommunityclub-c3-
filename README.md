@@ -1,7 +1,7 @@
 # 🌍 Cloud Community Club (C³)
 
 [![Discord](https://img.shields.io/discord/1316108296075218944?logo=discord)](https://discord.gg/dBNXWDKhrD)
- ![CodeQL](https://github.com/CloudCommunityClub/cloudcommunityclub-c3/workflows/CodeQL/badge.svg) [![Vercel](https://img.shields.io/github/deployments/CloudCommunityClub/cloudcommunityclub-c3/production?&logo=vercel&label=Vercel%20Deployment)](https://github.com/CloudCommunityClub/cloudcommunityclub-c3/deployments/Production)
+ ![CodeQL](https://github.com/prem22k/cloudcommunityclub-c3/workflows/CodeQL/badge.svg) [![Vercel](https://img.shields.io/github/deployments/prem22k/cloudcommunityclub-c3/production?&logo=vercel&label=Vercel%20Deployment)](https://github.com/prem22k/cloudcommunityclub-c3-/deployments/Production)
 
 Welcome to the official website repository of Cloud Community Club (C³) - a vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.
 
@@ -20,7 +20,7 @@ Our website serves as a central hub featuring:
 
 ### 📊 Repository Contribution Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/fe1b3c980d478532406427b995d24931828a681c.svg 'Repobeats analytics image')
+![Alt](https://repobeats.axiom.co/api/embed/008c9695f4c2ac65afa8d47ce629094525666935.svg 'Repobeats analytics image')
 
 ## 🔰 Quick Setup / Getting Started
 
