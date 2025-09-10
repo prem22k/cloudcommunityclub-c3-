@@ -71,6 +71,33 @@ const pastEvents: Event[] = [
             "/assets/events/open-session-main.jpg"
         ],
         tags: ["Inaugural", "Community", "Orientation"]
+    },
+    {
+        id: "3",
+        title: "Cloud & DevOps 101",
+        date: "June 16th, 2025",
+        time: "10:00 AM - 3:30 PM IST",
+        location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
+        description: "Want to know what 'Cloud' really means and how apps get deployed? This workshop is for you!\n\nJoin us for Cloud 101, a beginner-friendly, hands-on workshop designed to introduce you to the core concepts of Cloud Computing, Linux, Networking, DevOps, and even open-source contribution!\n\nFrom understanding the \"why\" behind cloud, to deploying your first app on AWS, GCP, or Azure, we're here to guide you step by step. Plus, hear about real DevOps job roles, tools, and career paths directly from those in the field!",
+        image: "/assets/events/Cloud 1O1 swecha-1.jpg",
+        registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
+        agenda: [
+            { time: "10:00 AM", activity: "Inauguration" },
+            { time: "10:30 AM", activity: "Linux Basics & Networking for Cloud" },
+            { time: "11:45 AM", activity: "DevOps 101: Tools, Culture & Real-World Examples" },
+            { time: "1:00 PM", activity: "Lunch Break" },
+            { time: "2:00 PM", activity: "Hands-on Cloud Deployment: Your First App Live!" },
+            { time: "3:00 PM", activity: "Getting Started with Open Source Contributions" },
+            { time: "3:30 PM", activity: "DevOps Careers & Market Demand" }
+        ],
+        highlights: [
+            "Hands-on Cloud Deployment Experience",
+            "Real DevOps Tools & Practices",
+            "Open Source Contribution Guidance",
+            "Career Path Insights",
+            "Limited Seats for Quality Learning"
+        ],
+        tags: ["Workshop", "Cloud", "DevOps", "Hands-on", "Open Source"]
     }
 ]
 
@@ -78,21 +105,25 @@ const pastEvents: Event[] = [
 const upcomingEvents: Event[] = [
     {
         id: "1",
-        title: "Cloud 101",
-        date: "June 16th & 17th, 2025",
-        time: "10:00 AM - 3:30 PM",
-        location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
-        description: "Join us for a hands-on workshop on cloud computing and DevOps. Learn cloud architecture, deployment models, get started with Linux, and explore DevOps concepts with practical experience on popular tools. This workshop is perfect for beginners looking to start their cloud journey.",
-        image: "/assets/events/Cloud 1O1 swecha-1.jpg",
-        registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
+        title: "FREE & OPEN SOURCE DRIVE @ SNIST",
+        date: "September 11th & 12th, 2025",
+        time: "10:00 AM – 4:00 PM",
+        location: "Quadrangle, SNIST",
+        description: "Are you tired of giving away your data to proprietary platforms? Join us to explore Free & Open Source Software (FOSS) – secure, transparent, and community-driven alternatives that put power back in your hands.\n\nWhat’s Happening?\n• Live Demos of FOSS Tools\n• Expert Q&A Sessions\n• De-Googlify Your Digital Life (Install secure, privacy-friendly apps)\n• Free Resources to get started\n\nBrought to you by C³ (Cloud Community Club / GLUG SNIST) in collaboration with Swecha. Come, reclaim your digital freedom. Let’s build a community that values privacy, openness, and freedom.",
+        image: "/assets/events/foss.jpeg",
         agenda: [
-            { time: "TBD", activity: "Introduction to Cloud Computing" },
-            { time: "TBD", activity: "Cloud Service Models (IaaS, PaaS, SaaS)" },
-            { time: "TBD", activity: "Hands-on with AWS/Azure/GCP" },
-            { time: "TBD", activity: "Deploying Your First Cloud Application" },
-            { time: "TBD", activity: "Best Practices & Security Considerations" }
+            { time: "TBD", activity: "Live Demos of FOSS Tools" },
+            { time: "TBD", activity: "Expert Q&A Sessions" },
+            { time: "TBD", activity: "De-Googlify Your Digital Life" },
+            { time: "TBD", activity: "Free Resources to get started" }
         ],
-        tags: ["Workshop", "Cloud", "Hands-on"]
+        highlights: [
+            "Privacy-first alternatives",
+            "Community-driven software",
+            "Hands-on installs and demos",
+            "Collaboration with Swecha"
+        ],
+        tags: ["FOSS", "Open Source", "Privacy", "Community"]
     },
 ]
 
