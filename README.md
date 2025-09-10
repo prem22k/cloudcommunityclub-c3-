@@ -1,7 +1,7 @@
 # 🌍 Cloud Community Club (C³)
 
 [![Discord](https://img.shields.io/discord/1316108296075218944?logo=discord)](https://discord.gg/dBNXWDKhrD)
- ![CodeQL](https://github.com/prem22k/cloudcommunityclub-c3/workflows/CodeQL/badge.svg) [![Vercel](https://img.shields.io/github/deployments/prem22k/cloudcommunityclub-c3/production?&logo=vercel&label=Vercel%20Deployment)](https://github.com/prem22k/cloudcommunityclub-c3-/deployments/Production)
+[![CodeQL](https://github.com/prem22k/cloudcommunityclub-c3-/actions/workflows/codeql.yml/badge.svg)](https://github.com/prem22k/cloudcommunityclub-c3-/actions/workflows/codeql.yml) [![Vercel](https://img.shields.io/github/deployments/prem22k/cloudcommunityclub-c3-/production?logo=vercel&label=Vercel%20Deployment)](https://github.com/prem22k/cloudcommunityclub-c3-/deployments/activity_log?environment=Production)
 
 Welcome to the official website repository of Cloud Community Club (C³) - a vibrant community dedicated to cloud computing enthusiasts, professionals, and learners.
 
