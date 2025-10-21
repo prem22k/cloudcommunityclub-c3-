@@ -37,7 +37,7 @@ const pastEvents: Event[] = [
         time: "9:00 AM - 4:00 PM",
         location: "Sreenidhi Institute of Science and Technology",
         description: "Experience the future of technology at AI Hack Day 2025, where innovation meets artificial intelligence. This groundbreaking national hackathon brought together brilliant minds from across the country to tackle real-world challenges using cutting-edge AI solutions. In collaboration with Swecha Telangana, Visam.ai, and IIIT Hyderabad, this event created an ecosystem where students and industry experts collaborated to push the boundaries of what's possible with AI.",
-        image: "/assets/events/ai-hack-day-maisn.jpeg",
+        image: "/assets/events/ai-hack-day-main.jpeg",
         highlights: [
             "250+ Participants",
             "80+ Project Submissions",
@@ -58,7 +58,7 @@ const pastEvents: Event[] = [
         time: "1:30 PM - 3:30 PM",
         location: "Sreenidhi Institute of Science and Technology, CET Lab-3",
         description: "A milestone moment in our journey - the official launch of the Cloud Community Club (C³) at SNIST. This inaugural event marked the beginning of an exciting chapter in our tech community's story. Students discovered a vibrant ecosystem dedicated to Open-source development, cutting-edge Research, Institution-centric Projects, and real-world Deployment experiences. Through engaging presentations and interactive sessions, attendees gained insights into our community's vision and learned how to become an integral part of the C³ ecosystem.",
-        image: "/assets/events/open-session-maisn.jpg",
+        image: "/assets/events/open-session-main.jpg",
         highlights: [
             "150+ Attendees",
             "Introduction to Project Schools",
@@ -68,7 +68,7 @@ const pastEvents: Event[] = [
             "Announced Event Calendar"
         ],
         gallery: [
-            "/assets/events/open-session-mains.jpg"
+            "/assets/events/open-session-main.jpg"
         ],
         tags: ["Inaugural", "Community", "Orientation"]
     },
@@ -79,7 +79,7 @@ const pastEvents: Event[] = [
         time: "10:00 AM - 3:30 PM IST",
         location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
         description: "Want to know what 'Cloud' really means and how apps get deployed? This workshop is for you!\n\nJoin us for Cloud 101, a beginner-friendly, hands-on workshop designed to introduce you to the core concepts of Cloud Computing, Linux, Networking, DevOps, and even open-source contribution!\n\nFrom understanding the \"why\" behind cloud, to deploying your first app on AWS, GCP, or Azure, we're here to guide you step by step. Plus, hear about real DevOps job roles, tools, and career paths directly from those in the field!",
-        image: "/assets/events/Cloud 1O1 swechass-1.jpg",
+        image: "/assets/events/Cloud 1O1 swecha-1.jpg",
         registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
         agenda: [
             { time: "10:00 AM", activity: "Inauguration" },
@@ -106,7 +106,7 @@ const pastEvents: Event[] = [
         time: "10:00 AM – 4:00 PM",
         location: "Quadrangle, SNIST",
         description: "Are you tired of giving away your data to proprietary platforms? Join us to explore Free & Open Source Software (FOSS) – secure, transparent, and community-driven alternatives that put power back in your hands.\n\nWhat's Happening?\n• Live Demos of FOSS Tools\n• Expert Q&A Sessions\n• De-Googlify Your Digital Life (Install secure, privacy-friendly apps)\n• Free Resources to get started\n\nBrought to you by C³ (Cloud Community Club / GLUG SNIST) in collaboration with Swecha. Come, reclaim your digital freedom. Let's build a community that values privacy, openness, and freedom.",
-        image: "/assets/events/fosss.jpeg",
+        image: "/assets/events/foss.jpeg",
         highlights: [
             "Privacy-first alternatives",
             "Community-driven software",
@@ -126,7 +126,7 @@ const upcomingEvents: Event[] = [
         "time": "10:00 AM - 4:00 PM",
         "location": "Biotech Seminar Hall, SNIST",
         "description": "Tech Samyog is a 3-day hands-on workshop organized by (Sree GLUG) Sreenidhi Linux Users Group in collaboration with Cloud Community Club (C³-SNIST). This workshop is designed to help students explore the open-source ecosystem, gain a practical understanding of AI Engineering, and bridge the gap between academia and industry through real-world, project-based learning.\n\nThe sessions are open to students from all departments, with flexible attendance — participants may join any day of interest. However, Day 3 is highly recommended as it includes the final build session, where students apply everything they've learned.",
-        "image": "/assets/events/tech-samysog.png",
+        "image": "/assets/events/tech-samyog.png",
         "agenda": [
             { "time": "Day 1", "activity": "Introduction to Git and APIs - Learn version control using Git and explore how APIs power modern applications" },
             { "time": "Day 2", "activity": "AI Engineering - Understand the fundamentals of Artificial Intelligence, AI agents, LLMs, and real-world AI applications" },
