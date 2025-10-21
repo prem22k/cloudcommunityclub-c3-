@@ -98,25 +98,15 @@ const pastEvents: Event[] = [
             "Limited Seats for Quality Learning"
         ],
         tags: ["Workshop", "Cloud", "DevOps", "Hands-on", "Open Source"]
-    }
-]
-
-// Upcoming Events Data
-const upcomingEvents: Event[] = [
+    },
     {
-        id: "1",
+        id: "4",
         title: "FREE & OPEN SOURCE DRIVE @ SNIST",
         date: "September 11th & 12th, 2025",
         time: "10:00 AM – 4:00 PM",
         location: "Quadrangle, SNIST",
-        description: "Are you tired of giving away your data to proprietary platforms? Join us to explore Free & Open Source Software (FOSS) – secure, transparent, and community-driven alternatives that put power back in your hands.\n\nWhat’s Happening?\n• Live Demos of FOSS Tools\n• Expert Q&A Sessions\n• De-Googlify Your Digital Life (Install secure, privacy-friendly apps)\n• Free Resources to get started\n\nBrought to you by C³ (Cloud Community Club / GLUG SNIST) in collaboration with Swecha. Come, reclaim your digital freedom. Let’s build a community that values privacy, openness, and freedom.",
+        description: "Are you tired of giving away your data to proprietary platforms? Join us to explore Free & Open Source Software (FOSS) – secure, transparent, and community-driven alternatives that put power back in your hands.\n\nWhat's Happening?\n• Live Demos of FOSS Tools\n• Expert Q&A Sessions\n• De-Googlify Your Digital Life (Install secure, privacy-friendly apps)\n• Free Resources to get started\n\nBrought to you by C³ (Cloud Community Club / GLUG SNIST) in collaboration with Swecha. Come, reclaim your digital freedom. Let's build a community that values privacy, openness, and freedom.",
         image: "/assets/events/foss.jpeg",
-        agenda: [
-            { time: "TBD", activity: "Live Demos of FOSS Tools" },
-            { time: "TBD", activity: "Expert Q&A Sessions" },
-            { time: "TBD", activity: "De-Googlify Your Digital Life" },
-            { time: "TBD", activity: "Free Resources to get started" }
-        ],
         highlights: [
             "Privacy-first alternatives",
             "Community-driven software",
@@ -124,7 +114,34 @@ const upcomingEvents: Event[] = [
             "Collaboration with Swecha"
         ],
         tags: ["FOSS", "Open Source", "Privacy", "Community"]
-    },
+    }
+]
+
+// Upcoming Events Data
+const upcomingEvents: Event[] = [
+    {
+        "id": "1",
+        "title": "Tech Samyog – 3-Day Hands-on Workshop at SNIST",
+        "date": "October 22 - 24",
+        "time": "10:00 AM - 4:00 PM",
+        "location": "Biotech Seminar Hall, SNIST",
+        "description": "Tech Samyog is a 3-day hands-on workshop organized by (Sree GLUG) Sreenidhi Linux Users Group in collaboration with Cloud Community Club (C³-SNIST). This workshop is designed to help students explore the open-source ecosystem, gain a practical understanding of AI Engineering, and bridge the gap between academia and industry through real-world, project-based learning.\n\nThe sessions are open to students from all departments, with flexible attendance — participants may join any day of interest. However, Day 3 is highly recommended as it includes the final build session, where students apply everything they've learned.",
+        "image": "/assets/events/tech-samyog.png",
+        "agenda": [
+            { "time": "Day 1", "activity": "Introduction to Git and APIs - Learn version control using Git and explore how APIs power modern applications" },
+            { "time": "Day 2", "activity": "AI Engineering - Understand the fundamentals of Artificial Intelligence, AI agents, LLMs, and real-world AI applications" },
+            { "time": "Day 3", "activity": "Open Source & Linux - Discover the world of FOSS, learn how to raise your first Pull/Merge Request, and get hands-on with GNU Linux essentials" },
+            { "time": "Afternoon Session", "activity": "Build a simple product or project using the concepts learned during the workshop" }
+        ],
+        "highlights": [
+            "Explore emerging technologies including AI, Cloud, Linux, and Open Source",
+            "Learn by doing through interactive, hands-on sessions",
+            "Opportunity to collaborate, contribute, and build a working project",
+            "Open to students from all departments",
+            "Ideal for those preparing for hackathons, research, and industry projects"
+        ],
+        "tags": ["Workshop", "AI", "Open Source", "Linux", "Git", "Hands-on", "APIs", "Agentic AI", "LLMs", "FOSS", "Ollama"]
+    }
 ]
 
 // Animation variants
