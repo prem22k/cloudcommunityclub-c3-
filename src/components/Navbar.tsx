@@ -24,6 +24,7 @@ export default function Navbar(): React.ReactNode {
     return (
         <div className='z-50 flex flex-col fixed w-full'>
             {/* Announcement Banner */}
+            {/*
             {ANNOUNCEMENT_TEXT ? (
                 <motion.div
                     onMouseDown={() => {
@@ -66,6 +67,7 @@ export default function Navbar(): React.ReactNode {
             ) : (
                 <></>
             )}
+            */}
 
             {/* Top Bar */}
             <motion.div

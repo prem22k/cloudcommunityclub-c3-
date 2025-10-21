@@ -21,7 +21,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://snist.cloudcommunityclub.in'),
+    metadataBase: new URL('https://snist.cloudcommunityclub.tech'),
     title: {
         default: 'Cloud Community Club',
         template: '%s | Cloud Community Club',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Cloud Community Club (C³)',
         description: 'Join our cloud community club',
-        url: 'https://snist.cloudcommunityclub.in',
+        url: 'https://snist.cloudcommunityclub.tech',
         siteName: 'Cloud Community Club',
         images: [
             {
