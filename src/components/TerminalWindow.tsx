@@ -67,7 +67,7 @@ export default function TerminalWindow({
                     <div className="flex-1 p-6 text-[#f8f8f2] leading-6 relative z-10">
                         {children || (
                             <>
-                                <p className="text-[#6272a4]">// Welcome to Cloud Community Club v1.0.0</p>
+                                <p className="text-[#6272a4]">{'// Welcome to Cloud Community Club v1.0.0'}</p>
                                 <p className="mt-0">
                                     <span className="text-[#ff79c6]">➜</span> <span className="text-[#8be9fd]">~</span> <span className="text-[#f1fa8c]">init_sequence.sh</span>
                                 </p>

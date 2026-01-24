@@ -395,7 +395,7 @@ export default function TerminalJoinForm() {
             case 'fullName':
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Enter your full name</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Enter your full name'}</span>)}
                         <div className="flex items-center pl-4 border-l-2 border-[#6272a4]/30 ml-1 h-6 relative group">
                             <span className="text-[#ff79c6] mr-2">const</span>
                             <span className="text-[#8be9fd] mr-2">fullName</span>
@@ -430,7 +430,7 @@ export default function TerminalJoinForm() {
             case 'rollNumber':
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Enter your roll number</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Enter your roll number'}</span>)}
                         <div className="flex items-center pl-4 border-l-2 border-[#6272a4]/30 ml-1 h-6 relative">
                             <span className="text-[#ff79c6] mr-2">const</span>
                             <span className="text-[#8be9fd] mr-2">rollNo</span>
@@ -464,7 +464,7 @@ export default function TerminalJoinForm() {
             case 'email':
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Enter your email address</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Enter your email address'}</span>)}
                         <div className="flex items-center pl-4 border-l-2 border-[#6272a4]/30 ml-1 h-6">
                             <span className="text-[#ff79c6] mr-2">let</span>
                             <span className="text-[#8be9fd] mr-2">email</span>
@@ -499,7 +499,7 @@ export default function TerminalJoinForm() {
             case 'phone':
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Enter your phone number</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Enter your phone number'}</span>)}
                         <div className="flex items-center pl-4 border-l-2 border-[#6272a4]/30 ml-1 h-6">
                             <span className="text-[#ff79c6] mr-2">let</span>
                             <span className="text-[#8be9fd] mr-2">phone</span>
@@ -533,7 +533,7 @@ export default function TerminalJoinForm() {
             case 'department':
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Select your department enum</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Select your department enum'}</span>)}
                         <div className="pl-4 border-l-2 border-[#6272a4]/30 ml-1">
                             <div className="flex items-center mb-0 h-6">
                                 <span className="text-[#ff79c6] mr-2">const</span>
@@ -574,7 +574,7 @@ export default function TerminalJoinForm() {
                 const { ref: motivationRef, ...motivationRegister } = register('motivation')
                 return (
                     <div key={fieldName} className="mb-6 font-mono">
-                        {renderLine(<span className="text-[#6272a4]">// Why do you want to join C³?</span>)}
+                        {renderLine(<span className="text-[#6272a4]">{'// Why do you want to join C³?'}</span>)}
                         <div className="pl-3 border-l-2 border-[#6272a4]/30 ml-1">
                             {renderLine(
                                 <>
@@ -744,9 +744,9 @@ export default function TerminalJoinForm() {
 
             <div className="mb-6 font-mono border-l-4 border-[#bd93f9] pl-3 py-0 bg-[#44475a]/20">
                 <div className="h-6 leading-6 text-[#bd93f9] text-sm font-bold">
-                    // Step {currentStep + 1}: {currentStepConfig.title}
+                    {`// Step ${currentStep + 1}: ${currentStepConfig.title}`}
                 </div>
-                <div className="h-6 leading-6 text-[#6272a4] text-xs italic">/* {currentStepConfig.description} */</div>
+                <div className="h-6 leading-6 text-[#6272a4] text-xs italic">{`/* ${currentStepConfig.description} */`}</div>
             </div>
 
             <form onSubmit={(e) => e.preventDefault()}>
