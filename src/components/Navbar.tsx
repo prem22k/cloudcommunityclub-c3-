@@ -130,7 +130,7 @@ export default function Navbar(): React.ReactNode {
                     </li>
 
                     <li className='text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
-                        <Link href='/join-us' className='flex items-center'>
+                        <Link href='/join' className='flex items-center'>
                             <GoCodeOfConduct className='my-auto mr-2 text-xl' />
                             Join Us
                         </Link>
@@ -195,7 +195,7 @@ export default function Navbar(): React.ReactNode {
                         <div className='text-2xl text-white font-semibold flex active:scale-90 hover:scale-105 transition duration-300 ease-out'>
                             <GoCodeOfConduct className='my-auto mr-2 text-2xl' />
                             <a
-                                href='/join-us'
+                                href='/join'
                                 onMouseUp={handleClick}
                             >
                                 Join Us!

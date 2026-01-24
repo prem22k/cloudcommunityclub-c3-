@@ -41,6 +41,7 @@ module.exports = {
         fontFamily: {
             sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
             display: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+            mono: ['var(--font-jetbrains)', ...defaultTheme.fontFamily.mono],
         },
     },
 

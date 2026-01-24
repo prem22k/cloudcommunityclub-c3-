@@ -1,22 +1,29 @@
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins, JetBrains_Mono } from 'next/font/google'
 import { Metadata } from 'next'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from '@/components/Navbar'
 import './globals.css'
 
 // Font configurations
-const inter = Inter({ 
+const inter = Inter({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-inter',
     preload: true
 })
 
-const poppins = Poppins({ 
+const poppins = Poppins({
     weight: ['400', '500', '600', '700'],
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-poppins',
+    preload: true
+})
+
+const jetbrainsMono = JetBrains_Mono({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-jetbrains',
     preload: true
 })
 
@@ -45,7 +52,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         type: 'website',
     },
-    
+
     twitter: {
         card: 'summary_large_image',
         site: '@C3Snist',
@@ -63,7 +70,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+        <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}>
             <body className="min-h-screen bg-black text-white" suppressHydrationWarning>
                 <Navbar />
                 <main>{children}</main>

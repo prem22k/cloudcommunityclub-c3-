@@ -58,7 +58,7 @@ export default function Hero(): React.ReactNode {
                 >
                     {/* Backdrop with slightly increased darkness */}
                     <div className='absolute inset-0 bg-black bg-opacity-40' />
-                    
+
                     <Image
                         width={1920}
                         height={1080}
@@ -69,7 +69,7 @@ export default function Hero(): React.ReactNode {
                         quality={85}
                         sizes="100vw"
                     />
-                    
+
                     <Image
                         width={1920}
                         height={1080}
