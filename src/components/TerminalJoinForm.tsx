@@ -35,6 +35,7 @@ export const joinClubSchema = z.object({
     email: z.string().email(),
     phone: z.string().min(10),
     department: z.enum(DEPARTMENTS),
+    year: z.enum(['1', '2', '3', '4']),
     motivation: z.string().min(20).max(500),
 })
 
@@ -67,10 +68,10 @@ export const FORM_STEPS: FormStep[] = [
     },
     {
         id: 2,
-        title: 'Department',
-        description: 'Select academic branch',
-        fields: ['department'],
-        pathSegment: 'branch',
+        title: 'Academics',
+        description: 'Select branch and year',
+        fields: ['department', 'year'],
+        pathSegment: 'academics',
     },
     {
         id: 3,
@@ -570,6 +571,43 @@ export default function TerminalJoinForm() {
                     </div>
                 )
 
+            case 'year':
+                return (
+                    <div key={fieldName} className="mb-6 font-mono">
+                        {renderLine(<span className="text-[#6272a4]">{'// Select your current year'}</span>)}
+                        <div className="pl-4 border-l-2 border-[#6272a4]/30 ml-1">
+                            <div className="flex items-center mb-2 h-6">
+                                <span className="text-[#ff79c6] mr-2">let</span>
+                                <span className="text-[#8be9fd] mr-2">year</span>
+                                <span className="text-[#ff79c6] mr-2">=</span>
+                            </div>
+                            <div className="pl-6 flex gap-4">
+                                {['1', '2', '3', '4'].map((yr) => (
+                                    <label
+                                        key={yr}
+                                        className="flex items-center gap-2 cursor-pointer hover:bg-[#44475a]/50 px-2 transition-colors group h-6"
+                                    >
+                                        <input
+                                            {...register('year')}
+                                            type="radio"
+                                            value={yr}
+                                            className="sr-only peer"
+                                            onFocus={(e) => handleFocus(2, 'year', e)}
+                                        />
+                                        <span className="text-[#6272a4] peer-checked:text-[#50fa7b] group-hover:text-[#f8f8f2] transition-colors">
+                                            {getValues('year') === yr ? '◉' : '○'}
+                                        </span>
+                                        <span className={`text-sm ${getValues('year') === yr ? 'text-[#f1fa8c] font-bold' : 'text-[#6272a4] group-hover:text-[#f8f8f2]'}`}>
+                                            {yr}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                        {renderError(error?.message)}
+                    </div>
+                )
+
             case 'motivation':
                 const { ref: motivationRef, ...motivationRegister } = register('motivation')
                 return (
@@ -697,7 +735,8 @@ export default function TerminalJoinForm() {
                         <div className="h-6 leading-6 text-sm"><span className="text-[#ff79c6]">const</span> <span className="text-[#8be9fd]">newMember</span> <span className="text-[#ff79c6]">=</span> <span className="text-[#f8f8f2]">{`{`}</span></div>
                         <div className="h-6 leading-6 pl-4 text-sm">name: <span className="text-[#f1fa8c]">'{getValues('fullName')}'</span>,</div>
                         <div className="h-6 leading-6 pl-4 text-sm">role: <span className="text-[#f1fa8c]">'Cadet'</span>,</div>
-                        <div className="h-6 leading-6 pl-4 text-sm">dept: <span className="text-[#bd93f9]">Department.{getValues('department')}</span></div>
+                        <div className="h-6 leading-6 pl-4 text-sm">dept: <span className="text-[#bd93f9]">Department.{getValues('department')}</span>,</div>
+                        <div className="h-6 leading-6 pl-4 text-sm">year: <span className="text-[#f1fa8c]">{getValues('year')}</span></div>
                         <div className="h-6 leading-6 text-sm"><span className="text-[#f8f8f2]">{`}`}</span></div>
                     </div>
                 </motion.div>
