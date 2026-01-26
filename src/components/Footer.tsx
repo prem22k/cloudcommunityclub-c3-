@@ -7,7 +7,7 @@ import { MdOutlineEmail } from 'react-icons/md'
 export default function Footer() {
     return (
         <div className='w-full h-full bg-gradient-to-b from-neutral-800 dark:from-neutral-950 to-neutral-950 dark:to-black text-lg font-semibold pt-4 text-center'>
-            
+
             <p className='font-semibold'>Connect with C³</p>
 
             <div className='flex flex-row flex-wrap gap-3 justify-center py-4 overflow-x-hidden'>
@@ -79,13 +79,13 @@ export default function Footer() {
             </div>
 
             <div className='pt-4 pb-10'>
-    <p className='text-blue-500 text-sm sm:text-lg'>
-        Built with 💙 by <Link href='https://github.com/prem22k' target='_blank' className='underline'>Prem Sai</Link> and <Link href='https://github.com/C3Snist' target='_blank' className='underline'>C³ members</Link>
-    </p>
-    <p className='text-neutral-500 text-sm sm:text-lg'>
-        Copyright ©️ Cloud Community Club (C³) 2024
-    </p>
-</div>
+                <p className='text-blue-500 text-sm sm:text-lg'>
+                    Built with 💙 by <Link href='https://github.com/prem22k' target='_blank' className='underline'>Prem Sai</Link> and <Link href='https://github.com/C3Snist' target='_blank' className='underline'>C³ members</Link>
+                </p>
+                <p className='text-neutral-500 text-sm sm:text-lg'>
+                    Copyright ©️ Cloud Community Club (C³) 2024
+                </p>
+            </div>
 
         </div>
     )

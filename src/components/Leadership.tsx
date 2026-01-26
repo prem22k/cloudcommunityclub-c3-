@@ -356,10 +356,10 @@ const MinorLeaderCard: React.FC<props_MinorLeaderCard> = ({
                             target='_blank'
                             rel='noreferrer'
                         >
-                            <SiDiscord 
+                            <SiDiscord
                                 onMouseUp={() => playSfx_discorda && playSfx_discorda()}
-                                size={'3vh'} 
-                                className='h-10' 
+                                size={'3vh'}
+                                className='h-10'
                             />
                         </a>
                     )}

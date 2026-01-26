@@ -1,4 +1,4 @@
-'use client'
+
 
 import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
@@ -27,11 +27,7 @@ const Footer = dynamic(() => import('../components/Footer'), {
     loading: () => null
 })
 
-// Dynamically import ReactTyped
-const ReactTyped = dynamic(() => import('react-typed').then(mod => mod.ReactTyped), {
-    ssr: false,
-    loading: () => <span className="bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent">Loading...</span>
-})
+import GalleryTypewriter from '../components/GalleryTypewriter'
 
 const GALLERY_TYPED_WORDS = [
     'Cloud Workshops',
@@ -50,11 +46,11 @@ export default function App() {
         <>
             <IntroFade />
             <Hero />
-            
+
             <Suspense fallback={<div className="h-screen bg-black" />}>
                 <Overview />
             </Suspense>
-            
+
             <Suspense fallback={<div className="h-screen bg-black" />}>
                 <Leadership />
             </Suspense>
@@ -73,14 +69,7 @@ export default function App() {
                         Innovate with us through&nbsp;
                     </span>
                     <Suspense fallback={<span className="bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent">Loading...</span>}>
-                        <ReactTyped
-                            strings={GALLERY_TYPED_WORDS}
-                            typeSpeed={50}
-                            backSpeed={75}
-                            backDelay={3000}
-                            loop
-                            className='bg-gradient-to-t from-yellow-300 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(225,200,255,0.5)]'
-                        />
+                        <GalleryTypewriter words={GALLERY_TYPED_WORDS} />
                     </Suspense>
                 </h1>
             </div>
