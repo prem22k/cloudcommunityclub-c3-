@@ -10,7 +10,7 @@ interface TerminalWindowProps {
     cursorLine?: number
     cursorCol?: number
     activeLine?: number
-    containerRef?: React.RefObject<HTMLDivElement>
+    containerRef?: React.RefObject<HTMLDivElement | null>
 }
 
 export default function TerminalWindow({

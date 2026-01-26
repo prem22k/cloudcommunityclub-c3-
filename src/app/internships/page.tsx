@@ -128,8 +128,8 @@ export default function InternshipsPage() {
   const [isClient, setIsClient] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [internships, setInternships] = useState<Internship[]>([])
-  const [categories, setCategories] = useState<string[]>([])
+  const [internships] = useState<Internship[]>(internshipsData)
+  const [categories] = useState<string[]>(categoriesData)
   
   // State for lightbox/modal
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -143,9 +143,8 @@ export default function InternshipsPage() {
 
   // Initialize client-side data after component mounts
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true)
-    setInternships(internshipsData)
-    setCategories(categoriesData)
   }, [])
 
   // Filter internships based on search and category - only run on client

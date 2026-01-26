@@ -1,40 +1,50 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "incremental": true,
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
-        "paths": {
-            "@/*": ["./src/*"]
-        }
-    },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        ".next/types/**/*.ts",
-        "src/app/page.tsx",
-        "src/app/layout.tsx",
-        "tailwind.config.js",
-        "src/components/About.tsx",
-        "src/components/Carousel.tsx",
-        "next.config.js",
-        "src/app/api/[...slug].js",
-        "src/app/hackathon/[slug]/page.tsx"
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "exclude": ["node_modules", ".eslintrc.js"]
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/page.tsx",
+    "src/app/layout.tsx",
+    "tailwind.config.js",
+    "src/components/About.tsx",
+    "src/components/Carousel.tsx",
+    "next.config.js",
+    "src/app/api/[...slug].js",
+    "src/app/hackathon/[slug]/page.tsx",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".eslintrc.js"
+  ]
 }

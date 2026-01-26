@@ -7,9 +7,8 @@ import useSound from 'use-sound'
 import { motion } from 'framer-motion'
 
 import {
-    SiAmazonaws,
+    SiAmazon,
     SiGooglecloud,
-    SiMicrosoftazure,
     SiDocker,
     SiKubernetes,
     SiTerraform,
@@ -24,6 +23,7 @@ import {
     SiLinux,
     SiTypescript,
 } from 'react-icons/si'
+import { VscAzure } from 'react-icons/vsc'
 
 const SECTION_TYPED_KEYWORDS = [
     'Cloud Platforms',
@@ -46,7 +46,7 @@ const TECH_ICON_SHADOW = { filter: 'drop-shadow(4px 4px 2px rgba(0, 0, 0, 1))' }
 
 const TECHNOLOGIES: { [key: string]: JSX.Element } = {
     'AWS': (
-        <SiAmazonaws
+        <SiAmazon
             color='#FF9900'
             className={TECH_ICON_CLASSES}
             style={TECH_ICON_SHADOW}
@@ -60,7 +60,7 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
         />
     ),
     'Azure': (
-        <SiMicrosoftazure
+        <VscAzure
             color='#0089D6'
             className={TECH_ICON_CLASSES}
             style={TECH_ICON_SHADOW}

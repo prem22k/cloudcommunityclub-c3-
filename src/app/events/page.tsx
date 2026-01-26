@@ -152,7 +152,7 @@ const fadeInUp = {
         y: 0,
         transition: {
             duration: 0.7,
-            ease: [0.22, 1, 0.36, 1]
+            ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
         }
     }
 }
@@ -172,7 +172,7 @@ const cardHover = {
     rest: { scale: 1 },
     hover: { 
         scale: 1.02,
-        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }
     }
 }
 
