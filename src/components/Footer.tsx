@@ -69,7 +69,7 @@ export default function Footer() {
             <div className='flex flex-row items-center justify-center gap-4 py-2 w-full'>
                 <Link href='https://sreenidhi.edu.in/' target='_blank'>
                     <Image
-                        src='/assets/bits/sreenidhi-logo.png'  // Add your college logo
+                        src='/assets/bits/sreenidhi-logo.webp'  // Add your college logo
                         width={250}
                         height={250}
                         alt='College Logo'

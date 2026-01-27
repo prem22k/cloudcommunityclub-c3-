@@ -14,7 +14,7 @@ import { FcCollaboration, FcElectronics, FcIdea } from 'react-icons/fc'
 const cardBaseClasses = 'hover:z-10 z-0 w-[350px] hover:w-[420px] h-[430px] active:!scale-100 hover:outline-[8px] outline-[3px] outline hover:outline-double transition-all duration-300 ease-out bg-gradient-to-t rounded-3xl'
 
 const sfxClunk = '/assets/sound_fx/clunk.mp3'
-const logo = '/assets/ccc_logo.png'
+const logo = '/assets/ccc_logo.webp'
 
 export default function About(): React.ReactNode {
     const [playSfx_clunk] = useSound(sfxClunk)
@@ -32,67 +32,69 @@ export default function About(): React.ReactNode {
 
             <div className='w-full py-24 flex flex-col lg:flex-row justify-center items-center gap-x-20 gap-y-8 bg-[#030303]'>
                 <div className='relative w-[85%] lg:w-[45%]'>
-                {/* Reduced opacity in the top gradient */}
-                <div className='absolute top-0 w-full h-[20%] bg-gradient-to-b from-[rgba(3,3,3,1)] to-transparent z-10' />
-                {/* Reduced opacity in the bottom gradient */}
-                <div className='z-0 absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-[rgba(3,3,3,1)] to-transparent' />
-                {/* Reduced opacity in the radial gradient */}
-                <div className='absolute w-full h-full bg-[radial-gradient(50%_90%_at_50%_50%,rgba(255,255,255,0)_40%,rgba(3,3,3,1)_100%)]' />
-    
-                {/* Aerial view video */}
-                <video
-                        src='/assets/home/aerial.mp4'
+                    {/* Reduced opacity in the top gradient */}
+                    <div className='absolute top-0 w-full h-[20%] bg-gradient-to-b from-[rgba(3,3,3,1)] to-transparent z-10' />
+                    {/* Reduced opacity in the bottom gradient */}
+                    <div className='z-0 absolute bottom-0 w-full h-[20%] bg-gradient-to-t from-[rgba(3,3,3,1)] to-transparent' />
+                    {/* Reduced opacity in the radial gradient */}
+                    <div className='absolute w-full h-full bg-[radial-gradient(50%_90%_at_50%_50%,rgba(255,255,255,0)_40%,rgba(3,3,3,1)_100%)]' />
+
+                    {/* Aerial view video */}
+                    <video
                         className='outline-[#030303] outline outline-4 rounded-lg'
                         preload='auto'
                         autoPlay
                         playsInline
                         muted
                         loop
+                    >
+                        <source src='/assets/home/aerial.webm' type='video/webm' />
+                        <source src='/assets/home/aerial.mp4' type='video/mp4' />
+                    </video>
+                </div>
+
+                <div className='w-[80%] lg:w-[35%] text-sm xl:text-base'>
+                    <ReactTyped
+                        className='title-main text-base md:text-3xl font-bold text-white'
+                        strings={['Cloud Community Club (C³)']}
+                        typeSpeed={50}
+                        startWhenVisible
                     />
+                    <h2>🌐 A Student-Driven Tech Initiative</h2>
+                    <div className='w-full h-[1px] bg-white my-3'></div>
+                    <p className='my-2'>
+                        As a newly established club, C³ aims to create a vibrant ecosystem where students can explore and excel in various domains of technology. We believe in bridging the gap between theoretical knowledge and practical application through hands-on experience.
+                    </p>
+                    <p className='my-2'>
+                        Whether you're a beginner or experienced in any tech domain, our community welcomes everyone. We focus on collaborative learning, research opportunities, and real-world project experience to help you grow in your chosen field.
+                    </p>
+                    <p className='my-2'>
+                        This is your platform to innovate, research, collaborate, and grow in the ever-evolving world of technology!
+                    </p>
+                </div>
+
             </div>
 
-            <div className='w-[80%] lg:w-[35%] text-sm xl:text-base'>
-                <ReactTyped
-                    className='title-main text-base md:text-3xl font-bold text-white'
-                    strings={['Cloud Community Club (C³)']}
-                    typeSpeed={50}
-                    startWhenVisible
-                />
-                <h2>🌐 A Student-Driven Tech Initiative</h2>
-                <div className='w-full h-[1px] bg-white my-3'></div>
-                <p className='my-2'>
-                    As a newly established club, C³ aims to create a vibrant ecosystem where students can explore and excel in various domains of technology. We believe in bridging the gap between theoretical knowledge and practical application through hands-on experience.
-                </p>
-                <p className='my-2'>
-                    Whether you're a beginner or experienced in any tech domain, our community welcomes everyone. We focus on collaborative learning, research opportunities, and real-world project experience to help you grow in your chosen field.
-                </p>
-                <p className='my-2'>
-                    This is your platform to innovate, research, collaborate, and grow in the ever-evolving world of technology!
-                </p>
-            </div>
-        
-        </div>
+            <div className='w-full h-[180px] bg-[#040404]'></div>
 
-        <div className='w-full h-[180px] bg-[#040404]'></div>
-
-        <div className='flex flex-col'>
-            <Image
+            <div className='flex flex-col'>
+                <Image
                     src={logo}
                     className='z-10 hover:!scale-110 transition duration-300 ease-out mx-auto mb-6'
                     alt=''
                     width={250}
                     height={250}
                     unoptimized
-            />
+                />
 
-            <h1 className='title-main text-xl text-center sm:text-3xl font-extrabold text-white mb-10'>
-                <span>Join us in Exploring the </span>
-                <span className='text-yellow-300 animate-pulse drop-shadow-[0_0_10px_rgba(255,250,50,0.45)]'>
-                    Future of Technology
-                </span>
-            </h1>
+                <h1 className='title-main text-xl text-center sm:text-3xl font-extrabold text-white mb-10'>
+                    <span>Join us in Exploring the </span>
+                    <span className='text-yellow-300 animate-pulse drop-shadow-[0_0_10px_rgba(255,250,50,0.45)]'>
+                        Future of Technology
+                    </span>
+                </h1>
 
-            <div className='flex flex-row overflow-x-scroll overflow-y-visible gap-10 py-[160px] px-[20px] my-[-160px] lg:justify-center no-scrollbar'>
+                <div className='flex flex-row overflow-x-scroll overflow-y-visible gap-10 py-[160px] px-[20px] my-[-160px] lg:justify-center no-scrollbar'>
                     {/* CARD: Cloud Innovation */}
                     <motion.div
                         ref={ref}
@@ -257,9 +259,9 @@ export default function About(): React.ReactNode {
                                 </span>
                             </h1>
                             <p className='text-sm text-center py-2 px-8 leading-6'>
-                            Network with <b>industry leaders</b> and gain insights into the evolving tech landscape. Access{' '}
-                            <b>mentorship opportunities</b> and build connections for your future career in{' '}
-                            <b>cutting-edge innovation</b>.
+                                Network with <b>industry leaders</b> and gain insights into the evolving tech landscape. Access{' '}
+                                <b>mentorship opportunities</b> and build connections for your future career in{' '}
+                                <b>cutting-edge innovation</b>.
                             </p>
                         </div>
 

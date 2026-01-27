@@ -30,7 +30,7 @@ export default function JoinUs() {
                 >
                     <div className="relative w-32 h-32 md:w-40 md:h-40">
                         <Image
-                            src="/assets/ccc_logo.png"
+                            src="/assets/ccc_logo.webp"
                             alt="Cloud Community Club Logo"
                             fill
                             className="object-contain hover:scale-105 transition-transform duration-300"

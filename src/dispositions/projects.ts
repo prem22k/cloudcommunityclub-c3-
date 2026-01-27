@@ -21,14 +21,14 @@ export const projects: Projects = {
             status: "Coming Soon",
             tech_stack: ["AWS", "Terraform", "Docker"],
             difficulty: "Intermediate",
-            thumbnail: "/assets/projects/aws-lab.jpg"
+            thumbnail: "/assets/projects/aws-lab.webp"
         },
         "Multi-Cloud Monitoring": {
             description: "Building a monitoring solution across multiple cloud providers",
             status: "Coming Soon",
             tech_stack: ["AWS", "Azure", "GCP", "Grafana", "Prometheus"],
             difficulty: "Advanced",
-            thumbnail: "/assets/projects/monitoring.jpg"
+            thumbnail: "/assets/projects/monitoring.webp"
         }
     },
     "DevOps & Automation": {
@@ -37,14 +37,14 @@ export const projects: Projects = {
             status: "Coming Soon",
             tech_stack: ["GitHub Actions", "Docker", "Node.js"],
             difficulty: "Beginner",
-            thumbnail: "/assets/projects/cicd.jpg"
+            thumbnail: "/assets/projects/cicd.webp"
         },
         "Infrastructure as Code": {
             description: "Automating cloud infrastructure with Terraform",
             status: "Coming Soon",
             tech_stack: ["Terraform", "AWS", "Python"],
             difficulty: "Intermediate",
-            thumbnail: "/assets/projects/iac.jpg"
+            thumbnail: "/assets/projects/iac.webp"
         }
     },
     "Cloud Native Apps": {
@@ -53,14 +53,14 @@ export const projects: Projects = {
             status: "Coming Soon",
             tech_stack: ["Kubernetes", "Docker", "Go"],
             difficulty: "Advanced",
-            thumbnail: "/assets/projects/microservices.jpg"
+            thumbnail: "/assets/projects/microservices.webp"
         },
         "Serverless API": {
             description: "Creating serverless APIs with AWS Lambda",
             status: "Coming Soon",
             tech_stack: ["AWS Lambda", "API Gateway", "DynamoDB"],
             difficulty: "Intermediate",
-            thumbnail: "/assets/projects/serverless.jpg"
+            thumbnail: "/assets/projects/serverless.webp"
         }
     },
     "Cloud Security": {
@@ -69,14 +69,14 @@ export const projects: Projects = {
             status: "Coming Soon",
             tech_stack: ["AWS IAM", "Azure AD", "Security Groups"],
             difficulty: "Intermediate",
-            thumbnail: "/assets/projects/security.jpg"
+            thumbnail: "/assets/projects/security.webp"
         },
         "Zero Trust Architecture": {
             description: "Building a zero trust architecture in the cloud",
             status: "Coming Soon",
             tech_stack: ["AWS", "Azure", "Identity Management"],
             difficulty: "Advanced",
-            thumbnail: "/assets/projects/zero-trust.jpg"
+            thumbnail: "/assets/projects/zero-trust.webp"
         }
     }
 }

@@ -29,19 +29,19 @@ import { PiFeatherDuotone, PiHandshakeBold } from 'react-icons/pi'
 
 const dir_leaderPortraits = '/assets/home/leader_portraits/'
 
-const pfp_president = dir_leaderPortraits + 'nandhanrao.png'
-const pfp_vicepresident = dir_leaderPortraits + 'nikhilanand.png'
-const pfp_secretary = dir_leaderPortraits + 'vasalaharshitha.png'
-const pfp_community = dir_leaderPortraits + 'vamanakhil.png'
-const pfp_technical = dir_leaderPortraits + 'sathwik.png'
-const pfp_rdhead = dir_leaderPortraits + 'harshanvarma.png'
-const pfp_organizing = dir_leaderPortraits + 'santoshkammari.png'
-const pfp_designing = dir_leaderPortraits + 'sivamaruthi.png'
-const pfp_marketing = dir_leaderPortraits + 'vasundara.png'
-const pfp_document = dir_leaderPortraits + 'bhargavi.png'
+const pfp_president = dir_leaderPortraits + 'nandhanrao.webp'
+const pfp_vicepresident = dir_leaderPortraits + 'nikhilanand.webp'
+const pfp_secretary = dir_leaderPortraits + 'vasalaharshitha.webp'
+const pfp_community = dir_leaderPortraits + 'vamanakhil.webp'
+const pfp_technical = dir_leaderPortraits + 'sathwik.webp'
+const pfp_rdhead = dir_leaderPortraits + 'harshanvarma.webp'
+const pfp_organizing = dir_leaderPortraits + 'santoshkammari.webp'
+const pfp_designing = dir_leaderPortraits + 'sivamaruthi.webp'
+const pfp_marketing = dir_leaderPortraits + 'vasundara.webp'
+const pfp_document = dir_leaderPortraits + 'bhargavi.webp'
 const pfp_none = dir_leaderPortraits + 'noprofile.webp'
-const pfp_webmaster = dir_leaderPortraits + 'premsai.jpg'  // Make sure to add your image to this directory
-const pfp_publicity = dir_leaderPortraits + 'goneeeshita.jpeg'
+const pfp_webmaster = dir_leaderPortraits + 'premsai.webp'  // Make sure to add your image to this directory
+const pfp_publicity = dir_leaderPortraits + 'goneeeshita.webp'
 export const FALLBACK_QUOTE = (
     <p>
         That was no message. <i>This</i> is a message.
@@ -106,7 +106,7 @@ export const leadership = {
             imgSrc: pfp_technical,
             quote: (
                 <p>
-                   IT'S NEVER TOO LATE TO DREAM.
+                    IT'S NEVER TOO LATE TO DREAM.
                 </p>
             ),
             linktree: 'https://linktr.ee/sathwikbodakuntla',
@@ -115,7 +115,7 @@ export const leadership = {
         'Harshan Varma': {
             role: 'Research & Development Head',
             imgSrc: pfp_rdhead,
-            quote: ( 
+            quote: (
                 <p>
                     One who rules with his left rules the world
                 </p>
@@ -139,16 +139,16 @@ export const leadership = {
             linkedin: 'https://www.linkedin.com/in/maruthi-ganesh-929988258/',
             icon: <PiHandshakeBold />,
         },
-         'B Vasundara': {
-             role: 'Marketing Head',
-             imgSrc: pfp_marketing,
-             quote: 'To let the brain work without sufficient material is like racing an engine. It racks itself to pieces.',
-             instagram: 'https://www.instagram.com/bv_894',
-             linkedin: 'https://www.linkedin.com/in/b-vasundara-678b86253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-             icon: <PiHandshakeBold />,
-         },
-         
-         'Bhargavi': {
+        'B Vasundara': {
+            role: 'Marketing Head',
+            imgSrc: pfp_marketing,
+            quote: 'To let the brain work without sufficient material is like racing an engine. It racks itself to pieces.',
+            instagram: 'https://www.instagram.com/bv_894',
+            linkedin: 'https://www.linkedin.com/in/b-vasundara-678b86253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+            icon: <PiHandshakeBold />,
+        },
+
+        'Bhargavi': {
             role: 'Documentation Head',
             imgSrc: pfp_document,
             quote: 'Be the way you are',

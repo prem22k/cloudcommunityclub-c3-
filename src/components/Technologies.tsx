@@ -37,8 +37,8 @@ const SECTION_TYPED_KEYWORDS = [
 ]
 
 const sfxClick = '/assets/sound_fx/click.mp3'
-const conveyorFront = '/assets/home/conveyor_front.png'
-const cloudIcon = '/assets/ccc_logo.png'
+const conveyorFront = '/assets/home/conveyor_front.webp'
+const cloudIcon = '/assets/ccc_logo.webp'
 
 const TECH_TEXT_CLASSES = 'title-main my-auto mx-10 font-semibold text-xl md:text-2xl'
 const TECH_ICON_CLASSES = 'my-auto w-[60px] md:w-[72px] h-full'
@@ -90,7 +90,7 @@ const TECHNOLOGIES: { [key: string]: JSX.Element } = {
     'Jenkins': (
         <SiJenkins
             color='#D24939'
-            className={TECH_ICON_CLASSES} 
+            className={TECH_ICON_CLASSES}
             style={TECH_ICON_SHADOW}
         />
     ),
