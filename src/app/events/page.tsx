@@ -37,17 +37,17 @@ const pastEvents: Event[] = [
         time: "9:00 AM - 4:00 PM",
         location: "Sreenidhi Institute of Science and Technology",
         description: "Experience the future of technology at AI Hack Day 2025, where innovation meets artificial intelligence. This groundbreaking national hackathon brought together brilliant minds from across the country to tackle real-world challenges using cutting-edge AI solutions. In collaboration with Swecha Telangana, Visam.ai, and IIIT Hyderabad, this event created an ecosystem where students and industry experts collaborated to push the boundaries of what's possible with AI.",
-        image: "/assets/events/ai-hack-day-main.jpeg",
+        image: "/assets/events/ai-hack-day-main.webp",
         highlights: [
             "250+ Participants",
             "80+ Project Submissions",
             "4 Industry mentors"
         ],
         gallery: [
-            "/assets/events/ai-hackday1.jpeg",
-            "/assets/events/ai-hackday2.jpeg",
-            "/assets/events/ai-hackday3.jpeg",
-            "/assets/events/ai-hackday4.jpeg"
+            "/assets/events/ai-hackday1.webp",
+            "/assets/events/ai-hackday2.webp",
+            "/assets/events/ai-hackday3.webp",
+            "/assets/events/ai-hackday4.webp"
         ],
         tags: ["Hackathon", "AI", "Competition"]
     },
@@ -58,7 +58,7 @@ const pastEvents: Event[] = [
         time: "1:30 PM - 3:30 PM",
         location: "Sreenidhi Institute of Science and Technology, CET Lab-3",
         description: "A milestone moment in our journey - the official launch of the Cloud Community Club (C³) at SNIST. This inaugural event marked the beginning of an exciting chapter in our tech community's story. Students discovered a vibrant ecosystem dedicated to Open-source development, cutting-edge Research, Institution-centric Projects, and real-world Deployment experiences. Through engaging presentations and interactive sessions, attendees gained insights into our community's vision and learned how to become an integral part of the C³ ecosystem.",
-        image: "/assets/events/open-session-main.jpg",
+        image: "/assets/events/open-session-main.webp",
         highlights: [
             "150+ Attendees",
             "Introduction to Project Schools",
@@ -68,7 +68,7 @@ const pastEvents: Event[] = [
             "Announced Event Calendar"
         ],
         gallery: [
-            "/assets/events/open-session-main.jpg"
+            "/assets/events/open-session-main.webp"
         ],
         tags: ["Inaugural", "Community", "Orientation"]
     },
@@ -79,7 +79,7 @@ const pastEvents: Event[] = [
         time: "10:00 AM - 3:30 PM IST",
         location: "Vaughn Seminar Hall, Sreenidhi Institute of Science and Technology",
         description: "Want to know what 'Cloud' really means and how apps get deployed? This workshop is for you!\n\nJoin us for Cloud 101, a beginner-friendly, hands-on workshop designed to introduce you to the core concepts of Cloud Computing, Linux, Networking, DevOps, and even open-source contribution!\n\nFrom understanding the \"why\" behind cloud, to deploying your first app on AWS, GCP, or Azure, we're here to guide you step by step. Plus, hear about real DevOps job roles, tools, and career paths directly from those in the field!",
-        image: "/assets/events/Cloud 1O1 swecha-1.jpg",
+        image: "/assets/events/Cloud 1O1 swecha-1.webp",
         registrationLink: "https://www.tickettailor.com/events/cloudcommunityclub/1739658",
         agenda: [
             { time: "10:00 AM", activity: "Inauguration" },
@@ -106,7 +106,7 @@ const pastEvents: Event[] = [
         time: "10:00 AM – 4:00 PM",
         location: "Quadrangle, SNIST",
         description: "Are you tired of giving away your data to proprietary platforms? Join us to explore Free & Open Source Software (FOSS) – secure, transparent, and community-driven alternatives that put power back in your hands.\n\nWhat's Happening?\n• Live Demos of FOSS Tools\n• Expert Q&A Sessions\n• De-Googlify Your Digital Life (Install secure, privacy-friendly apps)\n• Free Resources to get started\n\nBrought to you by C³ (Cloud Community Club / GLUG SNIST) in collaboration with Swecha. Come, reclaim your digital freedom. Let's build a community that values privacy, openness, and freedom.",
-        image: "/assets/events/foss.jpeg",
+        image: "/assets/events/foss.webp",
         highlights: [
             "Privacy-first alternatives",
             "Community-driven software",
@@ -126,7 +126,7 @@ const upcomingEvents: Event[] = [
         "time": "10:00 AM - 4:00 PM",
         "location": "Biotech Seminar Hall, SNIST",
         "description": "Tech Samyog is a 3-day hands-on workshop organized by (Sree GLUG) Sreenidhi Linux Users Group in collaboration with Cloud Community Club (C³-SNIST). This workshop is designed to help students explore the open-source ecosystem, gain a practical understanding of AI Engineering, and bridge the gap between academia and industry through real-world, project-based learning.\n\nThe sessions are open to students from all departments, with flexible attendance — participants may join any day of interest. However, Day 3 is highly recommended as it includes the final build session, where students apply everything they've learned.",
-        "image": "/assets/events/tech-samyog.png",
+        "image": "/assets/events/tech-samyog.webp",
         "agenda": [
             { "time": "Day 1", "activity": "Introduction to Git and APIs - Learn version control using Git and explore how APIs power modern applications" },
             { "time": "Day 2", "activity": "AI Engineering - Understand the fundamentals of Artificial Intelligence, AI agents, LLMs, and real-world AI applications" },
@@ -147,8 +147,8 @@ const upcomingEvents: Event[] = [
 // Animation variants
 const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-        opacity: 1, 
+    visible: {
+        opacity: 1,
         y: 0,
         transition: {
             duration: 0.7,
@@ -170,7 +170,7 @@ const staggerContainer = {
 
 const cardHover = {
     rest: { scale: 1 },
-    hover: { 
+    hover: {
         scale: 1.02,
         transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
     }
@@ -180,7 +180,7 @@ const cardHover = {
 const CountdownTimer = ({ deadline }: { deadline: string }) => {
     const calculateTimeLeft = () => {
         const difference = new Date(deadline).getTime() - new Date().getTime();
-        
+
         if (difference <= 0) {
             return {
                 days: 0,
@@ -190,7 +190,7 @@ const CountdownTimer = ({ deadline }: { deadline: string }) => {
                 expired: true
             };
         }
-        
+
         return {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
             hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
@@ -254,24 +254,24 @@ interface ImageGalleryProps {
 
 const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalleryProps) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    
+
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!isOpen) return;
-            
+
             if (e.key === "Escape") onClose();
             if (e.key === "ArrowRight") setCurrentImageIndex(prev => (prev + 1) % images.length);
             if (e.key === "ArrowLeft") setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
         };
-        
+
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [isOpen, images, onClose]);
-    
+
     if (!isOpen) return null;
-    
+
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -279,7 +279,7 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
         >
             <div className="relative w-full max-w-5xl h-[80vh] flex flex-col">
                 <div className="absolute top-0 right-0 p-4 z-10">
-                    <button 
+                    <button
                         onClick={onClose}
                         className="text-white hover:text-gray-300 transition-colors p-2"
                     >
@@ -289,12 +289,12 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                         </svg>
                     </button>
                 </div>
-                
+
                 <div className="text-center mb-4">
                     <h3 className="text-white text-xl">{currentEventTitle}</h3>
                     <p className="text-gray-400 text-sm">Image {currentImageIndex + 1} of {images.length}</p>
                 </div>
-                
+
                 <div className="relative flex-grow overflow-hidden rounded-lg">
                     <motion.div
                         key={currentImageIndex}
@@ -311,9 +311,9 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                         />
                     </motion.div>
                 </div>
-                
+
                 <div className="mt-4 flex justify-between">
-                    <button 
+                    <button
                         onClick={() => setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length)}
                         className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
                     >
@@ -321,7 +321,7 @@ const ImageGallery = ({ images, isOpen, onClose, currentEventTitle }: ImageGalle
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
-                    <button 
+                    <button
                         onClick={() => setCurrentImageIndex(prev => (prev + 1) % images.length)}
                         className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
                     >
@@ -505,7 +505,7 @@ const EventsClient = () => {
     const [currentEventTitle, setCurrentEventTitle] = useState("");
     const [activeTab, setActiveTab] = useState<'upcoming' | 'past'>('upcoming');
     const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-    
+
     const openGallery = (images: string[], eventTitle: string) => {
         setGalleryImages(images);
         setCurrentEventTitle(eventTitle);
@@ -523,14 +523,14 @@ const EventsClient = () => {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-black">
             {/* Hero Section */}
             <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src="/assets/events/events_bg.jpg"
+                        src="/assets/events/events_bg.webp"
                         alt="Events Hero"
                         fill
                         className="object-cover opacity-70"
@@ -538,13 +538,13 @@ const EventsClient = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black" />
                 </div>
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="relative z-10 text-center px-4 max-w-4xl mx-auto"
                 >
-                    <motion.h1 
+                    <motion.h1
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -554,7 +554,7 @@ const EventsClient = () => {
                             C³ Events
                         </span>
                     </motion.h1>
-                    <motion.p 
+                    <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -569,24 +569,22 @@ const EventsClient = () => {
             <div className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800 py-4 shadow-lg shadow-black/20">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex justify-center space-x-4">
-                        <button 
+                        <button
                             onClick={() => setActiveTab('upcoming')}
-                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${
-                                activeTab === 'upcoming' 
-                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30' 
+                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${activeTab === 'upcoming'
+                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/30'
                                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                            }`}
+                                }`}
                         >
                             <Calendar className="w-5 h-5 mr-2" />
                             Upcoming Events
                         </button>
-                        <button 
+                        <button
                             onClick={() => setActiveTab('past')}
-                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${
-                                activeTab === 'past' 
-                                    ? 'bg-gray-700 text-white shadow-lg shadow-gray-900/30' 
+                            className={`px-6 py-2 rounded-lg transition-all duration-300 flex items-center ${activeTab === 'past'
+                                    ? 'bg-gray-700 text-white shadow-lg shadow-gray-900/30'
                                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
-                            }`}
+                                }`}
                         >
                             <Clock className="w-5 h-5 mr-2" />
                             Past Events
@@ -599,14 +597,14 @@ const EventsClient = () => {
             <div className="max-w-7xl mx-auto px-4 py-12">
                 {/* Upcoming Events */}
                 {activeTab === 'upcoming' && (
-                    <motion.div 
+                    <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                         className="space-y-8"
                     >
                         {upcomingEvents.length === 0 ? (
-                <motion.div 
+                            <motion.div
                                 variants={fadeInUp}
                                 className="text-center py-16 bg-gray-900/30 rounded-xl border border-gray-800 backdrop-blur-sm"
                             >
@@ -617,7 +615,7 @@ const EventsClient = () => {
                                 <p className="text-gray-400 max-w-2xl mx-auto mb-6">
                                     We're currently planning our next events. Check back soon or join our Discord to be the first to know!
                                 </p>
-                                <a 
+                                <a
                                     href="https://discord.gg/dBNXWDKhrD"
                                     className="inline-flex items-center px-6 py-3 bg-blue-800/30 hover:bg-blue-800/50 text-white rounded-lg transition-all duration-300"
                                     target="_blank"
@@ -626,11 +624,11 @@ const EventsClient = () => {
                                     Join Our Discord
                                     <ExternalLink className="w-4 h-4 ml-2" />
                                 </a>
-                </motion.div>
+                            </motion.div>
                         ) : (
                             upcomingEvents.map((event) => (
-                        <motion.div
-                            key={event.id}
+                                <motion.div
+                                    key={event.id}
                                     variants={fadeInUp}
                                     initial="rest"
                                     whileHover="hover"
@@ -638,55 +636,55 @@ const EventsClient = () => {
                                 >
                                     <motion.div className="md:flex" variants={cardHover}>
                                         <div className="md:w-2/5 lg:w-1/3 relative h-64 md:h-auto overflow-hidden">
-                                    <Image
-                                        src={event.image}
-                                        alt={event.title}
-                                        fill
+                                            <Image
+                                                src={event.image}
+                                                alt={event.title}
+                                                fill
                                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-                                            
+
                                             {/* Event tags */}
                                             <div className="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
                                                 {event.tags && event.tags.map((tag, index) => (
-                                                    <span 
-                                                        key={index} 
+                                                    <span
+                                                        key={index}
                                                         className="px-3 py-1 bg-blue-600/90 text-white text-xs font-medium rounded-full shadow-lg shadow-blue-900/30"
                                                     >
                                                         {tag}
                                                     </span>
                                                 ))}
                                             </div>
-                                            
+
                                             {/* Event date overlay */}
                                             <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-blue-500/30 shadow-lg shadow-black/30">
                                                 <div className="text-lg font-bold text-white">{event.date.split(' ')[1]}</div>
                                                 <div className="text-xs text-blue-300">{event.date.split(' ')[0]}</div>
                                             </div>
-                                </div>
+                                        </div>
                                         <div className="p-6 md:w-3/5 lg:w-2/3">
                                             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                                        {event.title}
-                                    </h3>
-                                    
+                                                {event.title}
+                                            </h3>
+
                                             <div className="flex flex-wrap gap-4 mb-4 text-gray-300 text-sm">
-                                        <div className="flex items-center">
+                                                <div className="flex items-center">
                                                     <Calendar className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.date}
-                                        </div>
-                                        <div className="flex items-center">
+                                                    {event.date}
+                                                </div>
+                                                <div className="flex items-center">
                                                     <Clock className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.time}
-                                        </div>
-                                        <div className="flex items-center">
+                                                    {event.time}
+                                                </div>
+                                                <div className="flex items-center">
                                                     <MapPin className="w-4 h-4 mr-2 text-blue-400" />
-                                            {event.location}
-                                        </div>
-                                    </div>
+                                                    {event.location}
+                                                </div>
+                                            </div>
 
                                             <p className="text-gray-300 mb-4">
-                                        {event.description}
-                                    </p>
+                                                {event.description}
+                                            </p>
 
                                             {/* Timer */}
                                             {event.registrationDeadline && (
@@ -694,7 +692,7 @@ const EventsClient = () => {
                                             )}
 
                                             <div className="flex flex-wrap gap-4 mt-4">
-                                                <button 
+                                                <button
                                                     onClick={() => openEventDetails(event)}
                                                     className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300"
                                                 >
@@ -712,9 +710,9 @@ const EventsClient = () => {
                                                         <ExternalLink className="w-4 h-4 ml-2" />
                                                     </a>
                                                 )}
-                                </div>
-                            </div>
-                        </motion.div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
                                 </motion.div>
                             ))
                         )}
@@ -723,15 +721,15 @@ const EventsClient = () => {
 
                 {/* Past Events */}
                 {activeTab === 'past' && (
-                <motion.div 
+                    <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={staggerContainer}
                         className="grid grid-cols-1 md:grid-cols-2 gap-6"
                     >
-                    {pastEvents.map((event) => (
-                        <motion.div
-                            key={event.id}
+                        {pastEvents.map((event) => (
+                            <motion.div
+                                key={event.id}
                                 variants={fadeInUp}
                                 initial="rest"
                                 whileHover="hover"
@@ -739,37 +737,37 @@ const EventsClient = () => {
                             >
                                 <motion.div variants={cardHover}>
                                     <div className="relative h-48 overflow-hidden">
-                                <Image
-                                    src={event.image}
-                                    alt={event.title}
-                                    fill
+                                        <Image
+                                            src={event.image}
+                                            alt={event.title}
+                                            fill
                                             className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
-                                        
+
                                         {/* Event tags */}
                                         <div className="absolute top-3 right-3 flex flex-wrap gap-2 justify-end">
                                             {event.tags && event.tags.map((tag, index) => (
-                                                <span 
-                                                    key={index} 
+                                                <span
+                                                    key={index}
                                                     className="px-2 py-1 bg-gray-800/90 text-white text-xs font-medium rounded-full shadow-lg shadow-black/30"
                                                 >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
-                                        
+
                                         <div className="absolute bottom-0 left-0 right-0 p-4">
                                             <h3 className="text-xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors">
-                                            {event.title}
-                                        </h3>
+                                                {event.title}
+                                            </h3>
                                             <div className="flex items-center text-gray-300 text-sm">
                                                 <Calendar className="w-3 h-3 mr-1 text-gray-400" />
                                                 {event.date}
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="p-4">
                                         <div className="flex flex-wrap gap-3 mb-3 text-gray-400 text-xs">
                                             <div className="flex items-center">
@@ -779,32 +777,32 @@ const EventsClient = () => {
                                             <div className="flex items-center">
                                                 <MapPin className="w-3 h-3 mr-1 text-gray-500" />
                                                 {event.location}
-                                </div>
-                            </div>
+                                            </div>
+                                        </div>
 
                                         <p className="text-gray-400 mb-4 text-sm line-clamp-2">
-                                    {event.description}
-                                </p>
+                                            {event.description}
+                                        </p>
 
                                         <div className="flex flex-wrap gap-2 mb-4">
                                             {event.highlights && event.highlights.slice(0, 2).map((highlight, index) => (
-                                            <div 
-                                                key={index}
+                                                <div
+                                                    key={index}
                                                     className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800"
-                                            >
-                                                {highlight}
-                                            </div>
-                                        ))}
+                                                >
+                                                    {highlight}
+                                                </div>
+                                            ))}
                                             {event.highlights && event.highlights.length > 2 && (
                                                 <div className="bg-gray-900/50 px-2 py-1 rounded text-gray-400 text-xs border border-gray-800">
                                                     +{event.highlights.length - 2} more
-                                    </div>
+                                                </div>
                                             )}
-                                </div>
+                                        </div>
 
                                         <div className="flex justify-between items-center">
                                             {event.gallery && event.gallery.length > 0 && (
-                                                <button 
+                                                <button
                                                     onClick={() => openGallery(event.gallery || [], event.title)}
                                                     className="flex items-center text-blue-400 hover:text-blue-300 text-sm"
                                                 >
@@ -812,25 +810,25 @@ const EventsClient = () => {
                                                     View Gallery
                                                 </button>
                                             )}
-                                            
-                                            <button 
+
+                                            <button
                                                 onClick={() => openEventDetails(event)}
                                                 className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-all duration-300 text-sm"
                                             >
                                                 Details
                                                 <ChevronRight className="w-3 h-3 ml-1" />
                                             </button>
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
                                 </motion.div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
                     </motion.div>
                 )}
-                </div>
-            
+            </div>
+
             {/* Gallery Modal */}
-            <ImageGallery 
+            <ImageGallery
                 images={galleryImages}
                 isOpen={galleryOpen}
                 onClose={() => setGalleryOpen(false)}

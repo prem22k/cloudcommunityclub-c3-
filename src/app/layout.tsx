@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-jetbrains',
-    preload: true
+    preload: false
 })
 
 export const metadata: Metadata = {
@@ -74,7 +74,7 @@ export default function RootLayout({
             <body className="min-h-screen bg-black text-white" suppressHydrationWarning>
                 <Navbar />
                 <main>{children}</main>
-                <SpeedInsights />
+                {process.env.NODE_ENV === 'production' && <SpeedInsights />}
             </body>
         </html>
     )

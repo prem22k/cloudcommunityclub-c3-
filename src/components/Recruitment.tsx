@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-const logo = '/assets/Designer.png'
+const logo = '/assets/Designer.webp'
 
 export default function Recruitment(): React.ReactNode {
     return (
@@ -13,7 +13,7 @@ export default function Recruitment(): React.ReactNode {
             <div className='absolute bottom-0 w-full h-[30%] bg-gradient-to-t from-[#0a0a0a] to-transparent' />
 
             <Image
-                src='/assets/home/spaces.jpg'
+                src='/assets/home/spaces.webp'
                 width={1600}
                 height={1600}
                 alt='space background'

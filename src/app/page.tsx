@@ -4,7 +4,7 @@ import React, { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 
 // Critical components loaded immediately
-import IntroFade from '../components/IntroFade'
+
 import Hero from '../components/Hero'
 
 // Dynamically imported components
@@ -44,7 +44,7 @@ const GALLERY_TYPED_WORDS = [
 export default function App() {
     return (
         <>
-            <IntroFade />
+
             <Hero />
 
             <Suspense fallback={<div className="h-screen bg-black" />}>

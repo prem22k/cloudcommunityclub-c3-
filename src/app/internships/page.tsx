@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  Briefcase, 
-  LightbulbIcon, 
-  Users, 
-  Award, 
-  ExternalLink, 
-  Search, 
-  Filter, 
+import {
+  Briefcase,
+  LightbulbIcon,
+  Users,
+  Award,
+  ExternalLink,
+  Search,
+  Filter,
   BookOpen,
   X
 } from 'lucide-react'
@@ -42,7 +42,7 @@ const internshipsData: Internship[] = [
     category: 'AI & Machine Learning',
     description: 'A Nationwide AI Internship to Build the World\'s First Telugu Large Language Model (LLM). Get hands-on training in cutting-edge AI technologies while contributing to this groundbreaking project.',
     applyLink: 'https://viswam.ai/summer-of-ai',
-    logo: '/assets/internships/soi_1.jpeg'
+    logo: '/assets/internships/soi_1.webp'
   }
 ]
 
@@ -72,11 +72,11 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, isOpen, onClose
         onClose()
       }
     }
-    
+
     if (isOpen) {
       window.addEventListener('keydown', handleEsc)
     }
-    
+
     return () => {
       window.removeEventListener('keydown', handleEsc)
     }
@@ -85,7 +85,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, isOpen, onClose
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -99,7 +99,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, isOpen, onClose
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 p-2 rounded-full bg-gray-800 text-white z-10 hover:bg-gray-700 transition-colors"
               onClick={onClose}
             >
@@ -130,7 +130,7 @@ export default function InternshipsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [internships, setInternships] = useState<Internship[]>([])
   const [categories, setCategories] = useState<string[]>([])
-  
+
   // State for lightbox/modal
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxImage, setLightboxImage] = useState({ src: '', alt: '' })
@@ -149,28 +149,28 @@ export default function InternshipsPage() {
   }, [])
 
   // Filter internships based on search and category - only run on client
-  const filteredInternships = isClient 
+  const filteredInternships = isClient
     ? internships.filter(internship => {
-        const matchesSearch = internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            internship.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            internship.description.toLowerCase().includes(searchTerm.toLowerCase())
-        
-        const matchesCategory = selectedCategory === 'All' || internship.category === selectedCategory
-        
-        return matchesSearch && matchesCategory
-      })
+      const matchesSearch = internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        internship.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        internship.description.toLowerCase().includes(searchTerm.toLowerCase())
+
+      const matchesCategory = selectedCategory === 'All' || internship.category === selectedCategory
+
+      return matchesSearch && matchesCategory
+    })
     : []
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
       {/* Lightbox component */}
-      <ImageLightbox 
+      <ImageLightbox
         src={lightboxImage.src}
         alt={lightboxImage.alt}
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
       />
-      
+
       {/* Hero Section */}
       <div className="relative h-[50vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -183,9 +183,9 @@ export default function InternshipsPage() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black opacity-90 z-10"></div>
-        
+
         <div className="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -193,7 +193,7 @@ export default function InternshipsPage() {
           >
             Internship Opportunities
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="max-w-2xl text-lg md:text-xl text-gray-300 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -201,9 +201,9 @@ export default function InternshipsPage() {
           >
             Kickstart your career with hands-on experience in the tech industry. Explore our curated list of internships from leading companies.
           </motion.p>
-          
+
           {isClient && (
-            <motion.div 
+            <motion.div
               className="flex flex-col md:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -219,7 +219,7 @@ export default function InternshipsPage() {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              
+
               <div className="relative">
                 <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                 <select
@@ -236,16 +236,16 @@ export default function InternshipsPage() {
           )}
         </div>
       </div>
-      
+
       {/* Why Internships Section */}
       <div className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Why Choose Our Internships?</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">Our internship program offers a unique opportunity to gain valuable experience and kickstart your career in the tech industry.</p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <motion.div 
+          <motion.div
             className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300"
             whileHover={{ y: -5 }}
           >
@@ -255,8 +255,8 @@ export default function InternshipsPage() {
             <h3 className="text-xl font-semibold mb-2">Real-World Experience</h3>
             <p className="text-gray-400">Work on actual projects that matter and contribute to real business outcomes.</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-purple-500 transition-all duration-300"
             whileHover={{ y: -5 }}
           >
@@ -266,8 +266,8 @@ export default function InternshipsPage() {
             <h3 className="text-xl font-semibold mb-2">Mentorship</h3>
             <p className="text-gray-400">Learn from industry professionals who are passionate about helping you grow.</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-green-500 transition-all duration-300"
             whileHover={{ y: -5 }}
           >
@@ -277,8 +277,8 @@ export default function InternshipsPage() {
             <h3 className="text-xl font-semibold mb-2">Skill Development</h3>
             <p className="text-gray-400">Enhance your technical and soft skills through structured learning programs.</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-pink-500 transition-all duration-300"
             whileHover={{ y: -5 }}
           >
@@ -290,11 +290,11 @@ export default function InternshipsPage() {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Internship Listings */}
       <div className="container mx-auto px-6 py-16">
         <h2 className="text-3xl font-bold mb-8">Available Internships</h2>
-        
+
         {!isClient ? (
           <div className="flex justify-center py-16">
             <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
@@ -310,7 +310,7 @@ export default function InternshipsPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredInternships.map(internship => (
-              <motion.div 
+              <motion.div
                 key={internship.id}
                 className="bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300"
                 whileHover={{ y: -5 }}
@@ -318,8 +318,8 @@ export default function InternshipsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div 
-                  className="relative h-48 overflow-hidden cursor-pointer" 
+                <div
+                  className="relative h-48 overflow-hidden cursor-pointer"
                   onClick={() => openLightbox(internship.logo, internship.company)}
                 >
                   <Image
@@ -340,11 +340,11 @@ export default function InternshipsPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{internship.title}</h3>
                   <p className="text-gray-300 font-medium mb-4">{internship.company}</p>
-                  
+
                   <div className="mb-4 text-gray-400 text-sm">
                     <div className="flex items-center mb-2">
                       <Briefcase size={16} className="mr-2" />
@@ -352,10 +352,10 @@ export default function InternshipsPage() {
                     </div>
                     <p>{internship.description}</p>
                   </div>
-                  
+
                   <div className="flex justify-between items-center mt-6">
                     <span className="text-green-400 font-semibold">{internship.stipend}</span>
-                    <Link 
+                    <Link
                       href={internship.applyLink}
                       className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-300"
                     >
@@ -368,7 +368,7 @@ export default function InternshipsPage() {
           </div>
         )}
       </div>
-      
+
       {/* Summer of AI 2025 Detailed Section */}
       <div className="container mx-auto px-6 py-16 bg-gradient-to-r from-blue-900/10 to-purple-900/10 rounded-2xl mb-16">
         <div className="flex flex-col md:flex-row items-start gap-12">
@@ -379,11 +379,11 @@ export default function InternshipsPage() {
             <p className="text-xl text-gray-200 mb-6 italic">
               A Nationwide AI Internship to Build the World's First Telugu LLM
             </p>
-            
+
             <p className="text-gray-300 mb-6">
               Summer of AI 2025 is an AI internship program empowering students to contribute to the world's first Telugu Large Language Model (LLM) and get hands-on training in cutting-edge AI technologies.
             </p>
-            
+
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-blue-300">Program Highlights:</h3>
               <ul className="space-y-3 text-gray-300">
@@ -421,7 +421,7 @@ export default function InternshipsPage() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-blue-300">What You Will Learn:</h3>
               <ul className="space-y-3 text-gray-300">
@@ -468,14 +468,14 @@ export default function InternshipsPage() {
               </ul>
             </div>
           </div>
-          
+
           <div className="w-full md:w-1/2">
-            <div 
-              className="relative rounded-2xl overflow-hidden mb-8 cursor-pointer" 
-              onClick={() => openLightbox('/assets/internships/soi_2.png', 'Summer of AI 2025')}
+            <div
+              className="relative rounded-2xl overflow-hidden mb-8 cursor-pointer"
+              onClick={() => openLightbox('/assets/internships/soi_2.webp', 'Summer of AI 2025')}
             >
               <Image
-                src="/assets/internships/soi_2.png"
+                src="/assets/internships/soi_2.webp"
                 alt="Summer of AI 2025"
                 width={600}
                 height={400}
@@ -491,7 +491,7 @@ export default function InternshipsPage() {
                 <span className="text-white text-xl font-bold">A Nationwide AI Internship</span>
               </div>
             </div>
-            
+
             <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
               <h3 className="text-xl font-semibold mb-4 text-green-300">Perks:</h3>
               <ul className="space-y-3 text-gray-300 mb-6">
@@ -528,14 +528,14 @@ export default function InternshipsPage() {
                   <span>Network with 1 Lakh+ AI enthusiasts and practitioners</span>
                 </li>
               </ul>
-              
+
               <h3 className="text-xl font-semibold mb-4 text-blue-300">Open for:</h3>
               <p className="text-gray-300 mb-6">All B.Tech / Engineering Students</p>
-              
+
               <div className="mt-6">
-                
+
                 <p className="text-center mt-4 text-gray-400">Become a part of the AI revolution and help build India's first native-language LLM.</p>
-                <Link 
+                <Link
                   href="https://viswam.ai/summer-of-ai"
                   className="block w-full py-3 px-4 mt-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white text-center font-bold rounded-lg transition-all duration-300"
                   target="_blank"

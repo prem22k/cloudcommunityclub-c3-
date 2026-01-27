@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
 
 import { ANNOUNCEMENT_TEXT, ANNOUNCEMENT_GRAD_COLOR } from '@/dispositions/general'
 
-const logo = '/assets/bits/sreenidhi-logo.png'
+const logo = '/assets/bits/sreenidhi-logo.webp'
 
 export default function Navbar(): React.ReactNode {
     const [nav, setNav] = useState(false)
@@ -51,14 +51,16 @@ export default function Navbar(): React.ReactNode {
                         {ANNOUNCEMENT_TEXT}
                     </p>
                     
-                    <Image
-                        width={256}
-                        height={128}
-                        src={'/assets/bits/diagonal_slowglide_overlay.gif'}
-                        alt=''
-                        className='-z-10 absolute w-full opacity-5 group-hover/announcement_bar:opacity-20 transition-all duration-500'
-                        unoptimized
-                    />
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className='-z-10 absolute w-full opacity-5 group-hover/announcement_bar:opacity-20 transition-all duration-500 pointer-events-none object-cover'
+                    >
+                        <source src='/assets/bits/diagonal_slowglide_overlay.webm' type='video/webm' />
+                        <source src='/assets/bits/diagonal_slowglide_overlay.mp4' type='video/mp4' />
+                    </video>
                 
                     <p className='z-10 right-4 absolute text-neutral-600 text-xs font-semibold select-none animate-pulse'>
                         press to dismiss
@@ -74,7 +76,7 @@ export default function Navbar(): React.ReactNode {
                 className='z-20 flex relative h-[64px] px-4 justify-between items-center text-gray-300 bg-gradient-to-b from-[#000] to-transparent'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
             >
                 <Image
                     width={180}
