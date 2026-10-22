@@ -91,7 +91,7 @@ export default function BusRoutes(): React.ReactNode {
                         No routes found for your search.
                     </div>
                 ) : (
-                    <div className='grid gap-5 sm:gap-6 lg:grid-cols-2'>
+                    <div className='grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-2'>
                         {filteredRoutes.map((route) => {
                             const isExpanded = expandedRoutes.has(route.routeNo)
                             const visibleStops = isExpanded ? route.stops : route.stops.slice(0, 4)
@@ -102,51 +102,55 @@ export default function BusRoutes(): React.ReactNode {
                                     initial={{ opacity: 0, y: 14 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className='rounded-2xl border border-zinc-700 bg-gradient-to-b from-zinc-900/80 to-black/90 p-5 shadow-[0_12px_36px_rgba(0,0,0,0.28)]'
+                                    className='min-w-0 rounded-2xl border border-zinc-700 bg-gradient-to-b from-zinc-900/80 to-black/90 p-5 shadow-[0_12px_36px_rgba(0,0,0,0.28)]'
                                 >
                                     <div className='flex items-start justify-between gap-3'>
-                                        <div>
+                                        <div className='min-w-0'>
                                             <div className='inline-flex items-center rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-cyan-300'>
                                                 <Route size={14} className='mr-1.5' /> Route {route.routeNo}
                                             </div>
-                                            <h2 className='mt-3 text-lg sm:text-xl font-semibold text-white'>
+                                            <h2 className='mt-3 text-lg sm:text-xl font-semibold text-white break-words'>
                                                 Destination: {route.destination}
                                             </h2>
                                         </div>
-                                        <div className='text-[11px] sm:text-xs text-zinc-400'>
+                                        <div className='shrink-0 text-[11px] sm:text-xs text-zinc-400'>
                                             {route.stops.length} stops
                                         </div>
                                     </div>
 
                                     <div className='mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm'>
-                                        <p className='text-zinc-200 flex items-center gap-2'>
-                                            <User size={15} className='text-zinc-400' />
-                                            <span className='font-medium'>Manager:</span> {route.routeManager}
+                                        <p className='text-zinc-200 flex items-start gap-2 min-w-0'>
+                                            <User size={15} className='mt-0.5 shrink-0 text-zinc-400' />
+                                            <span className='min-w-0 break-words'>
+                                                <span className='font-medium'>Manager:</span> {route.routeManager}
+                                            </span>
                                         </p>
-                                        <p className='text-zinc-200 flex items-center gap-2'>
-                                            <Phone size={15} className='text-zinc-400' />
-                                            <span className='font-medium'>Phone:</span> {route.phone}
+                                        <p className='text-zinc-200 flex items-start gap-2 min-w-0'>
+                                            <Phone size={15} className='mt-0.5 shrink-0 text-zinc-400' />
+                                            <span className='min-w-0 break-words'>
+                                                <span className='font-medium'>Phone:</span> {route.phone}
+                                            </span>
                                         </p>
                                     </div>
 
-                                    <div className='mt-5 overflow-hidden rounded-xl border border-zinc-800'>
-                                        <div className='grid grid-cols-[56px_1fr_96px] bg-zinc-900/80 px-3 py-2 text-[11px] sm:text-xs uppercase tracking-wide text-zinc-400'>
+                                    <div className='mt-5 max-w-full overflow-x-auto rounded-xl border border-zinc-800'>
+                                        <div className='grid grid-cols-[56px_minmax(0,1fr)_96px] bg-zinc-900/80 px-3 py-2 text-[11px] sm:text-xs uppercase tracking-wide text-zinc-400'>
                                             <span>#</span>
-                                            <span>Boarding Point</span>
-                                            <span>Time</span>
+                                            <span className='min-w-0 break-words'>Boarding Point</span>
+                                            <span className='whitespace-nowrap'>Time</span>
                                         </div>
 
                                         {visibleStops.map((stop) => (
                                             <div
                                                 key={`${route.routeNo}-${stop.stopOrder}`}
-                                                className='grid grid-cols-[56px_1fr_96px] items-start gap-2 px-3 py-2.5 text-sm border-t border-zinc-800/80'
+                                                className='grid grid-cols-[56px_minmax(0,1fr)_96px] items-start gap-2 px-3 py-2.5 text-sm border-t border-zinc-800/80'
                                             >
                                                 <span className='text-zinc-400'>{stop.stopOrder}</span>
-                                                <span className='text-zinc-100 inline-flex items-start gap-1.5'>
-                                                    <MapPin size={14} className='mt-0.5 text-zinc-500' />
-                                                    {stop.boardingPoint}
+                                                <span className='text-zinc-100 flex min-w-0 items-start gap-1.5'>
+                                                    <MapPin size={14} className='mt-0.5 shrink-0 text-zinc-500' />
+                                                    <span className='min-w-0 break-words'>{stop.boardingPoint}</span>
                                                 </span>
-                                                <span className='text-zinc-300 inline-flex items-center gap-1'>
+                                                <span className='text-zinc-300 inline-flex shrink-0 items-center gap-1 whitespace-nowrap'>
                                                     <Clock size={13} className='text-zinc-500' />
                                                     {stop.pickupTime ?? '--'}
                                                 </span>
